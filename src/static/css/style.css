@@ -1,6 +1,6 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800&display=swap');
+/* @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800&display=swap'); */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Space+Mono:400,700&display=swap');
+/* @import url('https://fonts.googleapis.com/css?family=Space+Mono:400,700&display=swap'); */
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500&display=swap');
 
 
@@ -19,6 +19,10 @@ body{
     
 }
 
+a, a:visited, a:hover{
+    color: inherit;
+    text-decoration: none;
+}
 
 .apple-font{
     font-family: -apple-system,BlinkMacSystemFont,sans-serif;
@@ -69,15 +73,13 @@ header div{
     align-items: center;
 }
 
-.other-links div{
-    padding: 5px;
-}
-header .other-links div:hover{
+
+/* header .other-links div:hover{
     border-radius: 5px;
     background-color: black;
     color: #fff;
-    /* text-decoration: underline; */
-}
+    text-decoration: underline;
+} */
 .h1-name{
     margin-top: 50px;
     margin-bottom: 25px;
@@ -91,9 +93,7 @@ header .other-links div:hover{
     font-size: 1.2rem;
 }
 
-.personal-description .link{
-    cursor: pointer;
-}
+
 .margin-top-25{
     margin-top: 25px;
 }
@@ -136,9 +136,16 @@ header .other-links div:hover{
 }
 
 .link{
-    text-decoration: underline;
+    border-bottom: 1px dotted black;
+    cursor: pointer;
+    padding: 2px;
 }
-
+.link:hover{
+    border-radius: 2px;
+    color: #fff;
+    background-color: #000;
+    border-bottom: none;
+}
 .margin-top-50{
     margin-top: 50px;
 }
@@ -230,7 +237,7 @@ header .other-links div:hover{
 }
 
 .home-social-links-container span{
-    text-decoration: underline;
+    /* text-decoration: underline; */
 }
 
 .home-social-links-container div:hover{
@@ -292,10 +299,14 @@ header .other-links div:hover{
 }
 
 .vault-header{
-    margin-bottom: 1px solid black;
-    width: max-content;
+    /* width: max-content; */
     padding-bottom: 10px;
+}
+
+.vault-title{
     border-bottom: 1px solid black;
+    padding-bottom: 10px;
+
 }
 
 .media-tag{
@@ -306,4 +317,46 @@ header .other-links div:hover{
     color: #fff;
     font-weight: normal;
     margin-right: 10px;
+}
+
+.media-container{
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 20px;
+}
+
+
+.home-article-title{
+    /* color: blue; */
+    /* border-radius: 5px; */
+    cursor: pointer;
+    padding: 2px;
+    font-weight: 600;
+    margin-left: 20px;
+}
+
+.home-article-title:hover{
+    background-color: #f4f4f4;
+    /* color: #fff; */
+}
+.home-article-date{
+    width: 180px;
+    text-align: right;
+}
+
+.home-article-container{
+    font-size: 1.2rem;
+    line-height: 1.6em;
+}
+
+.pages-list{
+    margin-right: 30px;
+}
+.pages-list li:not(:last-child){
+    margin-right: 10px;
+}
+
+.pages-button{
+    padding: 10px 0px 10px 10px;
+    border-left: 1px solid black;
 }
