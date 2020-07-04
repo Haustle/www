@@ -4,25 +4,25 @@
     border: 1px solid black;
     margin-left: 15px;
 }
-.pages-list{
+#pages-list{
     margin-right: 10px;
     list-style-type: none;
 }
 
-.pages-list li:hover{
+#pages-list li:hover{
     text-decoration: underline
 }
-.pages-list li:not(:last-child){
+#pages-list li:not(:last-child){
     margin-right: 10px;
 }
 
-.pages-button{
+#pages-button{
     padding: 10px 0px 10px 10px;
     border-left: 1px solid black;
     font-weight: bold;
 }
 
-.pages-button:hover{
+#pages-button:hover{
     font-weight: bold;
 }
 

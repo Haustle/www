@@ -1,7 +1,8 @@
 import Layout from '../components/layout'
 import Head from 'next/head'
+import { getBookmarks } from '../external-calls/vault';
 
-export default function Library(){
+export default function Library({ bookmarks }){
     return(
         <div className="container">
             <Head>
@@ -14,44 +15,42 @@ export default function Library(){
                     <h1>Vault</h1>
                     <span className="margin-left-25">An unordered collection of my favorite bookmarks</span>
                 </div>
-                <div className="bookmark-container flex-align-items-center">
-                    <span className="date">06/25</span>
-                    <div className="media-tag-container">
-                        <div className="media-tag">Podcast</div>
-                    </div>
-                    <h3>True Sight: The Internation 2019 Finals</h3>
-                </div>
 
-                <div className="bookmark-container flex-align-items-center">
-                    <span className="date">06/25</span>
-                    <div className="media-tag-container">
-                        <div className="media-tag">Video</div>
-                    </div>
-                    <h3>Kanye West: Uncensored and Uncut</h3>
-                </div>
 
-                <div className="bookmark-container flex-align-items-center">
-                    <span className="date">06/25</span>
-                    <div className="media-tag-container">
-                        <div className="media-tag">Podcast</div>
-                    </div>
-                    <h3>HIBT – Dyson w/ James Dyson</h3>
-                </div>
+                {bookmarks.map((bookmark) => (
 
-                <div className="bookmark-container flex-align-items-center">
-                    <span className="date">06/25</span>
-                    <div className="media-tag-container">
-                        <div className="media-tag">Read</div>
-                    </div>
-                    <h3>The Desktop Metaphor Must Die</h3>
-                </div>
+                    <div className="bookmark-container flex-justify-between">
+                        <div className="flex media-scale-hover">
+                            <span className="date">{bookmark.date}</span>
+                            <div className="media-tag-container">
+                                <div className="media-tag">{bookmark.category}</div>
+                            </div>
+                            <a target="_blank" href={bookmark.url}>
+                                <h3 className="media-title-container">{bookmark.title}</h3>
+                            </a>
+                            
+                        </div>
 
+                        <div className="message-square-container"><img src="message-square.svg"></img></div>
+                    </div>
+
+                ))}
                 
 
-                {/* <div>A collection of things I deem noteworthy in my eyes. Whether is be videos, music, articles, podcasts</div> */}
+
+                
             </Layout>
 
             <style jsx>{`
+                .message-square-container img{
+                    cursor: pointer;
+                }
+                .message-square-container{
+                    margin-left: 5px;
+                }
+                .media-title-container{
+                    width: 100%;
+                }
                 .media-tag-container{
                     min-width: 71px;
                     margin-right: 25px;
@@ -63,16 +62,18 @@ export default function Library(){
                     padding-bottom: 25px;
                     border-bottom: 1px solid black;
                 }
-                .bookmark-container:hover{
-                    opacity: .6;
+                .media-scale-hover:hover{
+                    opacity: .8;
                     transform: scale(1.01);
+                }
+                .media-scale-hover{
+                    opacity: .5;
+                    transition: all .2s ease-in-out;
+                    cursor: pointer;
 
                 }
                 .bookmark-container{
-                    cursor: pointer;
-                    filter: grayscale(1);
-                    opacity: .5;
-                    transition: all .2s ease-in-out;
+                    width: 95%;
                 }
 
                 .bookmark-container:not(:first-child){
@@ -95,4 +96,13 @@ export default function Library(){
         
     )
     
+}
+
+export async function getStaticProps() {
+    const bookmarks = getBookmarks()
+    return {
+        props: {
+            bookmarks
+        }
+    }
 }

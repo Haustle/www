@@ -1,10 +1,19 @@
 import styles from './layout.module.css';
+import Head from 'next/head'
 import Link from 'next/link';
 
+
+
 export default function Layout({ children }) {
+
+    function closePages(){
+        console.log('this is:', this);
+    }
+
     return(
         <>
-        
+        {/* <Head>
+        </Head> */}
         <main id={styles['main-wrapper']}>
             <header className={`${styles.nav} ${styles['page-size']} flex-justify-between`}>
                 <div className='flex-align-items-center'>
@@ -15,7 +24,7 @@ export default function Layout({ children }) {
 
                 <div className={`flex-align-items-center ${styles['other-links']}`}>
                     <div>
-                        <ul className={`flex ${styles['pages-list']}`}>
+                        <ul id={`${styles['pages-list']}`} className={`flex `}>
                             <li>
                                 <Link href="/about"><a>About</a></Link>
                             </li>
@@ -24,7 +33,7 @@ export default function Layout({ children }) {
                             </li>
                         </ul>
                     </div>
-                    <div className={styles['pages-button']}>
+                    <div id={styles['pages-button']} onClick = {() => this.closePages()}>
                         <div className="">Pages</div>
                     </div>
 
