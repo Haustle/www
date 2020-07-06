@@ -1,19 +1,19 @@
 import styles from './layout.module.css';
 import Head from 'next/head'
 import Link from 'next/link';
+// import
 
 
 
 export default function Layout({ children }) {
 
-    function closePages(){
-        console.log('this is:', this);
-    }
+    const [pagesVisible, setPagesVisible] = React.useState(false);
+    var togglePages = e => {
+        setPagesVisible(!pagesVisible)
+    };
 
     return(
         <>
-        {/* <Head>
-        </Head> */}
         <main id={styles['main-wrapper']}>
             <header className={`${styles.nav} ${styles['page-size']} flex-justify-between`}>
                 <div className='flex-align-items-center'>
@@ -24,7 +24,7 @@ export default function Layout({ children }) {
 
                 <div className={`flex-align-items-center ${styles['other-links']}`}>
                     <div>
-                        <ul id={`${styles['pages-list']}`} className={`flex `}>
+                        <ul id={`${styles['pages-list']}`} className={`flex ${pagesVisible ? '' : 'display-none'}`}>
                             <li>
                                 <Link href="/about"><a>About</a></Link>
                             </li>
@@ -33,7 +33,7 @@ export default function Layout({ children }) {
                             </li>
                         </ul>
                     </div>
-                    <div id={styles['pages-button']} onClick = {() => this.closePages()}>
+                        <div id={styles['pages-button']} onClick={togglePages}>
                         <div className="">Pages</div>
                     </div>
 
@@ -43,6 +43,7 @@ export default function Layout({ children }) {
             <div className={styles['page-size']}>
                 {children}
             </div>
+
         </main>
        
         </>
