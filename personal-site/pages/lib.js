@@ -13,15 +13,15 @@ export default function Library({ bookmarks }){
     var showComment = (comIcon) => {
 
         var id = parseInt(comIcon.target.id)
-       
-        if (commentRefs[id].style.display == 'block'){
+        console.log(`id: ${id}, currentComIndex: ${currentCommentIndex}`);
+        if (commentRefs[id].style.display == 'block' ){
             commentRefs[id].style.display = "none";
         }
         else{
             commentRefs[id].style.display = 'block';
         }
         console.log(`This is the returned display of current tag: ${commentRefs[id].style.display}`);
-        if (currentCommentIndex != -1) {
+        if (currentCommentIndex != -1 && (id != currentCommentIndex)) {
             commentRefs[currentCommentIndex].style.display = "none";
         }
         currentCommentIndex = id;
@@ -109,6 +109,8 @@ export default function Library({ bookmarks }){
                 }
                 .bookmark-container{
                     width: 95%;
+                    transition: all .2s ease-in-out;
+
                 }
 
                 .bookmark-container:not(:first-child){
