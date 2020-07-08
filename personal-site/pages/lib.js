@@ -110,6 +110,7 @@ export default function Library({ bookmarks }){
                 .bookmark-container{
                     width: 95%;
                     transition: all .2s ease-in-out;
+                    align-items: none;
 
                 }
 
