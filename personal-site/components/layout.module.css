@@ -18,8 +18,12 @@
 
 #pages-button{
     padding: 10px 0px 10px 10px;
-    border-left: 1px solid black;
+    /* border-left: 1px solid transparent; */
     font-weight: bold;
+}
+
+.border-left{
+    border-left: 1px solid black;
 }
 
 #pages-button:hover{

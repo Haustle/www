@@ -1,8 +1,33 @@
 import Layout from '../components/layout'
 import Head from 'next/head'
 import { getBookmarks } from '../external-calls/vault';
+import { isNullOrUndefined } from 'util';
 
 export default function Library({ bookmarks }){
+    var commentRefs = [];
+    var setCom = (ref) => {
+        commentRefs.push(ref);
+    };
+    var currentCommentIndex = -1;
+    
+    var showComment = (comIcon) => {
+
+        var id = parseInt(comIcon.target.id)
+       
+        if (commentRefs[id].style.display == 'block'){
+            commentRefs[id].style.display = "none";
+        }
+        else{
+            commentRefs[id].style.display = 'block';
+        }
+        console.log(`This is the returned display of current tag: ${commentRefs[id].style.display}`);
+        if (currentCommentIndex != -1) {
+            commentRefs[currentCommentIndex].style.display = "none";
+        }
+        currentCommentIndex = id;
+    }
+    var count = 0;
+
     return(
         <div className="container">
             <Head>
@@ -26,27 +51,37 @@ export default function Library({ bookmarks }){
                                 <div className="media-tag">{bookmark.category}</div>
                             </div>
                             <a target="_blank" href={bookmark.url}>
-                                <h3 className="media-title-container">{bookmark.title}</h3>
+                                <h3 className="media-title-container">{count} {bookmark.title}</h3>
+                                {
+                                    bookmark.comment != '' ? <div className="comment-styling roboto-mono" ref={setCom}>{bookmark.comment}</div> : null
+                                }
                             </a>
                             
                         </div>
 
-                        <div className="message-square-container"><img src="message-square.svg"></img></div>
+                        <div className="message-square-container">
+                        {
+                            bookmark.comment != '' ? <img src="message-square.svg" onClick={showComment} id={count++}></img> : null
+                        }                                               
+                        </div>
                     </div>
-
-                ))}
-                
-
-
-                
+                ))}                
             </Layout>
 
             <style jsx>{`
+
+                .comment-styling{
+                    margin-top: 30px;
+                    margin-bottom: 30px;
+                    border-left: 2px solid black;
+                    padding-left: 10px;
+                    display: none;
+                }
                 .message-square-container img{
                     cursor: pointer;
                 }
                 .message-square-container{
-                    margin-left: 5px;
+                    margin-left: 20px;
                 }
                 .media-title-container{
                     width: 100%;
@@ -99,7 +134,7 @@ export default function Library({ bookmarks }){
 }
 
 export async function getStaticProps() {
-    const bookmarks = getBookmarks()
+    const bookmarks = getBookmarks();
     return {
         props: {
             bookmarks
