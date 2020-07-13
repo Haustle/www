@@ -7,13 +7,26 @@
 #pages-list{
     margin-right: 10px;
     list-style-type: none;
+    padding: 5px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    border: 1px solid ghostwhite;
+    border-radius: 5px;
+
 }
 
 #pages-list li:hover{
-    text-decoration: underline
+    /* text-decoration: underline; */
+    color: white;
+    background-color: black;
+    
 }
 #pages-list li:not(:last-child){
     margin-right: 10px;
+}
+#pages-list li{
+    padding: 2px 5px;
+    border-radius: 5px;
+
 }
 
 #pages-button{
@@ -22,9 +35,9 @@
     font-weight: bold;
 }
 
-.border-left{
+/* .border-left{
     border-left: 1px solid black;
-}
+} */
 
 #pages-button:hover{
     font-weight: bold;

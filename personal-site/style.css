@@ -5,6 +5,11 @@ body,html,ul, h1, h2, h3{
     margin: 0;
     padding: 0;
 }
+html{
+    /* Make sure the page stays align regardless if there's a scrollbar */
+    overflow-y: scroll; 
+}
+
 
 .flex-align-items-center{
     display: flex;
@@ -47,3 +52,7 @@ a, a:visited, a:hover{
     margin-bottom: 50px;
 }
 
+::selection{
+    background-color: yellow;
+    color: black;
+}

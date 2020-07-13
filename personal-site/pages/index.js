@@ -8,13 +8,19 @@ export default function Home() {
 
     <div className="container">
       <Head>
-        <title>Tyrus Miles</title>
+        <title>tyrus miles</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Layout>
         <h1 className="h1-name">Hi, I'm Tyrus ⌨️</h1>
-        <div className="personal-description">...currently a computer science student. I'm passionate about <span className="link">design</span> & <span className="link">code</span> amongst other random <Link href="/lib"><a><span className="link">things</span></a></Link>. Having fun and trying to build projects at <span className="link">Haustle</span>.</div>
-        <div className=" margin-25"></div>
+        <div className="personal-description">...currently a computer science student. I'm interested in <span className="link"><Link href="/projects"><a>design & code</a></Link></span> amongst other random <Link href="/lib"><a><span className="link">things</span></a></Link>. Trying to build projects at <span className="link bold"><a href="localhost:5000/">Haustle</a></span>.</div>
+        <div className=" margin-25">
+          <div className="home-social-links-container flex-justify-between">
+            <div className="flex-align-items-center social-platform-container"><img src="twitter.svg"></img><span>Twitter</span></div>
+            <div className="flex-align-items-center social-platform-container"><img src="github.svg"></img><span>GitHub</span></div>
+            <div className="flex-align-items-center social-platform-container"><img src="mail.svg"></img><span>Email</span></div>
+          </div>
+        </div>
        
 
         <div>
@@ -26,7 +32,7 @@ export default function Home() {
             </div>
 
             <div className="flex-align-items-center">
-              <div className="home-article-date">December 31, 2020</div>
+              <div className="home-article-date">December 31, 2020 </div>
               <h3 className="home-article-title">Goals for 2021</h3>
             </div>
 
@@ -34,15 +40,16 @@ export default function Home() {
               <div className="home-article-date">February 5, 2019</div>
               <h3 className="home-article-title">Cool...random snippets</h3>
             </div>
+
+            <div className="flex-align-items-center">
+              <div className="home-article-date">August 5, 2020</div>
+              <h3 className="home-article-title">My first Internship</h3>
+            </div>
           </div>
 
         </div>
 
-        {/* <div className="home-social-links-container flex-justify-between">
-          <div className="flex-align-items-center social-platform-container"><img src="twitter.svg"></img><span>Twitter</span></div>
-          <div className="flex-align-items-center social-platform-container"><img src="github.svg"></img><span>GitHub</span></div>
-          <div className="flex-align-items-center social-platform-container"><img src="mail.svg"></img><span>Email</span></div>
-        </div> */}
+        
 
         <style jsx>{`
 

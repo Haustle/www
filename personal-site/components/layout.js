@@ -28,7 +28,7 @@ export default function Layout({ children }) {
                     <div>
                         <ul id={`${styles['pages-list']}`} className={`flex ${pagesVisible ? '' : 'display-none'}`}>
                             <li>
-                                <Link href="/about"><a>Projects</a></Link>
+                                <Link href="/projects"><a>Projects</a></Link>
                             </li>
                             <li>
                                 <Link href="/lib"><a>Bookmarks</a></Link>

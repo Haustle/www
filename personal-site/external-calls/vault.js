@@ -36,6 +36,27 @@ const bookmarks = [
         url: 'https://uxdesign.cc/the-desktop-metaphor-must-die-676fbb34afdb',
         comment: 'Food for thought when designing, and practicality'
     },
+    {
+        title: "Joe Rogan #1309 – Naval Ravikant",
+        category: 'Read',
+        date: '02/12',
+        url: 'https://www.youtube.com/watch?v=3qHkcs3kG44',
+        comment: ''
+    },
+    {
+        title: "How to Run a Business in 2020",
+        category: 'Read',
+        date: '02/12',
+        url: 'https://www.nytimes.com/2020/01/30/style/millennial-entrepreneur-startups.html',
+        comment: 'Love the MSCHF boys and their mission'
+    },
+    {
+        title: "Courage & Nadeshot – How League of Legends Evolved from a College Idea into the World's Biggest Game",
+        category: 'Read',
+        date: '02/12',
+        url: 'https://www.youtube.com/watch?v=5OsFytuMmk8',
+        comment: 'Cool insight to one of my favorite games'
+    }
     
 
 ];

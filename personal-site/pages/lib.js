@@ -50,8 +50,8 @@ export default function Library({ bookmarks }){
                             <div className="media-tag-container">
                                 <div className="media-tag">{bookmark.category}</div>
                             </div>
-                            <a target="_blank" href={bookmark.url}>
-                                <h3 className="media-title-container">{count} {bookmark.title}</h3>
+                            <a target="_blank" className="title-comment" href={bookmark.url}>
+                                <h3 className="media-title-container">{bookmark.title}</h3>
                                 {
                                     bookmark.comment != '' ? <div className="comment-styling roboto-mono" ref={setCom}>{bookmark.comment}</div> : null
                                 }
@@ -61,7 +61,7 @@ export default function Library({ bookmarks }){
 
                         <div className="message-square-container">
                         {
-                            bookmark.comment != '' ? <img src="message-square.svg" onClick={showComment} id={count++}></img> : null
+                                bookmark.comment != '' ? <img className="media-scale-hover" src="message-square.svg" onClick={showComment} id={count++}></img> : null
                         }                                               
                         </div>
                     </div>
@@ -69,6 +69,9 @@ export default function Library({ bookmarks }){
             </Layout>
 
             <style jsx>{`
+                .title-comment{
+                    // width: 440px;
+                }
 
                 .comment-styling{
                     margin-top: 30px;
@@ -85,6 +88,7 @@ export default function Library({ bookmarks }){
                 }
                 .media-title-container{
                     width: 100%;
+                    line-height: 1.6em;
                 }
                 .media-tag-container{
                     min-width: 71px;
@@ -110,7 +114,7 @@ export default function Library({ bookmarks }){
                 .bookmark-container{
                     width: 95%;
                     transition: all .2s ease-in-out;
-                    align-items: none;
+                    align-items: normal;
 
                 }
 
