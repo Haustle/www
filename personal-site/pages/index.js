@@ -13,12 +13,18 @@ export default function Home() {
       </Head>
       <Layout>
         <h1 className="h1-name">Hi, I'm Tyrus ⌨️</h1>
-        <div className="personal-description">...currently a computer science student. I'm interested in <span className="link"><Link href="/projects"><a>design & code</a></Link></span> amongst other random <Link href="/lib"><a><span className="link">things</span></a></Link>. Trying to build projects at <span className="link bold"><a href="localhost:5000/">Haustle</a></span>.</div>
+        <div className="personal-description">...currently a computer science student. I'm interested in <span className="link"><Link href="/projects"><a>design & code</a></Link></span> amongst other random <Link href="/lib"><a><span className="link">things</span></a></Link>. Trying to build projects at <span className="link bold"><a href="http://www.haustle.studio" target="_blank">Haustle</a></span>.</div>
         <div className=" margin-25">
           <div className="home-social-links-container flex-justify-between">
-            <div className="flex-align-items-center social-platform-container"><img src="twitter.svg"></img><span>Twitter</span></div>
-            <div className="flex-align-items-center social-platform-container"><img src="github.svg"></img><span>GitHub</span></div>
-            <div className="flex-align-items-center social-platform-container"><img src="mail.svg"></img><span>Email</span></div>
+            <a href="http://www.twitter.com/haustle" target="_blank">
+                <div className="flex-align-items-center social-platform-container"><img src="twitter.svg"></img><span>Twitter</span></div>
+            </a>
+            <a href="http://www.github.com/haustle" target="_blank">
+                <div className="flex-align-items-center social-platform-container"><img src="github.svg"></img><span>GitHub</span></div>
+            </a>
+            <a href="mailto:tyrus.miles@gmai.com">
+              <div className="flex-align-items-center social-platform-container"><img src="mail.svg"></img><span>Email</span></div>
+            </a>
           </div>
         </div>
        
@@ -26,22 +32,7 @@ export default function Home() {
         <div>
           <h1 className="h1-name">Thoughts</h1>
           <div className="home-article-container">
-            <div className="flex-align-items-center">
-              <div className="home-article-date">June 25, 2020</div>
-              <h3 className="home-article-title">What is Haustle?</h3>
-            </div>
-
-            <div className="flex-align-items-center">
-              <div className="home-article-date">December 31, 2020 </div>
-              <h3 className="home-article-title">Goals for 2021</h3>
-            </div>
-
-            <div className="flex-align-items-center">
-              <div className="home-article-date">February 5, 2019</div>
-              <h3 className="home-article-title">Cool...random snippets</h3>
-            </div>
-
-            <div className="flex-align-items-center">
+            <div className="flex-align-items-center disabled-thought">
               <div className="home-article-date">August 5, 2020</div>
               <h3 className="home-article-title">My first Internship</h3>
             </div>
@@ -52,6 +43,14 @@ export default function Home() {
         
 
         <style jsx>{`
+          .disabled-thought {
+            opacity: .5;
+            text-decoration: line-through;
+            webkit-user-select: none; /* Safari */        
+            -moz-user-select: none; /* Firefox */
+            -ms-user-select: none; /* IE10+/Edge */
+            user-select: none; /* Standard */
+          }
 
           .social-platform-container:hover{
             // border-bottom: 1px solid black;

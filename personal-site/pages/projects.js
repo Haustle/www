@@ -16,28 +16,34 @@ export default function About() {
                     <span className="margin-left-25">Collection of projects I've been working on</span>
                 </div>
 
-                <div className="flex-align-items-center project-listing">
-                    <div className="git-repo-icon flex-align-items-center"><GitHub className="feather-button-icon" size={15} /><span className="git-repo-button-text">Git Repo</span></div>
+                <div className="flex-align-items-center">
+                    <div className="margin-right-25">
+                        <a href="http://www.github.com/haustle/www" target="_blank">
+                            <div className="git-repo-icon flex-align-items-center">
+                                <GitHub className="feather-button-icon" size={15} />
+                                <span className="git-repo-button-text">Git Repo</span>
+                            </div>
+                        </a>
+
+                    </div>
+                    
+                    
                     <div className="project-title">Personal Website (this)</div>
                 </div>
 
-                <div className="flex-align-items-center project-listing">
-                    <div className="git-repo-icon flex-align-items-center"><GitHub className="feather-button-icon" size={15} /><span className="git-repo-button-text">Git Repo</span></div>
-                    <div className="project-title">Haustle</div>
-                </div>
 
-                <div className="flex-align-items-center project-listing">
-                    <div className="git-repo-icon flex-align-items-center"><GitHub className="feather-button-icon" size={15} /><span className="git-repo-button-text">Git Repo</span></div>
-                    <div className="project-title">Show Manager</div>
-                </div>
 
-                
-                {/* <h3>Haustle</h3> */}
+
+
                 <style jsx>{ ` 
-                    .feather-button-icon{
-                        margin-rght: 10px;
+                    .git-repo-button-text{
+                        margin-left: 10px;
                     }
-
+                    .disable{
+                        opacity: .5;
+                        pointer-events: none;
+                    }
+                    
                     .h1-name-caption{
                         // margin-bottom: 50px;
                         margin-top: 50px;
@@ -51,7 +57,7 @@ export default function About() {
                         border-radius: 5px;
                         // border: 1px solid black;
                         background-color: black;
-                        margin-right: 25px;
+                        // margin-right: 25px;
                         color: white; 
                     }
                     .project-listing{
@@ -67,8 +73,8 @@ export default function About() {
                         text-decoration: underline;
                     }
 
-                    .git-repo-button-text{
-                        margin-left: 5px;
+                    .margin-right-25{
+                        margin-right: 25px;
                     }
         `}
 
