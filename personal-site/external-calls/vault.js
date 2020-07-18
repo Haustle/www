@@ -41,7 +41,7 @@ const bookmarks = [
         category: 'Read',
         date: '02/12',
         url: 'https://www.youtube.com/watch?v=3qHkcs3kG44',
-        comment: ''
+        comment: 'Interesting take on universal basic income'
     },
     {
         title: "How to Run a Business in 2020",
