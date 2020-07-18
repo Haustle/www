@@ -51,9 +51,9 @@ export default function Library({ bookmarks }){
                                 <div className="media-tag">{bookmark.category}</div>
                             </div>
                             <a target="_blank" className="title-comment" href={bookmark.url}>
-                                <h3 className="media-title-container">{bookmark.title}</h3>
+                                <div className="media-title-container">{bookmark.title}</div>
                                 {
-                                    bookmark.comment != '' ? <div className="comment-styling roboto-mono" ref={setCom}>{bookmark.comment}</div> : null
+                                    bookmark.comment != '' ? <div className="comment-styling" ref={setCom}>{bookmark.comment}</div> : null
                                 }
                             </a>
                             
@@ -78,6 +78,10 @@ export default function Library({ bookmarks }){
                     margin-bottom: 30px;
                     border-left: 2px solid black;
                     padding-left: 10px;
+                    width: auto;
+                    font-weight: bold;
+                    // color: white;
+                    // background-color: black;
                     display: none;
                 }
                 .message-square-container img{
@@ -87,6 +91,9 @@ export default function Library({ bookmarks }){
                     margin-left: 20px;
                 }
                 .media-title-container{
+                    // color: blue;
+                    // text-decoration: underline;
+                    font-size: 1.2rem;
                     width: 100%;
                     line-height: 1.6em;
                 }
@@ -102,11 +109,11 @@ export default function Library({ bookmarks }){
                     border-bottom: 1px solid black;
                 }
                 .media-scale-hover:hover{
-                    opacity: .8;
-                    transform: scale(1.01);
+                    opacity: .3;
+                    transform: scale(1.02);
                 }
                 .media-scale-hover{
-                    opacity: .5;
+                    // opacity: .;
                     transition: all .2s ease-in-out;
                     cursor: pointer;
 
@@ -119,7 +126,7 @@ export default function Library({ bookmarks }){
                 }
 
                 .bookmark-container:not(:first-child){
-                    margin-top: 20px;
+                    margin-top: 15px;
                 }
                 .date{
                     margin-right: 20px;

@@ -1,6 +1,7 @@
 import styles from './layout.module.css';
 import Head from 'next/head'
 import Link from 'next/link';
+// import 'animate.css'
 // import
 
 
@@ -25,8 +26,8 @@ export default function Layout({ children }) {
                 </div>
 
                 <div className={`flex-align-items-center ${styles['other-links']}`}>
-                    <div>
-                        <ul id={`${styles['pages-list']}`} className={`flex ${pagesVisible ? '' : 'display-none'}`}>
+                    <div className={styles['pages-list-container']}>
+                            <ul id={`${styles['pages-list']}`} className={`flex ${pagesVisible ? 'animate__animated animate__fadeInRight animate__faster' : 'opacity-0'}`}>
                             <li>
                                 <Link href="/projects"><a>Projects</a></Link>
                             </li>

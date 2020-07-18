@@ -11,9 +11,17 @@
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
     border: 1px solid ghostwhite;
     border-radius: 5px;
+    overflow: hidden;
 
 }
+.trans-in{
+    transition: all 1s ease-in-out;
+}
 
+.pages-list-container{
+    padding: 10px;
+    overflow: hidden;
+}
 #pages-list li:hover{
     /* text-decoration: underline; */
     color: white;
@@ -35,9 +43,6 @@
     font-weight: bold;
 }
 
-/* .border-left{
-    border-left: 1px solid black;
-} */
 
 #pages-button:hover{
     font-weight: bold;

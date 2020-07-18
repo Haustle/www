@@ -13,7 +13,7 @@ export default function Home() {
       </Head>
       <Layout>
         <h1 className="h1-name">Hi, I'm Tyrus ⌨️</h1>
-        <div className="personal-description">...currently a computer science student. I'm interested in <span className="link"><Link href="/projects"><a>design & code</a></Link></span> amongst other random <Link href="/lib"><a><span className="link">things</span></a></Link>. Trying to build projects at <span className="link bold"><a href="http://www.haustle.studio" target="_blank">Haustle</a></span>.</div>
+        <div className="personal-description">...currently a computer science student. I'm interested in <span className="link"><Link href="/projects"><a>design & code</a></Link></span> amongst other random <Link href="/lib"><a><span className="link">things</span></a></Link>. Trying to build projects at <span className="link"><a href="http://www.haustle.studio" target="_blank">Haustle</a></span>.</div>
         <div className=" margin-25">
           <div className="home-social-links-container flex-justify-between">
             <a href="http://www.twitter.com/haustle" target="_blank">

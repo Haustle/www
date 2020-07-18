@@ -6,7 +6,7 @@ const bookmarks = [
         category : 'Read',
         date: '07/01',
         url: 'https://lateralaction.com/articles/walt-disney/',
-        comment: ''
+        comment: 'Design / Creativity first, then functionality and practicality'
     },
     {
         title: "To anyone Who Thinks They're Falling Behind",
@@ -55,7 +55,7 @@ const bookmarks = [
         category: 'Read',
         date: '02/12',
         url: 'https://www.youtube.com/watch?v=5OsFytuMmk8',
-        comment: 'Cool insight to one of my favorite games'
+        comment: 'Cool insight into the origins of one of my favorite games'
     }
     
 

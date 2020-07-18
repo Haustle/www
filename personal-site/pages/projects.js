@@ -11,12 +11,15 @@ export default function About() {
             </Head>
 
             <Layout>
-                <div className="h1-name-caption flex-align-items-center margin-bottom-50">
-                    <h1>Projects</h1>
-                    <span className="margin-left-25">Collection of projects I've been working on</span>
+                <div className="status-container">
+                    <div className="projects-status">⚠ Currently working on creating writeups and thoughts on projects</div>
                 </div>
 
-                <div className="flex-align-items-center">
+                <div className="h1-name-caption flex-align-items-center">
+                    <h1>Projects</h1>
+                    <span className="margin-left-25">Collection of projects I've been working on!</span>
+                </div>
+                <div className="project-listing-container flex-align-items-center">
                     <div className="margin-right-25">
                         <a href="http://www.github.com/haustle/www" target="_blank">
                             <div className="git-repo-icon flex-align-items-center">
@@ -24,18 +27,83 @@ export default function About() {
                                 <span className="git-repo-button-text">Git Repo</span>
                             </div>
                         </a>
-
                     </div>
-                    
-                    
                     <div className="project-title">Personal Website (this)</div>
                 </div>
+
+                {/* <div className="project-listing-container flex-align-items-center">
+                    <div className="margin-right-25">
+                        <a href="http://www.github.com/haustle/www" target="_blank">
+                            <div className="git-repo-icon flex-align-items-center">
+                                <GitHub className="feather-button-icon" size={15} />
+                                <span className="git-repo-button-text">Git Repo</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div className="project-title">Metabend</div>
+                </div>
+
+                <div className="project-listing-container flex-align-items-center">
+                    <div className="margin-right-25">
+                        <a href="http://www.github.com/haustle/www" target="_blank">
+                            <div className="git-repo-icon flex-align-items-center">
+                                <GitHub className="feather-button-icon" size={15} />
+                                <span className="git-repo-button-text">Git Repo</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div className="project-title">PS Cards</div>
+                </div>
+
+                <div className="project-listing-container flex-align-items-center">
+                    <div className="margin-right-25">
+                        <a href="http://www.github.com/haustle/www" target="_blank">
+                            <div className="git-repo-icon flex-align-items-center">
+                                <GitHub className="feather-button-icon" size={15} />
+                                <span className="git-repo-button-text">Git Repo</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div className="project-title">RaspPi Video Loop</div>
+                </div>
+
+                <div className="project-listing-container flex-align-items-center">
+                    <div className="margin-right-25">
+                        <a href="http://www.github.com/haustle/www" target="_blank">
+                            <div className="git-repo-icon flex-align-items-center">
+                                <GitHub className="feather-button-icon" size={15} />
+                                <span className="git-repo-button-text">Git Repo</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div className="project-title">Haustle</div>
+                </div> */}
 
 
 
 
 
                 <style jsx>{ ` 
+                    .project-listing-container:not(:first-child){
+                        margin-top: 15px;
+                    }
+                    .status-container{
+                        display: flex;
+                        justify-content: center;
+                    }
+                    .projects-status{
+                        font-size: 14px;
+                        // color: white;
+                        // background-color: black;
+                        border: 1px solid black;
+                        padding: 20px;
+                        border-radius: 5px;
+                        text-align: center;
+                        margin-bottom: 40px;
+                        margin-top: 50px;
+                        width: max-content;
+
+                    }
                     .git-repo-button-text{
                         margin-left: 10px;
                     }
@@ -45,12 +113,8 @@ export default function About() {
                     }
                     
                     .h1-name-caption{
-                        // margin-bottom: 50px;
-                        margin-top: 50px;
                         margin-bottom: 75px;
-                        width: max-content;
                         padding-bottom: 25px;
-                        // border-bottom: 1px solid black;
                     }
                     .git-repo-icon{
                         padding: 5px 10px;
@@ -66,7 +130,8 @@ export default function About() {
 
                     .project-title{
                         cursor: pointer;
-                        font-size: 20px;
+                        font-size: 1.2rem;
+                        // font-weight: bold;
 
                     }
                     .project-title:hover{

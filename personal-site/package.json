@@ -8,6 +8,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "animate.css": "^4.1.0",
     "jquery": "^3.5.1",
     "next": "9.4.4",
     "react": "16.13.1",
