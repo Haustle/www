@@ -8,10 +8,10 @@ export default function Home() {
 
     <div className="container">
       <Head>
-        <title>tyrus miles</title>
+        <title>Tyrus Miles</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Layout>
+      <Layout category="Home">
         <h1 className="h1-name">Hi, I'm Tyrus ⌨️</h1>
         <div className="personal-description">...currently a computer science student. I'm interested in <span className="link"><Link href="/projects"><a>design & code</a></Link></span> amongst other random <Link href="/lib"><a><span className="link">things</span></a></Link>. Trying to build projects at <span className="link"><a href="http://www.haustle.studio" target="_blank">Haustle</a></span>.</div>
         <div className=" margin-25">
@@ -31,10 +31,10 @@ export default function Home() {
 
         <div>
           <h1 className="h1-name">Thoughts</h1>
-          <div className="home-article-container">
-            <div className="flex-align-items-center disabled-thought">
+          <div className="home-article-container disabled-thought" >
+            <div className="flex-align-items-center ">
               <div className="home-article-date">August 5, 2020</div>
-              <h3 className="home-article-title">My first Internship</h3>
+              <h3 className="home-article-title">Sophmore Year & Internship</h3>
             </div>
           </div>
 
@@ -50,6 +50,7 @@ export default function Home() {
             -moz-user-select: none; /* Firefox */
             -ms-user-select: none; /* IE10+/Edge */
             user-select: none; /* Standard */
+            pointer-events: none;
           }
 
           .social-platform-container:hover{
@@ -66,6 +67,7 @@ export default function Home() {
               padding: 2px;
               // font-weight: 600;
               margin-left: 20px;
+              color: blue;
           }
 
           .home-article-title:hover{
@@ -84,17 +86,8 @@ export default function Home() {
               line-height: 2;
               font-size: 1.2rem;
           }
-          .link{
-              border-bottom: 1px dotted black;
-              cursor: pointer;
-              padding: 2px;
-          }
-          .link:hover{
-              border-radius: 2px;
-              color: #fff;
-              background-color: #000;
-              border-bottom: none;
-          }
+          
+          
           .home-social-links-container{
               margin-top: 50px;
               width: 60%;

@@ -35,7 +35,9 @@
     padding: 2px 5px;
     border-radius: 5px;
 
+    /* transition: all .2s ease-in-out; */
 }
+
 
 #pages-button{
     padding: 10px 0px 10px 10px;
@@ -44,13 +46,13 @@
 }
 
 
-#pages-button:hover{
-    font-weight: bold;
-}
 
-.nav div{
-    cursor: pointer;
+.nav{
+    margin-bottom: 50px;
 }
+/* .nav div{
+    cursor: pointer;
+} */
 #main-wrapper{
     margin-top: 4.0rem;
     font-family: -apple-system,BlinkMacSystemFont,sans-serif;
@@ -60,6 +62,10 @@
     margin: 0 auto;
     max-width: 42em;
     padding: 20px;
+}
+
+.pages-button{
+    cursor: pointer;
 }
 
 /* thigns that need to be global */

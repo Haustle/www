@@ -10,7 +10,7 @@ export default function About() {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
 
-            <Layout>
+            <Layout category="Projects">
                 <div className="status-container">
                     <div className="projects-status">⚠ Currently working on creating writeups and thoughts on projects</div>
                 </div>

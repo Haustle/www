@@ -7,22 +7,30 @@ import Link from 'next/link';
 
 // the fix for the click to open with useState is https://stackoverflow.com/questions/60939606/next-js-toggle-display-of-a-div-tag
 
-export default function Layout({ children }) {
+export default function Layout({ children, category=""}) {
+
+
+    // to keep the component, i think the right direction to go in is useContext
+
 
     // this is a state
+    var navOpen =navOpen;
+
     const [pagesVisible, setPagesVisible] = React.useState(false);
     var togglePages = e => {
         setPagesVisible(!pagesVisible)
+        console.log(`This is the value of pagesVisible: ${pagesVisible}`)
     };
 
     return(
         <>
         <main id={styles['main-wrapper']}>
-            <header className={`${styles.nav} ${styles['page-size']} flex-justify-between`}>
+            <header className={`${styles['nav']} ${styles['page-size']} flex-justify-between`}>
+            
                 <div className='flex-align-items-center'>
                     <div className='bold'>
                         <Link href="/"><a>tyrus.im</a></Link></div>
-                    <div className = {styles['page-selector']}>Home</div>
+                    <div className = {styles['page-selector']}>{category}</div>
                 </div>
 
                 <div className={`flex-align-items-center ${styles['other-links']}`}>
@@ -36,9 +44,8 @@ export default function Layout({ children }) {
                             </li>
                         </ul>
                     </div>
-                        <div id={styles['pages-button']} className={pagesVisible ? styles['border-left'] : ''} onClick={togglePages}>
-                        <div className="">Pages</div>
-                    </div>
+                        
+                            <div onClick={togglePages} className={styles["pages-button"]}>Pages</div>
 
                 </div>
             </header>

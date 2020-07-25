@@ -35,23 +35,24 @@ export default function Library({ bookmarks }){
                 <link rel="icon" href="/favicon.ico" />
             </Head>
 
-            <Layout>
+            <Layout category="Book">
                 <div className="h1-name-caption flex-align-items-center margin-bottom-50">
                     <h1>Vault</h1>
                     <span className="margin-left-25">An unordered collection of my favorite bookmarks</span>
                 </div>
 
 
-                {bookmarks.map((bookmark) => (
+                {bookmarks.map((bookmark, index) => (
 
-                    <div className="bookmark-container flex-justify-between">
-                        <div className="flex media-scale-hover">
+                    <div key={index} className="bookmark-container flex-justify-between">
+                        <div className="flex">
                             <span className="date">{bookmark.date}</span>
                             <div className="media-tag-container">
                                 <div className="media-tag">{bookmark.category}</div>
                             </div>
                             <a target="_blank" className="title-comment" href={bookmark.url}>
-                                <div className="media-title-container">{bookmark.title}</div>
+                                <div className="media-title-container">
+                                    <span className="media-title-span">{bookmark.title}</span></div>
                                 {
                                     bookmark.comment != '' ? <div className="comment-styling" ref={setCom}>{bookmark.comment}</div> : null
                                 }
@@ -61,7 +62,7 @@ export default function Library({ bookmarks }){
 
                         <div className="message-square-container">
                         {
-                                bookmark.comment != '' ? <img className="media-scale-hover" src="message-square.svg" onClick={showComment} id={count++}></img> : null
+                                bookmark.comment != '' ? <img className="" src="message-square.svg" onClick={showComment} id={count++}></img> : null
                         }                                               
                         </div>
                     </div>
@@ -93,9 +94,18 @@ export default function Library({ bookmarks }){
                 .media-title-container{
                     // color: blue;
                     // text-decoration: underline;
-                    font-size: 1.2rem;
+                    font-size: 1.0rem;
                     width: 100%;
                     line-height: 1.6em;
+                }
+                .media-title-span{
+                    padding: 2px;
+                }
+                .media-title-span:hover{
+                    text-decoration: underline;
+                    color: grey;
+ 
+
                 }
                 .media-tag-container{
                     min-width: 71px;
@@ -109,8 +119,9 @@ export default function Library({ bookmarks }){
                     border-bottom: 1px solid black;
                 }
                 .media-scale-hover:hover{
-                    opacity: .3;
-                    transform: scale(1.02);
+                    // opacity: .3;
+                    color: grey;
+                    // transform: scale(1.02);
                 }
                 .media-scale-hover{
                     // opacity: .;
