@@ -31,10 +31,26 @@ export default function Home() {
 
         <div>
           <h1 className="h1-name">Thoughts</h1>
-          <div className="home-article-container disabled-thought" >
-            <div className="flex-align-items-center ">
-              <div className="home-article-date">August 5, 2020</div>
-              <h3 className="home-article-title">Sophmore Year & Internship</h3>
+          <div className="home-article-container" >
+            <div className="flex-align-items-center disabled-thought">
+              <div className="home-article-date "><span className="article-status">soon</span></div>
+              {/* <div className="home-article-date ">August 5, 2020</div> */}
+              <h3 className="home-article-title ">Goals for this website</h3>
+            </div>
+          </div>
+          <div className="home-article-container" >
+            <div className="flex-align-items-center disabled-thought">
+              <div className="home-article-date"><span className="article-status">soon</span></div>
+              <h3 className="home-article-title">Projects I want to complete</h3>
+            </div>
+          </div>
+          <div className="home-article-container" >
+            <div className="flex-align-items-center disabled-thought">
+              
+              <div className="home-article-date ">
+                <span className="article-status">soon</span>
+              </div>
+              <h3 className="home-article-title ">Sophmore Year & Internship</h3>
             </div>
           </div>
 
@@ -43,9 +59,16 @@ export default function Home() {
         
 
         <style jsx>{`
+          .article-status{
+            padding: 2px 5px;
+            border-radius: 2px;
+            background-color: black;
+            color: white;
+            margin-left: 10px;
+          }
           .disabled-thought {
             opacity: .5;
-            text-decoration: line-through;
+            // text-decoration: line-through;
             webkit-user-select: none; /* Safari */        
             -moz-user-select: none; /* Firefox */
             -ms-user-select: none; /* IE10+/Edge */
@@ -67,11 +90,12 @@ export default function Home() {
               padding: 2px;
               // font-weight: 600;
               margin-left: 20px;
-              color: blue;
+              // color: blue;
           }
 
           .home-article-title:hover{
-              background-color: #f4f4f4;
+              // background-color: #f4f4f4;
+              text-decoration: underline;
               // color: white;
           }
           .home-article-date{
@@ -80,8 +104,13 @@ export default function Home() {
           }
           .home-article-container{
               // font-size: 1.2rem;
-              line-height: 2.2em;
+              // line-height: 2.2em;
           }
+          .home-article-container:not(:first-child){
+            margin-top: 20px;
+          }
+
+          
           .personal-description{
               line-height: 2;
               font-size: 1.2rem;
