@@ -63,6 +63,7 @@ export default function Library({ bookmarks }){
                         <div className="message-square-container">
                         {
                                 bookmark.comment != '' ? <img className="" src="message-square.svg" onClick={showComment} id={count++}></img> : null
+                                // bookmark.comment != '' ? <a href={`#${count}`}> <img className="" src="message-square.svg" onClick={showComment} id={count++}></img></a> : null
                         }                                               
                         </div>
                     </div>
@@ -103,7 +104,7 @@ export default function Library({ bookmarks }){
                 }
                 .media-title-span:hover{
                     text-decoration: underline;
-                    color: grey;
+                    // color: grey;
  
 
                 }

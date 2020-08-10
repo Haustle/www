@@ -55,6 +55,7 @@
 } */
 #main-wrapper{
     margin-top: 4.0rem;
+    margin-bottom: 4.0rem;
     font-family: -apple-system,BlinkMacSystemFont,sans-serif;
 }
 
@@ -62,6 +63,7 @@
     margin: 0 auto;
     max-width: 42em;
     padding: 20px;
+    /* padding-bottom: 50px; */
 }
 
 .pages-button{
