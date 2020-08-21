@@ -1,7 +1,6 @@
 import Layout from '../components/layout'
 import Head from 'next/head'
 import { getBookmarks } from '../external-calls/vault';
-import { isNullOrUndefined } from 'util';
 
 export default function Library({ bookmarks }){
     var commentRefs = [];
