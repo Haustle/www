@@ -34,7 +34,6 @@ export default function Library({ bookmarks }){
                 <link rel="icon" href="/favicon.ico" />
             </Head>
 
-            <Layout category="Book">
                 <div className="h1-name-caption flex-align-items-center margin-bottom-50">
                     <h1>Vault</h1>
                     <span className="margin-left-25">An unordered collection of my favorite bookmarks</span>
@@ -67,7 +66,6 @@ export default function Library({ bookmarks }){
                         </div>
                     </div>
                 ))}                
-            </Layout>
 
             <style jsx>{`
                 .title-comment{
@@ -162,7 +160,8 @@ export async function getStaticProps() {
     const bookmarks = getBookmarks();
     return {
         props: {
-            bookmarks
+            bookmarks,
+            pageName: 'library'
         }
     }
 }

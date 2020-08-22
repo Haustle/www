@@ -11,7 +11,6 @@ export default function Home() {
         <title>Tyrus Miles</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Layout category="Home">
         <h1 className="h1-name">Hi, I'm Tyrus ⌨️</h1>
         <div className="personal-description">...currently a computer science student. I'm interested in <span className="link"><Link href="/projects"><a>design & code</a></Link></span> amongst other random <Link href="/lib"><a><span className="link">things</span></a></Link>. Trying to build projects at <span className="link"><a href="http://www.haustle.studio" target="_blank">Haustle</a></span>.</div>
         <div className=" margin-25">
@@ -142,11 +141,16 @@ export default function Home() {
           }
         `}
         </style>
-      </Layout>
 
     </div>
   )
 }
 
-// if we need to make calls to some api or grab information, we use this function
+export function getStaticProps() {
+  return {
+    props: {
+      pageName: 'Home'
+    }
+  }
+}
 

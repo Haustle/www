@@ -11,7 +11,6 @@ export default function About({ repos }) {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
 
-            <Layout category="Projects">
                 <div className="status-container">
                     <div className="projects-status">⚠ Currently working on creating writeups and thoughts on projects</div>
                 </div>
@@ -101,7 +100,6 @@ export default function About({ repos }) {
         `}
 
         </style>
-            </Layout>
         </div>
         
     )
@@ -113,7 +111,8 @@ export async function getStaticProps(){
     const repos = await getRepos('haustle');
     return {
         props: {
-            repos
+            repos,
+            pageName: 'Projects'
         }
     }
 }
