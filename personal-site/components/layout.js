@@ -20,7 +20,7 @@ export default function Layout({ children, category = "" }) {
         setPagesVisible(!pagesVisible);
         console.log(`pagesVisible: ${pagesVisible} – navShownOnce ${navShownOnce}`);
     };
-
+        
     return (
         <>
         <Head><link rel="shortcut icon" href="/favicon.ico"/></Head>
@@ -37,7 +37,6 @@ export default function Layout({ children, category = "" }) {
                         <div className={styles['pages-list-container']}>
                             <ul id={`${styles['pages-list']}`} className={`flex ${navShownOnce == false ? 'opacity-0' : (pagesVisible ? 'animate__animated animate__fadeInRight animate__faster' : 'animate__animated animate__fadeOutRight animate__faster')}`}>
 
-                            {/* <ul id={`${styles['pages-list']}`} className={`flex ${pagesVisible ? 'animate__animated animate__fadeInRight animate__faster' : 'animate__animated animate__fadeOutRight animate__faster'}`}> */}
                                 <li>
                                     <Link href="/projects"><a>Projects</a></Link>
                                 </li>

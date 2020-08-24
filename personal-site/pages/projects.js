@@ -1,4 +1,4 @@
-import Layout from '../components/layout'
+import ActivityCircle from '../components/activityCircle'
 import Head from 'next/head'
 import { GitHub } from 'react-feather'
 import {getRepos} from '../external-calls/fetchPractice'
@@ -14,6 +14,7 @@ export default function About({ repos }) {
                 <div className="status-container">
                     <div className="projects-status">⚠ Currently working on creating writeups and thoughts on projects</div>
                 </div>
+                {/* <div>View the source code for this website</div> */}
 
                 <div className="h1-name-caption flex-align-items-center">
                     <h1>Projects</h1>
@@ -21,7 +22,7 @@ export default function About({ repos }) {
                 </div>
 
                 {repos.map((repo, index) => (
-                    <div className="project-listing-container flex-align-items-center">
+                    <div className="project-listing-container flex-align-items-center" key={repo}>
                         <div className="margin-right-25">
                             <a href={repo.url} target="_blank">
                                 <div className="git-repo-icon flex-align-items-center">
@@ -31,13 +32,16 @@ export default function About({ repos }) {
                             </a>
                         </div>
                         <div className="project-title">{repo.name}</div>
-                        <div className="last-updated-container">Last Updated: {repo.daysAgo} days ago</div>
+                        {/* <div className="last-updated-container">Last Updated: {repo.daysAgo} days ago</div> */}
+                        <div className="last-updated-container"><ActivityCircle days={repo.daysAgo}></ActivityCircle> {repo.daysAgo} days ago</div>
                     </div>
                 ))}
 
                 <style jsx>{ ` 
                     .last-updated-container{
                         margin-left: 30px;
+                        display: flex;
+                        align-items: center;
                     }
                     .project-listing-container:not(:first-child){
                         margin-top: 15px;
