@@ -56,7 +56,14 @@ const bookmarks = [
         date: '02/12',
         url: 'https://www.youtube.com/watch?v=5OsFytuMmk8',
         comment: 'Cool insight into the origins of one of my favorite games'
-    }
+    },
+    {
+        title: "Runnin' Down a Dream: How to Succeed and Thrive in a Career You Love - Bill Gurley",
+        category: 'Video',
+        date: '07/28',
+        url: 'https://www.youtube.com/watch?v=xmYekD6-PZ8',
+        comment: 'Insights into the origin of shake shack and thought process of drafting in sports. This got me to read Money Ball'
+    },
     
 
 ];

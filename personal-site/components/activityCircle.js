@@ -1,12 +1,6 @@
 export default function ActivityCircle({ days = 0}){
-    // green
-    // yellow
-    // orange
-    // blue
-    // red
 
     var colorChosen = "";
-    debugger;
     switch (days >= 0) {
         case (days <= 7 && days >= 0):
             console.log(`We are inside of green: ${days}`)
@@ -18,10 +12,10 @@ export default function ActivityCircle({ days = 0}){
         case(days >= 14 && days <= 30):
             colorChosen = "orange";
             break;
-        case (days <= 45 && days >=30):
+        case (days <= 60 && days >=30):
             colorChosen = "blue";
             break;
-        case (days >= 45):
+        case (days >= 60):
             colorChosen = "red";
             break;
     }

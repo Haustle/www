@@ -8,6 +8,16 @@ function dayDifference(date1, date2) {
     return diffDays;
 }
 
+function compareDays (a , b){
+    if(a.daysAgo < b.daysAgo){
+        return -1;
+    }
+    if (a.daysAgo > b.daysAgo){
+        return 1
+    }
+    return 0
+}
+
 
 // async function getRepos(userName) {
 export async function getRepos(userName){
@@ -34,9 +44,10 @@ export async function getRepos(userName){
             daysAgo
         }); 
 
-
-    
     }
+
+    // we sort the list of projects based on the most recent
+    infoList = infoList.sort(compareDays);
     return infoList;
 }
 
