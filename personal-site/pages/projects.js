@@ -1,8 +1,9 @@
-import Layout from '../components/layout'
+import ActivityCircle from '../components/activityCircle'
 import Head from 'next/head'
 import { GitHub } from 'react-feather'
+import {getRepos} from '../external-calls/fetchPractice'
 
-export default function About() {
+export default function About({ repos }) {
     return (
         <div className="container">
             <Head>
@@ -10,80 +11,38 @@ export default function About() {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
 
-            <Layout category="Projects">
                 <div className="status-container">
                     <div className="projects-status">⚠ Currently working on creating writeups and thoughts on projects</div>
                 </div>
+                {/* <div>View the source code for this website</div> */}
 
                 <div className="h1-name-caption flex-align-items-center">
                     <h1>Projects</h1>
                     <span className="margin-left-25">Collection of projects I've been working on!</span>
                 </div>
-                <div className="project-listing-container flex-align-items-center">
-                    <div className="margin-right-25">
-                        <a href="http://www.github.com/haustle/www" target="_blank">
-                            <div className="git-repo-icon flex-align-items-center">
-                                <GitHub className="feather-button-icon" size={15} />
-                                <span className="git-repo-button-text">Git Repo</span>
-                            </div>
-                        </a>
+
+                {repos.map((repo, index) => (
+                    <div className="project-listing-container flex-align-items-center" key={repo}>
+                        <div className="margin-right-25">
+                            <a href={repo.url} target="_blank">
+                                <div className="git-repo-icon flex-align-items-center">
+                                    <GitHub className="feather-button-icon" size={15} />
+                                    <span className="git-repo-button-text">Git Repo</span>
+                                </div>
+                            </a>
+                        </div>
+                        <div className="project-title">{repo.name}</div>
+                        {/* <div className="last-updated-container">Last Updated: {repo.daysAgo} days ago</div> */}
+                        <div className="last-updated-container"><ActivityCircle days={repo.daysAgo}></ActivityCircle> {repo.daysAgo} days ago</div>
                     </div>
-                    <div className="project-title">Personal Website (this)</div>
-                </div>
-
-                {/* <div className="project-listing-container flex-align-items-center">
-                    <div className="margin-right-25">
-                        <a href="http://www.github.com/haustle/www" target="_blank">
-                            <div className="git-repo-icon flex-align-items-center">
-                                <GitHub className="feather-button-icon" size={15} />
-                                <span className="git-repo-button-text">Git Repo</span>
-                            </div>
-                        </a>
-                    </div>
-                    <div className="project-title">Metabend</div>
-                </div>
-
-                <div className="project-listing-container flex-align-items-center">
-                    <div className="margin-right-25">
-                        <a href="http://www.github.com/haustle/www" target="_blank">
-                            <div className="git-repo-icon flex-align-items-center">
-                                <GitHub className="feather-button-icon" size={15} />
-                                <span className="git-repo-button-text">Git Repo</span>
-                            </div>
-                        </a>
-                    </div>
-                    <div className="project-title">PS Cards</div>
-                </div>
-
-                <div className="project-listing-container flex-align-items-center">
-                    <div className="margin-right-25">
-                        <a href="http://www.github.com/haustle/www" target="_blank">
-                            <div className="git-repo-icon flex-align-items-center">
-                                <GitHub className="feather-button-icon" size={15} />
-                                <span className="git-repo-button-text">Git Repo</span>
-                            </div>
-                        </a>
-                    </div>
-                    <div className="project-title">RaspPi Video Loop</div>
-                </div>
-
-                <div className="project-listing-container flex-align-items-center">
-                    <div className="margin-right-25">
-                        <a href="http://www.github.com/haustle/www" target="_blank">
-                            <div className="git-repo-icon flex-align-items-center">
-                                <GitHub className="feather-button-icon" size={15} />
-                                <span className="git-repo-button-text">Git Repo</span>
-                            </div>
-                        </a>
-                    </div>
-                    <div className="project-title">Haustle</div>
-                </div> */}
-
-
-
-
+                ))}
 
                 <style jsx>{ ` 
+                    .last-updated-container{
+                        margin-left: 30px;
+                        display: flex;
+                        align-items: center;
+                    }
                     .project-listing-container:not(:first-child){
                         margin-top: 15px;
                     }
@@ -131,6 +90,7 @@ export default function About() {
                     .project-title{
                         cursor: pointer;
                         font-size: 1.2rem;
+                        width: 150px;
                         // font-weight: bold;
 
                     }
@@ -144,9 +104,19 @@ export default function About() {
         `}
 
         </style>
-            </Layout>
         </div>
         
     )
 
+}
+
+export async function getStaticProps(){
+    // function that returns basic information in repo by user
+    const repos = await getRepos('haustle');
+    return {
+        props: {
+            repos,
+            pageName: 'Projects'
+        }
+    }
 }

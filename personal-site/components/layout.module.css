@@ -68,6 +68,7 @@
 
 .pages-button{
     cursor: pointer;
+    margin-left: 5px;
 }
 
 /* thigns that need to be global */
