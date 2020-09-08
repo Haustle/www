@@ -1,7 +1,7 @@
 import ActivityCircle from '../components/activityCircle'
 import Head from 'next/head'
 import { GitHub } from 'react-feather'
-import {getRepos} from '../external-calls/fetchPractice'
+import {getRepos} from '../external-calls/gitCall'
 
 export default function About({ repos }) {
     return (
@@ -115,7 +115,6 @@ export default function About({ repos }) {
 
 }
 
-console.log('This is repos: ${repos.length}');
 
 export async function getStaticProps(){
     // function that returns basic information in repo by user

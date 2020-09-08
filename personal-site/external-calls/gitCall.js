@@ -1,3 +1,5 @@
+// find a way to cache
+
 
 const fetch = require('node-fetch');
 
@@ -21,6 +23,7 @@ function compareDays (a , b){
 
 // async function getRepos(userName) {
 export async function getRepos(userName){
+    console.log('a call is being made to GitHub...');
 
     var infoList = [];
     const repoList = await fetch(`https://api.github.com/users/${userName}/repos`);
@@ -34,6 +37,7 @@ export async function getRepos(userName){
 
         var commits = await fetch(`https://api.github.com/repos/${userName}/${repoName}/commits/master`);
         const recentCommit = (await commits.json())['commit'];
+        // console.log(recentCommit)
 
         var date = recentCommit['committer']['date']
         var daysAgo = dayDifference(new Date(date), new Date());

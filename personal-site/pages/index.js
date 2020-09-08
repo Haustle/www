@@ -17,7 +17,7 @@ export default function Home() {
             <a href="http://www.github.com/haustle" target="_blank">
                 <div className="flex-align-items-center social-platform-container"><img src="github.svg"></img><span>GitHub</span></div>
             </a>
-            <a href="mailto:tyrus.miles@gmai.com">
+            <a href="mailto:tyrus.miles@gmail.com">
               <div className="flex-align-items-center social-platform-container"><img src="mail.svg"></img><span>Email</span></div>
             </a>
           </div>
@@ -25,7 +25,6 @@ export default function Home() {
        
 
       <div className="flex margin-top-50">
-        {/* <h2 className="h1-name">Thoughts</h2> */}
         <h2>Thoughts</h2>
         <div>
           <div className="home-article-container" >
