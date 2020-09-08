@@ -29,10 +29,6 @@ export default function Library({ bookmarks }){
 
     return(
         <div className="container">
-            <Head>
-                <title>Tyrus Miles</title>
-                <link rel="icon" href="/favicon.ico" />
-            </Head>
 
                 <div className="h1-name-caption flex-align-items-center margin-bottom-50">
                     <h1>Vault</h1>

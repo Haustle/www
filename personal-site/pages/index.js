@@ -7,11 +7,7 @@ export default function Home() {
   return (
 
     <div className="container">
-      <Head>
-        <title>Tyrus Miles</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-        <h1 className="h1-name">Hi, I'm Tyrus ⌨️</h1>
+        <h2 className="h1-name">Hello, I'm Tyrus ⌨️</h2>
         <div className="personal-description">...currently a computer science student. I'm interested in <span className="link"><Link href="/projects"><a>design & code</a></Link></span> amongst other random <Link href="/lib"><a><span className="link">things</span></a></Link>. Trying to build projects at <span className="link"><a href="http://haustle.studio" target="_blank">Haustle</a></span>.</div>
         <div className=" margin-25">
           <div className="home-social-links-container flex-justify-between">
@@ -28,30 +24,27 @@ export default function Home() {
         </div>
        
 
+      <div className="flex margin-top-50">
+        {/* <h2 className="h1-name">Thoughts</h2> */}
+        <h2>Thoughts</h2>
         <div>
-          <h1 className="h1-name">Thoughts</h1>
           <div className="home-article-container" >
             <div className="flex-align-items-center disabled-thought">
               <div className="home-article-date "><span className="article-status">soon</span></div>
               {/* <div className="home-article-date ">August 5, 2020</div> */}
-              <h3 className="home-article-title ">Goals for this website</h3>
+              <div className="home-article-title ">Goals for this website</div>
             </div>
           </div>
+
           <div className="home-article-container" >
             <div className="flex-align-items-center disabled-thought">
-              <div className="home-article-date"><span className="article-status">soon</span></div>
-              <h3 className="home-article-title">Projects I want to complete</h3>
+              <div className="home-article-date "><span className="article-status">soon</span></div>
+              {/* <div className="home-article-date ">August 5, 2020</div> */}
+              <div className="home-article-title ">Goals for this website</div>
             </div>
           </div>
-          <div className="home-article-container" >
-            <div className="flex-align-items-center disabled-thought">
-              
-              <div className="home-article-date ">
-                <span className="article-status">soon</span>
-              </div>
-              <h3 className="home-article-title ">Sophmore Year & Internship</h3>
-            </div>
-          </div>
+        </div>
+        
 
         </div>
 
@@ -88,6 +81,7 @@ export default function Home() {
               cursor: pointer;
               padding: 2px;
               // font-weight: 600;
+              // font-weight: bold;
               margin-left: 20px;
               // color: blue;
           }
@@ -98,21 +92,23 @@ export default function Home() {
               // color: white;
           }
           .home-article-date{
-              width: 180px;
+              width: 100px;
+              // width: 180px;
               text-align: right;
           }
           .home-article-container{
-              // font-size: 1.2rem;
+              // font-size: 1.0rem;
               // line-height: 2.2em;
           }
           .home-article-container:not(:first-child){
             margin-top: 20px;
           }
 
+
           
           .personal-description{
               line-height: 2;
-              font-size: 1.2rem;
+              font-size: 1.0rem;
           }
           
           
@@ -124,7 +120,7 @@ export default function Home() {
           .home-social-links-container div{
               cursor: pointer;
               width: max-content;
-              font-size: 1.2rem;
+              font-size: 1.0rem;
               display: flex;
           }
 
