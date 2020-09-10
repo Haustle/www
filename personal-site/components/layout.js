@@ -1,8 +1,6 @@
-import styles from './layout.module.css';
 import Head from 'next/head'
 import Link from 'next/link';
-// import 'animate.css'
-// import
+
 
 
 // the fix for the click to open with useState is https://stackoverflow.com/questions/60939606/next-js-toggle-display-of-a-div-tag
@@ -24,18 +22,19 @@ export default function Layout({ children, category = "" }) {
     return (
         <>
         <Head><link rel="shortcut icon" href="/favicon.ico"/></Head>
-            <main id={styles['main-wrapper']}>
-                <header className={`${styles['nav']} ${styles['page-size']} flex-justify-between`}>
+            <main id='main-wrapper'>
+                < header className = 'nav page-size flex-justify-between'
+                 >
 
                     <div className='flex-align-items-center'>
                         <div className='bold'>
                             <Link href="/"><a>tyrus.im</a></Link></div>
-                        <div className={styles['page-selector']}>{category}</div>
+                        <div className='page-selector'>{category}</div>
                     </div>
 
-                    <div className={`flex-align-items-center ${styles['other-links']}`}>
-                        <div className={styles['pages-list-container']}>
-                            <ul id={`${styles['pages-list']}`} className={`flex ${navShownOnce == false ? 'opacity-0' : (pagesVisible ? 'animate__animated animate__fadeInRight animate__faster' : 'animate__animated animate__fadeOutRight animate__faster')}`}>
+                    <div className='flex-align-items-center other-links'>
+                        <div className='pages-list-container'>
+                            <ul id='pages-list' className={`flex ${navShownOnce == false ? 'opacity-0' : (pagesVisible ? 'animate__animated animate__fadeInRight animate__faster' : 'animate__animated animate__fadeOutRight animate__faster')}`}>
 
                                 <li>
                                     <Link href="/projects"><a>Projects</a></Link>
@@ -46,17 +45,85 @@ export default function Layout({ children, category = "" }) {
                             </ul>
                         </div>
 
-                        <div onClick={togglePages} className={styles["pages-button"]}>Pages</div>
+                        <div onClick={togglePages} className='pages-button'>Pages</div>
 
                     </div>
                 </header>
 
-                <div className={styles['page-size']} >
+                <div className='page-size' >
                     {children}
                 </div>
                 
             </main>
+            <style jsx>{`
+                .page-selector{
+                    padding: 5px;
+                    border-radius: 5px;
+                    border: 1px solid black;
+                    margin-left: 15px;
+                }
+                #pages-list{
+                    margin-right: 10px;
+                    list-style-type: none;
+                    padding: 5px;
+                    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+                    border: 1px solid ghostwhite;
+                    border-radius: 5px;
+                    overflow: hidden;
 
+                }
+                .trans-in{
+                    transition: all 1s ease-in-out;
+                }
+
+                .pages-list-container{
+                    padding: 10px;
+                    overflow: hidden;
+                }
+                #pages-list li:hover{
+                    color: white;
+                    background-color: black;
+                    
+                }
+                #pages-list li:not(:last-child){
+                    margin-right: 10px;
+                }
+                #pages-list li{
+                    padding: 2px 5px;
+                    border-radius: 5px;
+                }
+
+
+                #pages-button{
+                    padding: 10px 0px 10px 10px;
+                    font-weight: bold;
+                }
+
+                .nav{
+                    margin-bottom: 50px;
+                }
+                #main-wrapper{
+                    margin-top: 4.0rem;
+                    margin-bottom: 4.0rem;
+                    font-family: -apple-system,BlinkMacSystemFont,sans-serif;
+                }
+
+                .page-size{
+                    margin: 0 auto;
+                    max-width: 42em;
+                    padding: 20px;
+                }
+
+                .pages-button{
+                    cursor: pointer;
+                    margin-left: 5px;
+                }
+
+
+
+
+
+            `}</style>
         </>
     )
 }
