@@ -1,5 +1,11 @@
+import { useRef } from "react";
+
 export default function CodeBlock({language = "", code=""}){
     // we should have something to route the language to the actual language name
+
+    function copy(){
+        navigator.clipboard.writeText(code)
+    }
     return(
         <>
             <p className="code-p">
@@ -12,7 +18,10 @@ export default function CodeBlock({language = "", code=""}){
                         </pre>
 
                     </div>
-                    <div className="code-lang-tag">{language}</div>
+                    <div className="flex-justify-between">
+                        <div className="code-lang-tag">{language}</div>
+                        <div className="copy" onClick={copy}>copy</div>
+                    </div>
                 </div>
             </p>
             
@@ -24,6 +33,13 @@ export default function CodeBlock({language = "", code=""}){
                     padding: 10px;
                     border-radius: 10px;
 
+                }
+                .copy{
+                    font-size: 1rem;
+                    cursor: pointer;
+                    padding: 2px 5px;
+                    border-radius: 5px;
+                    border: 1px solid white;
                 }
                 .code-lang-tag{
                     // position: absolute;
