@@ -11,7 +11,7 @@
     "animate.css": "^4.1.0",
     "jquery": "^3.5.1",
     "next": "9.4.4",
-    "node-fetch": "^2.6.0",
+    "node-fetch": "^2.6.1",
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-feather": "^2.0.8"
