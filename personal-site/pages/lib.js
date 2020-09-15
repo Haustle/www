@@ -157,7 +157,7 @@ export async function getStaticProps() {
     return {
         props: {
             bookmarks,
-            pageName: 'library'
+            pageName: 'Library'
         }
     }
 }

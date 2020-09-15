@@ -101,6 +101,9 @@ export default function Layout({ children, category = "" }) {
 
                 .nav{
                     margin-bottom: 50px;
+                    position: sticky;
+                    top: 0px;
+                    background:rgba(255,255,255, 0.98)
                 }
                 #main-wrapper{
                     margin-top: 4.0rem;

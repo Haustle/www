@@ -9,8 +9,8 @@ export default function MyApp({ Component, pageProps }) {
         <>
             <Head>
                 {pageProps.pageName == undefined || pageProps.pageName == 'Home' ?
-                    (<title>Tyrus Miles</title>) :
-                    (<title>{pageProps.pageName} – Tyrus Miles</title>)
+                    (<title>tyrus.im</title>) :
+                    (<title>{pageProps.pageName} « tyrus.im</title>)
                 }                
                 <link rel="icon" href="/favicon.ico" />
             </Head>
