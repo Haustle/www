@@ -16,7 +16,6 @@ export default function Layout({ children, category = "" }) {
         // we set navshownonce to true so we can use the fadeout animation
         setNav(true);
         setPagesVisible(!pagesVisible);
-        console.log(`pagesVisible: ${pagesVisible} – navShownOnce ${navShownOnce}`);
     };
         
     return (

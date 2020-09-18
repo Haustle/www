@@ -12,7 +12,6 @@ export default function MyApp({ Component, pageProps }) {
                     (<title>tyrus.im</title>) :
                     (<title>{pageProps.pageName} « tyrus.im</title>)
                 }                
-                <link rel="icon" href="/favicon.ico" />
             </Head>
 
             <Layout category={pageProps.pageName}>
