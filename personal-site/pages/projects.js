@@ -8,9 +8,9 @@ export default function About({ repos }) {
         <>
             <div className="container">
                 <div>
-                    <div className="status-container">
+                    {/* <div className="status-container">
                         <div className="projects-status">⚠ Currently working on creating writeups and thoughts on projects</div>
-                    </div>
+                    </div> */}
                     {/* <div>View the source code for this website</div> */}
 
                     <div className="h1-name-caption flex-align-items-center">
@@ -72,6 +72,7 @@ export default function About({ repos }) {
                 }
                 
                 .h1-name-caption{
+                    margin-top: 50px;
                     margin-bottom: 75px;
                     padding-bottom: 25px;
                 }
@@ -119,13 +120,13 @@ export default function About({ repos }) {
 // Need to look into getting more requests
 // export async function getServerSideProps() {
 
-export async function getStaticProps(){
+export async function getServerSideProps(){
     // console.log(`This is repos: ${repos.length}`);
     return {
         props: {
             repos: await getRepos('haustle'),
             pageName: 'Projects'
         },
-        unstable_revalidate: 3600,
+        // unstable_revalidate: 3600,
     }
 }

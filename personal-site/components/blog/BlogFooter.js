@@ -5,9 +5,16 @@ export default function BlogFooter(){
             <div className="footer flex-justify-between">
                 <div className="">
                     <div className="next-article">
-                        <a href="" className="next-article-link">
-                            <span>Next</span>
-                            <img className="arrow" src="/arrow-right.svg"/>
+                        <a href="">
+                            <div className="next-article-arrow">
+                                <span>Next</span>
+                                <img className="arrow" src="/arrow-right.svg" />
+                            </div>
+                            <div>
+                                {/* this needs to pass in and then we can figure out routers to */}
+                                Example Article Name
+                            </div>
+                            
                         </a>
                     </div>
 
@@ -26,7 +33,7 @@ export default function BlogFooter(){
                     height: 1rem;
                     margin-left: 5px;
                 }
-                .next-article-link{
+                .next-article-arrow{
                     display: flex;
                     align-items: center;
                 }

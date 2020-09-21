@@ -11,7 +11,6 @@ export default function CodeBlock({language = "", code=""}){
     return(
         <>
 
-            <p className="code-p">
                 <div className="code-container">
                     <div className="inline-code">
                         <pre>
@@ -30,21 +29,11 @@ export default function CodeBlock({language = "", code=""}){
                         
                     </div>
                 </div>
-            </p>
             
             <style jsx>{`
                 code::selection{
                     background-color: white;
                     color: black;
-                }
-                .code-p{
-                    margin-top: 75px;
-                    background-color: black;
-                    color: white;
-                    font-size: 1rem;
-                    padding: 10px;
-                    border-radius: 10px;
-
                 }
                 .copy{
                     font-size: 1rem;
@@ -73,6 +62,12 @@ export default function CodeBlock({language = "", code=""}){
                     min-height: 250px;
                     width: 100%;
                     position: relative;
+                    margin-top: 75px;
+                    background-color: black;
+                    color: white;
+                    font-size: 1rem;
+                    padding: 10px;
+                    border-radius: 10px;
                 }
 
                 
