@@ -1,4 +1,4 @@
-import ActivityCircle from '../components/activityCircle'
+import ActivityCircle from '../components/projects/activityCircle'
 import Head from 'next/head'
 import { GitHub } from 'react-feather'
 import {getRepos} from '../external-calls/gitCall'
@@ -8,9 +8,9 @@ export default function About({ repos }) {
         <>
             <div className="container">
                 <div>
-                    <div className="status-container">
+                    {/* <div className="status-container">
                         <div className="projects-status">⚠ Currently working on creating writeups and thoughts on projects</div>
-                    </div>
+                    </div> */}
                     {/* <div>View the source code for this website</div> */}
 
                     <div className="h1-name-caption flex-align-items-center">
@@ -29,7 +29,6 @@ export default function About({ repos }) {
                                 </a>
                             </div>
                             <div className="project-title">{repo.name}</div>
-                            {/* <div className="last-updated-container">Last Updated: {repo.daysAgo} days ago</div> */}
                             <div className="last-updated-container"><ActivityCircle days={repo.daysAgo}></ActivityCircle> {repo.daysAgo} {repo.daysAgo == 1 ? 'day ago' : 'days ago'}</div>
                         </div>
                     ))}
@@ -73,6 +72,7 @@ export default function About({ repos }) {
                 }
                 
                 .h1-name-caption{
+                    margin-top: 50px;
                     margin-bottom: 75px;
                     padding-bottom: 25px;
                 }
@@ -114,17 +114,19 @@ export default function About({ repos }) {
     )
 
 }
+// to check when I get more requests use 
+//              curl -i https://api.github.com/users/octocat
+// this makes a call every time.
+// Need to look into getting more requests
+// export async function getServerSideProps() {
 
-
-export async function getStaticProps(){
-    // function that returns basic information in repo by user
-    const repos = await getRepos('haustle');
-    console.log(`This is repos: ${repos.length}`);
+export async function getServerSideProps(){
+    // console.log(`This is repos: ${repos.length}`);
     return {
         props: {
-            repos,
+            repos: await getRepos('haustle'),
             pageName: 'Projects'
         },
-        // revalidate:
+        // unstable_revalidate: 3600,
     }
 }

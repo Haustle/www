@@ -7,9 +7,22 @@ export default function Home() {
   return (
 
     <div className="container">
-        <h2 className="h1-name">Hello, I'm Tyrus ⌨️</h2>
-        <div className="personal-description">...currently a computer science student. I'm interested in <span className="link"><Link href="/projects"><a>design & code</a></Link></span> amongst other random <Link href="/lib"><a><span className="link">things</span></a></Link>. Trying to build projects at <span className="link"><a href="http://haustle.studio" target="_blank">Haustle</a></span>.</div>
-        <div className=" margin-25">
+        {/* <h2 className="h1-name">Hello, I'm Tyrus ⌨️</h2> */}
+        <div className="personal-description h1-name"><b>Tyrus Miles</b> is currently a computer science student and interested in <span className="link"><Link href="/projects"><a>design & code</a></Link></span> amongst other <Link href="/lib"><a><span className="link">things</span></a></Link>. Building projects at <span className="link"><a href="http://haustle.studio" target="_blank">Haustle</a></span>.</div>
+
+
+
+        <div className="more-links">
+          <div><b>My social lines</b></div>
+        <div><span className="link"><a href="https://twitter.com/haustle" target="_blank">Twitter</a></span></div>
+        <div><span className="link"><a href="https://github.com/haustle" target="_blank">GitHub</a></span></div>
+        <div><span className="link"><a href="mailto:tyrus.miles@gmail.com">Email</a></span></div>
+        <div><span className="link"><a href="https://github.com/haustle/www" target="_blank">Source Code</a></span></div>
+
+        </div>
+
+
+        {/* <div className=" margin-25">
           <div className="home-social-links-container flex-justify-between">
             <a href="http://www.twitter.com/haustle" target="_blank">
                 <div className="flex-align-items-center social-platform-container"><img src="twitter.svg"></img><span>Twitter</span></div>
@@ -21,27 +34,22 @@ export default function Home() {
               <div className="flex-align-items-center social-platform-container"><img src="mail.svg"></img><span>Email</span></div>
             </a>
           </div>
-        </div>
-       
+        </div> */}
+
+        
 
       <div className="flex margin-top-50">
         <h2>Thoughts</h2>
-        <div>
+        <div className="home-article-wrapper">
           <div className="home-article-container" >
-            <div className="flex-align-items-center disabled-thought">
-              <div className="home-article-date "><span className="article-status">soon</span></div>
+            {/* <div className="flex-align-items-center disabled-thought"> */}
+            <div className="flex-align-items-center">
+              <div className="home-article-date "><span className="article-status">Example</span></div>
               {/* <div className="home-article-date ">August 5, 2020</div> */}
-              <div className="home-article-title ">Goals for this website</div>
+              <div className=""><Link href="/blog/example"><a className="home-article-title">Hello World</a></Link></div>
             </div>
           </div>
 
-          <div className="home-article-container" >
-            <div className="flex-align-items-center disabled-thought">
-              <div className="home-article-date "><span className="article-status">soon</span></div>
-              {/* <div className="home-article-date ">August 5, 2020</div> */}
-              <div className="home-article-title ">Goals for this website</div>
-            </div>
-          </div>
         </div>
         
 
@@ -50,6 +58,14 @@ export default function Home() {
         
 
         <style jsx>{`
+          .home-article-wrapper{
+            display: flex;
+            align-items: center;
+          }
+          .more-links{
+            line-height: 2;
+            margin-top: 30px;
+          }
           .article-status{
             padding: 2px 5px;
             border-radius: 2px;
@@ -86,9 +102,7 @@ export default function Home() {
           }
 
           .home-article-title:hover{
-              // background-color: #f4f4f4;
               text-decoration: underline;
-              // color: white;
           }
           .home-article-date{
               width: 100px;
@@ -144,7 +158,7 @@ export default function Home() {
 export function getStaticProps() {
   return {
     props: {
-      pageName: 'Home'
+      pageName: 'Root'
     }
   }
 }

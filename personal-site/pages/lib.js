@@ -1,5 +1,3 @@
-import Layout from '../components/layout'
-import Head from 'next/head'
 import { getBookmarks } from '../external-calls/vault';
 
 export default function Library({ bookmarks }){
@@ -53,13 +51,15 @@ export default function Library({ bookmarks }){
                             </a>
                             
                         </div>
-
-                        <div className="message-square-container">
-                        {
-                                bookmark.comment != '' ? <img className="" src="message-square.svg" onClick={showComment} id={count++}></img> : null
-                                // bookmark.comment != '' ? <a href={`#${count}`}> <img className="" src="message-square.svg" onClick={showComment} id={count++}></img></a> : null
-                        }                                               
+                        <div>
+                            <div className="message-square-container">
+                                {/* <span>www.youtube.com</span> */}
+                                {
+                                    bookmark.comment != '' ? <img className="" src="message-square.svg" onClick={showComment} id={count++}></img> : null
+                                }
+                            </div>
                         </div>
+                        
                     </div>
                 ))}                
 
@@ -124,7 +124,8 @@ export default function Library({ bookmarks }){
 
                 }
                 .bookmark-container{
-                    width: 95%;
+                    // width: 95%;
+                    // width: 100%;
                     transition: all .2s ease-in-out;
                     align-items: normal;
 
@@ -142,7 +143,7 @@ export default function Library({ bookmarks }){
                     background-color: black;
                     border-radius: 5px;
                     color: #fff;
-                    font-weight: normal;
+                    font-weight: normal; 
                     width: max-content;
                 }
             `}</style>
@@ -157,7 +158,7 @@ export async function getStaticProps() {
     return {
         props: {
             bookmarks,
-            pageName: 'library'
+            pageName: 'Library'
         }
     }
 }

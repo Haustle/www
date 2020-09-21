@@ -26,9 +26,10 @@ html{
     display: none;
 }
 .link{
-    border-bottom: 1px dotted black;
+    border-bottom: 1px dotted currentColor;
     cursor: pointer;
     padding: 2px;
+    color: #424242;
 }
 
 .link:hover{
