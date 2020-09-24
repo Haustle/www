@@ -10,14 +10,12 @@ export default function Library({ bookmarks }){
     var showComment = (comIcon) => {
 
         var id = parseInt(comIcon.target.id)
-        console.log(`id: ${id}, currentComIndex: ${currentCommentIndex}`);
         if (commentRefs[id].style.display == 'block' ){
             commentRefs[id].style.display = "none";
         }
         else{
             commentRefs[id].style.display = 'block';
         }
-        console.log(`This is the returned display of current tag: ${commentRefs[id].style.display}`);
         if (currentCommentIndex != -1 && (id != currentCommentIndex)) {
             commentRefs[currentCommentIndex].style.display = "none";
         }
