@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Space+Mono:400,400i,700,700i&display=swap');
+
 
 body,html,ul, h1, h2, h3{
     margin: 0;
@@ -14,6 +16,9 @@ html{
 .flex-align-items-center{
     display: flex;
     align-items: center;
+}
+.space{
+    font-family: 'Space Mono';
 }
 .roboto-mono{
     font-family: 'Roboto Mono'
