@@ -16,27 +16,10 @@ export default function Home() {
           <div><b>My social lines</b></div>
         <div><span className="link"><a href="https://twitter.com/haustle" target="_blank">Twitter</a></span></div>
         <div><span className="link"><a href="https://github.com/haustle" target="_blank">GitHub</a></span></div>
-        <div><span className="link"><a href="mailto:tyrus.miles@gmail.com">Email</a></span></div>
+        <div><span className="link"><a href="mailto:tyrus@haustle.studio">Email</a></span></div>
         <div><span className="link"><a href="https://github.com/haustle/www" target="_blank">Source Code</a></span></div>
 
         </div>
-
-
-        {/* <div className=" margin-25">
-          <div className="home-social-links-container flex-justify-between">
-            <a href="http://www.twitter.com/haustle" target="_blank">
-                <div className="flex-align-items-center social-platform-container"><img src="twitter.svg"></img><span>Twitter</span></div>
-            </a>
-            <a href="http://www.github.com/haustle" target="_blank">
-                <div className="flex-align-items-center social-platform-container"><img src="github.svg"></img><span>GitHub</span></div>
-            </a>
-            <a href="mailto:tyrus.miles@gmail.com">
-              <div className="flex-align-items-center social-platform-container"><img src="mail.svg"></img><span>Email</span></div>
-            </a>
-          </div>
-        </div> */}
-
-        
 
       <div className="flex margin-top-50">
         <h2>Thoughts</h2>

@@ -1,8 +1,13 @@
 import ToggleList from '../../components/blog/toggleList';
 import BlogFooter from '../../components/blog/BlogFooter';
 import CodeBlock from '../../components/blog/CodeBlock'
+import H from '../../components/blog/H'
 import { goals } from '../../external-calls/goals';
 export default function Example(){
+
+
+
+
     var codeSnip = `
     {itemList.map((item, index) => (
         <div className="list-item">
@@ -24,9 +29,9 @@ export default function Example(){
                 <h1 className="article-title">Example Title</h1>
             </div>
 
-            <article>
+            <article className="space">
                 <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui veniam in reiciendis dolorem molestias quasi voluptatem dolor assumenda velit eligendi vel sit, itaque est illum ullam doloribus non, iure totam modi. Hic, earum nostrum ut illum, dolorem fugit voluptatum rem id incidunt libero ullam minus quidem itaque, sunt nobis? Eum deserunt dolor quibusdam ea quo recusandae dignissimos, nam cum tempore officiis a omnis rem vero eveniet quidem eos dolorum obcaecati quod earum placeat voluptatum. Incidunt laborum provident asperiores? Veritatis ducimus quidem atque dignissimos tenetur rem maiores harum quasi quod recusandae a libero quis officiis at, esse enim totam numquam possimus!
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui veniam in reiciendis dolorem molestias quasi voluptatem dolor assumenda velit eligendi vel sit, itaque est illum ullam doloribus non, iure totam modi. Hic, earum nostrum ut illum, dolorem fugit voluptatum rem id incidunt libero ullam minus quidem itaque, sunt nobis? Eum deserunt dolor quibusdam ea quo recusandae dignissimos, nam cum tempore officiis a omnis rem vero eveniet quidem eos dolorum obcaecati quod <H>earum placeat</H> voluptatum. Incidunt laborum provident asperiores? Veritatis ducimus quidem atque dignissimos tenetur rem maiores harum quasi quod recusandae a libero quis officiis at, esse enim totam numquam possimus!
                 </p>
                 
                 <ToggleList itemList={goals}></ToggleList>
@@ -41,6 +46,7 @@ export default function Example(){
             </article>
             <BlogFooter></BlogFooter>
             <style jsx>{`
+
                 .code-p{
                     background-color: whitesmoke;
                     color: black;

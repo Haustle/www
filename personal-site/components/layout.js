@@ -99,6 +99,7 @@ export default function Layout({ children, category = "" }) {
                 }
 
                 .nav{
+                    z-index: 9999;
                     margin-bottom: 50px;
                     position: sticky;
                     top: 0px;
