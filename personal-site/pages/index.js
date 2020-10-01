@@ -8,8 +8,9 @@ export default function Home() {
         {/* <h2 className="h1-name">Hello, I'm Tyrus ⌨️</h2> */}
         <div className="personal-description h1-name"><b>Tyrus Miles</b> is currently a computer science student and interested in <span className="link"><Link href="/projects"><a>design & code</a></Link></span> amongst other <Link href="/lib"><a><span className="link">things</span></a></Link>. Building projects at <span className="link"><a href="http://haustle.studio" target="_blank">Haustle</a></span>.</div>
 
-
-
+        <div>
+          <Link href="/blog"><a><span className="link">Blog / Thoughts</span></a></Link>
+        </div>
         <div className="more-links">
           <div><b>My social lines</b></div>
         <div><span className="link"><a href="https://twitter.com/haustle" target="_blank">Twitter</a></span></div>
