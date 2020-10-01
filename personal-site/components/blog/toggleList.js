@@ -6,7 +6,7 @@ export default function ToggleList({ itemList }){
                 {/* we take in itemList –– list of js objects that contain attributes 'task'(string) and 'completed'(boolean) */}
 
                 {itemList.map((item, index) => (
-                    <div className="list-item">
+                    <div className="list-item" key={index}>
                         <div className={`box ${item.completed ? `fill` : ``}`}></div> 
                         <div className={`list-item-name ${item.completed ? `completed` : ``}`}>{item.task}</div>
                     </div>

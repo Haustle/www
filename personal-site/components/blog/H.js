@@ -43,7 +43,8 @@ const H = ({ children, message="this is a default message" }) => {
                 .highlight-text{
                     display: inline-block;
                     width: max-content;
-                    cursor: pointer;
+                    // cursor: pointer;
+                    cursor: default;
                     background-color: #F2E39B;
                     padding: 5px;
                     border-radius: 2px;
