@@ -1,5 +1,6 @@
 // find a way to cache
-
+const repoFilter = new Set();
+repoFilter.add("cse360assignment02");
 
 const fetch = require('node-fetch');
 
@@ -34,6 +35,9 @@ export async function getRepos(userName){
         
         const repoName = list[x]['name'];
         const url = list[x]['html_url'];
+
+        // need to filter out names of repos for things like school assignments
+        if(repoFilter.has(repoName)) continue
 
         var commits = await fetch(`https://api.github.com/repos/${userName}/${repoName}/commits/master`);
         const recentCommit = (await commits.json())['commit'];

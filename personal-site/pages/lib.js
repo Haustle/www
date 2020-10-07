@@ -108,7 +108,7 @@ export default function Library({ bookmarks }){
                     margin-bottom: 75px;
                     width: max-content;
                     padding-bottom: 25px;
-                    border-bottom: 1px solid black;
+                    // border-bottom: 1px solid black;
                 }
                 .media-scale-hover:hover{
                     // opacity: .3;
