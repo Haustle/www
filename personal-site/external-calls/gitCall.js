@@ -24,11 +24,9 @@ function compareDays (a , b){
 
 // async function getRepos(userName) {
 export async function getRepos(userName){
-    console.log('a call is being made to GitHub...');
-
+    // console.log('a call is being made to GitHub...');
     var infoList = [];
     const repoList = await fetch(`https://api.github.com/users/${userName}/repos`);
-    debugger;
 
     const list = await repoList.json();
     for(var x = 0; x < list.length; x++){
@@ -39,11 +37,8 @@ export async function getRepos(userName){
         // need to filter out names of repos for things like school assignments
         if(repoFilter.has(repoName)) continue
 
-        var commits = await fetch(`https://api.github.com/repos/${userName}/${repoName}/commits/master`);
-        const recentCommit = (await commits.json())['commit'];
-        // console.log(recentCommit)
 
-        var date = recentCommit['committer']['date']
+        var date = list[x]['pushed_at'];
         var daysAgo = dayDifference(new Date(date), new Date());
 
         infoList.push({
@@ -58,4 +53,6 @@ export async function getRepos(userName){
     infoList = infoList.sort(compareDays);
     return infoList;
 }
+
+
 
