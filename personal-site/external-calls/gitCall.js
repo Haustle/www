@@ -21,7 +21,6 @@ function compareDays (a , b){
     return 0
 }
 
-// dcab680e643f59493d5f938d903d89d93409f26e
 
 export async function getRepos(userName){
 
