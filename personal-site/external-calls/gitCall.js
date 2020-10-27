@@ -21,13 +21,18 @@ function compareDays (a , b){
     return 0
 }
 
+// dcab680e643f59493d5f938d903d89d93409f26e
 
-// async function getRepos(userName) {
 export async function getRepos(userName){
-    // console.log('a call is being made to GitHub...');
-    var infoList = [];
-    const repoList = await fetch(`https://api.github.com/users/${userName}/repos`);
 
+    var infoList = [];
+    const headers = {
+        "Authorization" : `Token ${process.env.GIT_KEY}`
+    }
+    const repoList = await fetch(`https://api.github.com/users/${userName}/repos`, {
+        "method": "GET",
+        "headers" : headers
+    });
     const list = await repoList.json();
     for(var x = 0; x < list.length; x++){
         
