@@ -8,6 +8,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@octokit/core": "^3.2.1",
     "animate.css": "^4.1.0",
     "jquery": "^3.5.1",
     "next": "9.4.4",

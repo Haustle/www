@@ -8,15 +8,20 @@ export default function Home() {
         {/* <h2 className="h1-name">Hello, I'm Tyrus ⌨️</h2> */}
         <div className="personal-description h1-name"><b>Tyrus Miles</b> is currently a computer science student and interested in <span className="link"><Link href="/projects"><a>design & code</a></Link></span> amongst other <Link href="/lib"><a><span className="link">things</span></a></Link>. Building projects at <span className="link"><a href="http://haustle.studio" target="_blank">Haustle</a></span>.</div>
 
-        <div>
-          <Link href="/blog"><a><span className="link">Blog / Thoughts</span></a></Link>
+        <div className="local-pages">
+          <div>
+            <Link href="/blog"><a><span className="link">Blog / Thoughts</span></a></Link>
+          </div>
+          <div>
+            <Link href="/internet"><a><span className="link">Internet</span></a></Link>
+          </div>
         </div>
         <div className="more-links">
           <div><b>My social lines</b></div>
-        <div><span className="link"><a href="https://twitter.com/haustle" target="_blank">Twitter</a></span></div>
-        <div><span className="link"><a href="https://github.com/haustle" target="_blank">GitHub</a></span></div>
-        <div><span className="link"><a href="mailto:tyrus@haustle.studio">Email</a></span></div>
-        <div><span className="link"><a href="https://github.com/haustle/www" target="_blank">Source Code</a></span></div>
+            <div><span className="link"><a href="https://twitter.com/haustle" target="_blank">Twitter</a></span></div>
+            <div><span className="link"><a href="https://github.com/haustle" target="_blank">GitHub</a></span></div>
+            <div><span className="link"><a href="mailto:tyrus@haustle.studio">Email</a></span></div>
+            <div><span className="link"><a href="https://github.com/haustle/www" target="_blank">Source Code</a></span></div>
 
         </div>
 
@@ -40,6 +45,9 @@ export default function Home() {
         
 
         <style jsx>{`
+          .local-pages div:not(:first-child){
+            margin-top: 10px;
+          }
           .home-article-wrapper{
             display: flex;
             align-items: center;

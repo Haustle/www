@@ -1,8 +1,8 @@
-// find a way to cache
+const { Octokit } = require("@octokit/core");
+
 const repoFilter = new Set();
 repoFilter.add("cse360assignment02");
 
-const fetch = require('node-fetch');
 
 function dayDifference(date1, date2) {
     const MILLISECONDS_PER_DAY = 1000 * 60 * 60 * 24; 
@@ -22,13 +22,13 @@ function compareDays (a , b){
 }
 
 
-// async function getRepos(userName) {
 export async function getRepos(userName){
-    // console.log('a call is being made to GitHub...');
-    var infoList = [];
-    const repoList = await fetch(`https://api.github.com/users/${userName}/repos`);
 
-    const list = await repoList.json();
+    var infoList = [];
+    const octokit = new Octokit({ auth: process.env.GIT_KEY })
+    const repoList = await octokit.request(`/users/${userName}/repos`);
+    const list = await repoList["data"];
+
     for(var x = 0; x < list.length; x++){
         
         const repoName = list[x]['name'];
