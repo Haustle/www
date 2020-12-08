@@ -1,6 +1,12 @@
 import {things} from '../external-calls/intplace'
+import { useEffect } from 'react'
 
 const people = () => {
+    const [people, filterPeople] = React.useState(things);
+    const [catSet, setCatSet] = React.useState([])
+
+    // Getting all the categories from all the associated communities / poeple
+    // add them to set so now duplicates
     var cateGorySet = new Set();
     for(var x = 0; x < things.length; x++){
         var tempList = things[x].category
@@ -9,13 +15,32 @@ const people = () => {
         })
     }
 
-    function filterSort(filter){
-        // console.log(filter.innerHTML)
-        console.log(filter)
+    // chec
+    function containsCategory(userList) {
+        let result = catSet.every(i => userList.includes(i))
+        return result;
     }
 
+    var catSort = (fil) => {
+        // console.log(fil)
+    }
+    var togglePeople = (filter) => {
+        catSort(filter)
+        setCatSet([filter])
+
+
+        // console.log(catSet)
+
+    }
+
+    useEffect(() => {
+        var fitL = things.filter(p => containsCategory(p.category))
+        filterPeople(fitL)
+        // console.log("yes");
+    }, [catSet]);
+
+
     cateGorySet = [...cateGorySet]; // turn the set into a list
-    var current = cateGorySet[0];
     return(
         <>
             <div className="internet-sum">
@@ -25,18 +50,28 @@ const people = () => {
                 Got a question as to why something is on the list, shoot an email <span className="bold">Tyrus@haustle.studio</span>
             </div>
 
-            {/* category buttons */}
             <div className="cat-contain">
                 {cateGorySet.map((item, index) => (
-                    <span className="cat-buttons" onClick={filterSort}>
+                    <span className="cat-buttons big-bord" onClick={() => togglePeople(item)} key={index}>
                         {item}
                     </span>
+                    
                 ))}
+                <div>
+                    {catSet}
+                </div>
             </div>
 
+
             <div>
-                {things.map((item, index) => (
-                    <span className="item link">{item.name}</span>
+                {people.map((item, index) => (
+                    <div className="person">
+                        <span className="item link" key={index}>{item.name}</span>
+                        <span className="item-category-container">
+                            {item.category.map((cat, index) => <span className="list-cat">{cat}</span>)}
+                        </span>
+                    </div>
+
                 ))}
             </div>
                 
@@ -45,6 +80,26 @@ const people = () => {
 
 
             <style jsx>{`
+                .person{
+                    display: block;
+                    margin-bottom: 20px;
+                }
+                .list-cat:first-child{
+                    // color: red;
+                    margin-left: 25px;
+                    // font-weight: bold;
+                }
+                .list-cat{
+                    font-size: .8rem;
+                    margin-left: 10px;
+                    padding: 5px;
+                    background-color: black;
+                    color: white;
+                    border-radius: 5px;
+                }
+                .big-bord{
+                    border: 3px solid black;
+                }
                 .question{
                     margin-bottom: 15px;
                 }
@@ -61,15 +116,16 @@ const people = () => {
                     cursor: pointer;
                     display: inline-block;
                     padding: 5px;
-                    background-color: black;
+                    // background-color: black;
+                    border: 1px solid black;
                     border-radius: 5px;
                     width: max-content;
-                    color: white;
+                    // color: white;
                     margin-top: 5px;
                 }
                 .item{
                     width: max-content;
-                    display: block;
+                    // display: block;
                 }
                 .internet-sum{
                     // background-color: black;
