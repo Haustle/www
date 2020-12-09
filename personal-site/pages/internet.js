@@ -72,9 +72,6 @@ const peoplePage = () => {
                 ))}
 
             </div>
-            <div>
-                {catList}
-            </div>
 
             <div>
                 {people.map((item, index) => (
