@@ -1,9 +1,12 @@
 import {things} from '../external-calls/intplace'
 import { useEffect } from 'react'
 
-const people = () => {
+const peoplePage = () => {
     const [people, filterPeople] = React.useState(things);
-    const [catSet, setCatSet] = React.useState([])
+
+    const [catSet, setCatSet] = React.useState(new Set())
+    // this one is actually a list
+    const [catList, setCatList] = React.useState([])
 
     // Getting all the categories from all the associated communities / poeple
     // add them to set so now duplicates
@@ -15,29 +18,39 @@ const people = () => {
         })
     }
 
-    // chec
+    // checking to see the individual contains all the categories
     function containsCategory(userList) {
-        let result = catSet.every(i => userList.includes(i))
+
+        let result = catList.every(i => userList.includes(i))
         return result;
     }
 
-    var catSort = (fil) => {
-        // console.log(fil)
-    }
     var togglePeople = (filter) => {
-        catSort(filter)
-        setCatSet([filter])
 
+        // make a new set out of our current categories so we can filter easier
+        var set = new Set(catList);
+        if(set.has(filter)){
+            set.delete(filter);
+        }
+        else{
+            set.add(filter)
+        }
 
-        // console.log(catSet)
+        // turn the set back into an array and set
+        setCatSet(set)
+        setCatList([...set])
+
 
     }
 
+    // watch [catList] to see if there's changes, once there's a change filterPeople()
+    // this will act similiarly to an observer
+    
     useEffect(() => {
+
         var fitL = things.filter(p => containsCategory(p.category))
         filterPeople(fitL)
-        // console.log("yes");
-    }, [catSet]);
+    }, [catList]);
 
 
     cateGorySet = [...cateGorySet]; // turn the set into a list
@@ -52,23 +65,23 @@ const people = () => {
 
             <div className="cat-contain">
                 {cateGorySet.map((item, index) => (
-                    <span className="cat-buttons big-bord" onClick={() => togglePeople(item)} key={index}>
+                    <span className={`cat-buttons big-bord ${catSet.has(item) ? 'selected-cat' : ''}`} onClick={() => togglePeople(item)} key={index}>
                         {item}
                     </span>
                     
                 ))}
-                <div>
-                    {catSet}
-                </div>
-            </div>
 
+            </div>
+            <div>
+                {catList}
+            </div>
 
             <div>
                 {people.map((item, index) => (
                     <div className="person">
                         <span className="item link" key={index}>{item.name}</span>
                         <span className="item-category-container">
-                            {item.category.map((cat, index) => <span className="list-cat">{cat}</span>)}
+                            {item.category.map((cat, index) => <span className="list-cat" key={cat}>{cat}</span>)}
                         </span>
                     </div>
 
@@ -111,7 +124,10 @@ const people = () => {
                 .cat-contain span:not(:last-child){
                     margin-right: 5px;
                 }
-                
+                .selected-cat{
+                    background-color: black; 
+                    color: white;
+                }
                 .cat-buttons{
                     cursor: pointer;
                     display: inline-block;
@@ -148,4 +164,4 @@ export function getStaticProps() {
         }
     }
 }
-export default people;
+export default peoplePage;

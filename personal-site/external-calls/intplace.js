@@ -5,7 +5,7 @@ export var things = [
     },
     {
         name: "Pressure",
-        category: ["art","creative","individual"]
+        category: ["art","creative","people"]
     },
     {
         name: "Rama Works",
