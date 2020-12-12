@@ -30,6 +30,9 @@ html{
 .display-none{
     display: none;
 }
+.grey{
+    color: #424242;
+}
 .link{
     border-bottom: 1px dotted currentColor;
     cursor: pointer;

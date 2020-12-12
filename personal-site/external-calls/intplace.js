@@ -1,7 +1,7 @@
 export var things = [
     {
         name: "Notion",
-        category: ["products","company"]
+        category: ["products","company","design"]
     },
     {
         name: "Pressure",
@@ -29,7 +29,7 @@ export var things = [
     },
     {
         name: "Blake Robbins",
-        category: ["people"]
+        category: ["people","investor","writer"]
     },
     {
         name: "Fwiz",
@@ -39,5 +39,8 @@ export var things = [
         name: "Nadeshot",
         category: ["people","esports"]
     },
-
+    {
+        name: "Julian Lehr",
+        category: ["people", "writer"]
+    },
 ]

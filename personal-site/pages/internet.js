@@ -59,26 +59,28 @@ const peoplePage = () => {
             <div className="internet-sum">
                 Down below is every corner of the internet that I've explored that has had an impact on me thus far.
             </div>
-            <div className="question">
+            {/* <div className="question">
                 Got a question as to why something is on the list, shoot an email <span className="bold">Tyrus@haustle.studio</span>
-            </div>
+            </div> */}
 
             <div className="cat-contain">
                 {cateGorySet.map((item, index) => (
-                    <span className={`cat-buttons big-bord ${catSet.has(item) ? 'selected-cat' : ''}`} onClick={() => togglePeople(item)} key={index}>
+                    <span className={`cat-buttons big-bord ${catSet.has(item) ? 'selected-cat' : 'nonselected-cat'}`} onClick={() => togglePeople(item)} key={index}>
                         {item}
                     </span>
                     
                 ))}
 
             </div>
-
+            <div className="results-found grey">
+                {people.length} filtered results found...
+            </div>
             <div>
                 {people.map((item, index) => (
                     <div className="person">
-                        <span className="item link" key={index}>{item.name}</span>
+                        <span className="item link" key={`${index}$`}>{item.name}</span>
                         <span className="item-category-container">
-                            {item.category.map((cat, index) => <span className="list-cat" key={cat}>{cat}</span>)}
+                            {item.category.map((cat, index) => <span className="list-cat" key={`${cat}${index}`}>{cat}</span>)}
                         </span>
                     </div>
 
@@ -90,6 +92,9 @@ const peoplePage = () => {
 
 
             <style jsx>{`
+                .results-found{
+                    margin-bottom: 20px;
+                }
                 .person{
                     display: block;
                     margin-bottom: 20px;
@@ -117,23 +122,29 @@ const peoplePage = () => {
                     width: 100%;
                     display: inline-block;
                     margin-bottom: 50px;
+                    border-top: 1px solid black;
+                    margin-top: 15px;
+                    padding-top: 10px;
                 }
                 .cat-contain span:not(:last-child){
                     margin-right: 5px;
                 }
                 .selected-cat{
-                    background-color: black; 
-                    color: white;
+                    border: 2px solid black;
+
+                }
+                .nonselected-cat{
+                    border: 2px solid transparent
                 }
                 .cat-buttons{
                     cursor: pointer;
                     display: inline-block;
                     padding: 5px;
-                    // background-color: black;
-                    border: 1px solid black;
+
+
                     border-radius: 5px;
                     width: max-content;
-                    // color: white;
+
                     margin-top: 5px;
                 }
                 .item{
@@ -145,7 +156,7 @@ const peoplePage = () => {
                     // color: white;
                     // padding: 10px;
                     // border-radius: 5px;
-                    text-decoration: underline;
+                    // text-decoration: underline;
                     width: 80%;
                     margin-bottom: 50px;
                 }
