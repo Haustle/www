@@ -56,8 +56,8 @@ const peoplePage = () => {
     cateGorySet = [...cateGorySet]; // turn the set into a list
     return(
         <>
-            <div className="internet-sum">
-                Down below is every corner of the internet that I've explored that has had an impact on me thus far.
+            <div className="internet-sum ">
+                Down below are sources I constantly visit for inspiration...
             </div>
             {/* <div className="question">
                 Got a question as to why something is on the list, shoot an email <span className="bold">Tyrus@haustle.studio</span>
@@ -73,13 +73,13 @@ const peoplePage = () => {
 
             </div>
             <div className="results-found grey">
-                {people.length} filtered results found...
+                {people.length} {people.length == 1 ? 'result' : 'results'} found...
             </div>
             <div>
                 {people.map((item, index) => (
-                    <div className="person">
-                        <span className="item link" key={`${index}$`}>{item.name}</span>
-                        <span className="item-category-container">
+                    <div className="person" key={`${item.name}`}>
+                        <span className="item link" key={`${index}`}><a target="_blank" href={item.url}>{item.name}</a></span>
+                        <span className="item-category-container" key={`categories${item.name}`}>
                             {item.category.map((cat, index) => <span className="list-cat" key={`${cat}${index}`}>{cat}</span>)}
                         </span>
                     </div>
@@ -122,7 +122,8 @@ const peoplePage = () => {
                     width: 100%;
                     display: inline-block;
                     margin-bottom: 50px;
-                    border-top: 1px solid black;
+                    padding-left: 20px;
+                    border-left: 2px solid black;
                     margin-top: 15px;
                     padding-top: 10px;
                 }
@@ -157,8 +158,9 @@ const peoplePage = () => {
                     // padding: 10px;
                     // border-radius: 5px;
                     // text-decoration: underline;
+                    font-weight: bold;
                     width: 80%;
-                    margin-bottom: 50px;
+                    margin-bottom: 10px;
                 }
             `}</style>
         </>
