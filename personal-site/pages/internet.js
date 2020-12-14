@@ -1,5 +1,7 @@
 import {things} from '../external-calls/intplace'
 import { useEffect } from 'react'
+import Callout from '../components/callout'
+
 
 const peoplePage = () => {
     const [people, filterPeople] = React.useState(things);
@@ -56,12 +58,10 @@ const peoplePage = () => {
     cateGorySet = [...cateGorySet]; // turn the set into a list
     return(
         <>
+            <Callout color="yellow" tagName="Note">I'll try and update this list once a month 🤞🏾</Callout>
             <div className="internet-sum ">
                 Down below are sources I constantly visit for inspiration...
             </div>
-            {/* <div className="question">
-                Got a question as to why something is on the list, shoot an email <span className="bold">Tyrus@haustle.studio</span>
-            </div> */}
 
             <div className="cat-contain">
                 {cateGorySet.map((item, index) => (
@@ -158,6 +158,7 @@ const peoplePage = () => {
                     // padding: 10px;
                     // border-radius: 5px;
                     // text-decoration: underline;
+                    margin-top: 50px;
                     font-weight: bold;
                     width: 80%;
                     margin-bottom: 10px;

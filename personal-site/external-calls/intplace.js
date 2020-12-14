@@ -16,12 +16,12 @@ export var things = [
     },
     {
         name: "Paco",
-        category: ["design","developer","people"],
+        category: ["design","developer"],
         url: "https://twitter.com/pacocoursey"
     },
     {
         name: "Jordan Singer",
-        category: ["design","developer","people"],
+        category: ["design","developer"],
         url: "https://twitter.com/jsngr"
     },
     {
@@ -31,32 +31,52 @@ export var things = [
     },
     {
         name: "Blake Robbins",
-        category: ["people","investor","writer"],
+        category: [,"investor","writer"],
         url: "https://twitter.com/blakeir"
     },
     {
         name: "Fwiz",
-        category: ["people","esports","gaming"],
+        category: [,"esports","gaming"],
         url: "https://twitter.com/Fwiz"
     },
     {
         name: "Nadeshot",
-        category: ["people","esports"],
+        category: [,"esports"],
         url: "https://twitter.com/Nadeshot"
     },
     {
         name: "Julian Lehr",
-        category: ["people", "writer"],
+        category: ["writer"],
         url: "https://twitter.com/lehrjulian"
     },
     {
         name: "Eli Rousso",
-        category: ["design","developer","people"],
+        category: ["design","developer"],
         url: "https://twitter.com/elirousso"
     },
     {
         name: "Very Goods",
         category: ["community"],
         url: "https://verygoods.co/"
+    },
+    {
+        name: "breezeh",
+        category: ["photography"],
+        url: "https://twitter.com/briscoepark"
+    },
+    {
+        name: "Sam Balaban",
+        category: ["photography"],
+        url: "https://twitter.com/SdotBalaban"
+    },
+    {
+        name: "KaptainKristian",
+        category: ["video"],
+        url: "https://www.youtube.com/kaptainkristian"
+    },
+    {
+        name: "MKBHD",
+        category: ["tech"],
+        url: "https://twitter.com/MKBHD"
     }
 ]
