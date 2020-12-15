@@ -71,12 +71,22 @@ export var things = [
     },
     {
         name: "KaptainKristian",
-        category: ["video"],
+        category: ["video","youtuber"],
         url: "https://www.youtube.com/kaptainkristian"
     },
     {
         name: "MKBHD",
-        category: ["tech"],
+        category: ["tech", "youtuber"],
         url: "https://twitter.com/MKBHD"
+    },
+    {
+        name: "seereverseforcare",
+        category: ["archive page"],
+        url: "https://www.instagram.com/seereverseforcare/"
+    },
+    {
+        name: "Naval",
+        category: ["writer"],
+        url: "https://twitter.com/naval"
     }
 ]

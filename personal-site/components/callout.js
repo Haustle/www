@@ -21,6 +21,9 @@ const Callout = ({color="black", tagName="summary", underline=false ,children}) 
                 .yellow{
                     background-color: #fcca46;
                 }
+                .grey{
+                    background-color: #97A7B3;
+                }
                 .black{
                     background-color: black;
                 }

@@ -8,7 +8,8 @@ const peoplePage = () => {
 
     const [catSet, setCatSet] = React.useState(new Set())
     // this one is actually a list
-    const [catList, setCatList] = React.useState([])
+    const [catList, setCatList] = React.useState([]);
+    const [showfil, setShowfil] = React.useState(false);
 
     // Getting all the categories from all the associated communities / poeple
     // add them to set so now duplicates
@@ -27,6 +28,9 @@ const peoplePage = () => {
         return result;
     }
 
+    function showFilters(){
+        setShowfil(!showfil);
+    }
     var togglePeople = (filter) => {
 
         // make a new set out of our current categories so we can filter easier
@@ -58,22 +62,27 @@ const peoplePage = () => {
     cateGorySet = [...cateGorySet]; // turn the set into a list
     return(
         <>
-            <Callout color="yellow" tagName="Note">I'll try and update this list once a month 🤞🏾</Callout>
-            <div className="internet-sum ">
+            <Callout color="yellow" tagName="Note"><b>This is a list of sources I follow frequently</b>. I'll try and update this list once a month 🤞🏾</Callout>
+            {/* <div className="internet-sum ">
                 Down below are sources I constantly visit for inspiration...
-            </div>
+            </div> */}
+            <div onClick={showFilters} className="show-filters">[{showfil ? 'Hide filters' : 'Show filters'}] </div>
+            { showfil ? (
+                <div className="cat-contain">
+                    {cateGorySet.map((item, index) => (
+                        <span className={`cat-buttons ${catSet.has(item) ? 'selected-cat' : 'nonselected-cat'}`} onClick={() => togglePeople(item)} key={index}>
+                            {item}
+                        </span>
 
-            <div className="cat-contain">
-                {cateGorySet.map((item, index) => (
-                    <span className={`cat-buttons big-bord ${catSet.has(item) ? 'selected-cat' : 'nonselected-cat'}`} onClick={() => togglePeople(item)} key={index}>
-                        {item}
-                    </span>
-                    
-                ))}
+                    ))}
 
-            </div>
+                </div>
+            ) : ''
+
+            }
+            
             <div className="results-found grey">
-                {people.length} {people.length == 1 ? 'result' : 'results'} found...
+                {people.length} {people.length == 1 ? 'result' : 'results'} found | {catList.length} filters...
             </div>
             <div>
                 {people.map((item, index) => (
@@ -92,17 +101,27 @@ const peoplePage = () => {
 
 
             <style jsx>{`
+                .show-filters{
+                    margin-top: 50px;
+                    font-weight: bold;
+                    width: 80%;
+                    // margin-bottom: 10px;
+
+                    margin-bottom: 35px;
+                    color: blue;
+                    // text-decoration: underline;
+                    cursor: pointer;
+                    width: max-content;
+                }
                 .results-found{
-                    margin-bottom: 20px;
+                    margin-bottom: 30px;
                 }
                 .person{
                     display: block;
                     margin-bottom: 20px;
                 }
                 .list-cat:first-child{
-                    // color: red;
                     margin-left: 25px;
-                    // font-weight: bold;
                 }
                 .list-cat{
                     font-size: .8rem;
@@ -111,9 +130,6 @@ const peoplePage = () => {
                     background-color: black;
                     color: white;
                     border-radius: 5px;
-                }
-                .big-bord{
-                    border: 3px solid black;
                 }
                 .question{
                     margin-bottom: 15px;
