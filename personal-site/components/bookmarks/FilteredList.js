@@ -77,7 +77,7 @@ export default function FilteredList({listObj = []}){
             }
 
             <div className="results-found grey">
-                {people.length} {people.length == 1 ? 'result' : 'results'} found | {catList.length} filters...
+                <b>{people.length}</b> {people.length == 1 ? 'result' : 'results'} found | <b>{catList.length}</b> filters...
             </div>
             <div>
                 {people.map((item, index) => (
@@ -150,7 +150,7 @@ export default function FilteredList({listObj = []}){
                     margin-top: 5px;
                 }
                 .nonselected-cat:hover{
-                    border: 2px solid black;
+                    // border: 2px solid black;
                 }
                 .item{
                     width: max-content;

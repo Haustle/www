@@ -1,6 +1,7 @@
 export default function BlogFooter(){
     return(
         <>
+        <div className="blog-footer-wrapper">
             <div>Final notes and credits</div>
             <div className="footer flex-justify-between">
                 <div className="">
@@ -12,9 +13,9 @@ export default function BlogFooter(){
                             </div>
                             <div>
                                 {/* this needs to pass in and then we can figure out routers to */}
-                                Example Article Name
-                            </div>
-                            
+                            Example Article Name
+                        </div>
+
                         </a>
                     </div>
 
@@ -25,10 +26,15 @@ export default function BlogFooter(){
                     <span><a href="mailto:tyrus.miles@gmail.com">Email</a></span>
                 </div>
             </div>
+        </div>
+            
 
 
 
             <style jsx>{`
+                .blog-footer-wrapper{
+                    margin-top: 100px;
+                }
                 .arrow{
                     height: 1rem;
                     margin-left: 5px;
@@ -38,7 +44,6 @@ export default function BlogFooter(){
                     align-items: center;
                 }
                 .next-article{
-                    // padding: 15px;
                     position: relative;
                     display: block;
                     transition-duration: 0.2s;

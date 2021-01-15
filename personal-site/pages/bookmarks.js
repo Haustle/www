@@ -6,9 +6,7 @@ import { useEffect } from 'react'
 
 
 const peoplePage = () => {
-    // const [curList, setList] = React.useState(things)
     const [currentCat, setCat] = React.useState("Following")
-    // const [comp, setComp] = React.useState(<FilteredList listObj={curList} />)
 
     const compChange = (item) => {
         var category = item.target.innerText;
@@ -21,47 +19,52 @@ const peoplePage = () => {
     useEffect(() => {
         var cats = {
             'Following': things,
-            'Consumed': bookmarks
+            'Media': bookmarks
         }
 
     }, [currentCat])
 
     return(
         <>
-            <div>Here are a list of some sources I follow as well</div>
+            <div className="h1-name flex-align-items-center lib-header">
+                <h1 className="lib-title">Libary</h1>
+                <span className="margin-left-25">My favorite bookmarks 📖</span>
+            </div>
+            
             <div className="online-head">
-                <div onClick={compChange} className={`${currentCat == "Following" ? 'black-background' : ''}`}>Following</div>
-                <div onClick={compChange} className={`${currentCat == "Consumed" ? 'black-background' : ''}`}>Consumed</div>
+                <div onClick={compChange} className={` base-button ${currentCat == "Following" ? 'blocked' : 'unselected'}`}>Following</div>
+                <div onClick={compChange} className={` base-button ${currentCat == "Media" ? 'blocked' : 'unselected'}`}>Media</div>
             </div>
 
             { currentCat == "Following" ? <div> <FilteredList listObj={things} /></div> : <div><FilteredList listObj={bookmarks}/></div> }
 
-
-
-
-            
-
-
             <style jsx>{`
-                .black-background{
-                    background-color: black;
-                    color: white;
+                .base-button{
+                    padding: 2px 5px;
+                    border-radius: 5px;
+                }
+                .lib-title{
+                    font-size: 2rem;
+                }
+                .blocked{
+                    // text-decoration: underline;
+                    background-color: #efefef;
+
                 }
                 .online-head div{
                     cursor: pointer;
                 }
 
-                .online-head div:hover{
-                    background-color: black;
-                    color: white;
+                .online-head div:not(:last-child){
+                    margin-right: 30px;
+                }
+                .unselected:hover{
+                    // text-decoration: underline;
+                    background-color: #f8f8f8;
+                    
                 }
                 .online-head{
-                    padding: 10px;
                     display: flex;
-                    width: 200px;
-                    border: 1px solid black;
-                    justify-content: space-between;
-                    border-radius: 10px;
                     margin-top: 25px;
                 }
                 
@@ -72,8 +75,8 @@ const peoplePage = () => {
 export function getStaticProps() {
     return {
         props: {
-            pageName: 'Internet',
-            archive: things
+            archive: things,
+            name : 'Library'
         }
     }
 }

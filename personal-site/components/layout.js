@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 
 
-// the fix for the click to open with useState is https://stackoverflow.com/questions/60939606/next-js-toggle-display-of-a-div-tag
+
 
 export default function Layout({ children, category = "" }) {
 
@@ -11,44 +11,53 @@ export default function Layout({ children, category = "" }) {
     // navShownOnce is initally set to false so on page load opacity 0 is used instead of fade out animation
     const [navShownOnce, setNav] = React.useState(false);
     const [pagesVisible, setPagesVisible] = React.useState(false);
+
     var togglePages = e => {
 
         // we set navshownonce to true so we can use the fadeout animation
         setNav(true);
         setPagesVisible(!pagesVisible);
     };
-        
+    
+    const loadAnimation = 'animate__animated animate__fadeInRight animate__faster';
+    const closeAnimation = 'animate__animated animate__fadeOutRight animate__faster'
     return (
         <>
         <Head><link rel="shortcut icon" href="/favicon.ico"/></Head>
             <main id='main-wrapper'>
-                < header className = 'nav page-size flex-justify-between'
-                 >
+                <header className = 'nav page-size flex-justify-between'>
 
+                    {/* this is the left side  of the nav bar */}
                     <div className='flex-align-items-center'>
                         <div className='bold'>
-                            <Link href="/"><a>tyrus.im</a></Link></div>
-                        <div className='page-selector'>{category}</div>
+                            <Link href="/"><a>Tyrus</a></Link></div>
+
+                        {/* if we don't want the page route display we just pass in category as "" */}
+                        {category != "" ? <div className='page-selector'>{category}</div> : null}
                     </div>
 
+
+
+
+                    {/* This is the container for the pages button and the list of pages it opens */}
                     <div className='flex-align-items-center other-links'>
                         <div className='pages-list-container'>
-                            <ul id='pages-list' className={`flex ${navShownOnce == false ? 'opacity-0' : (pagesVisible ? 'animate__animated animate__fadeInRight animate__faster' : 'animate__animated animate__fadeOutRight animate__faster')}`}>
+                            <ul id='pages-list' className={`flex ${navShownOnce == false ? 'opacity-0' : (pagesVisible ? loadAnimation : closeAnimation)}`}>
 
-                                <li>
-                                    <Link href="/projects"><a>Projects</a></Link>
-                                </li>
-                                <li>
-                                    <Link href="/lib"><a>Bookmarks</a></Link>
-                                </li>
+                                <Link href="/blog"><a><li>Blog</li></a></Link>
+                                <Link href="/bookmarks"><a><li>Libary</li></a></Link>
+
                             </ul>
                         </div>
 
-                        <div onClick={togglePages} className='pages-button'>Pages</div>
+                        {/* pages button – onclick it has shadow and onhover it has shadow */}
+                        <div onClick={togglePages} className={`pages-button ${pagesVisible ? 'pages-button-clicked' : null}`}>Pages</div>
 
                     </div>
                 </header>
 
+
+                {/* page contents / components that gets passed in*/}
                 <div className='page-size' >
                     {children}
                 </div>
@@ -65,11 +74,14 @@ export default function Layout({ children, category = "" }) {
                     margin-right: 10px;
                     list-style-type: none;
                     padding: 5px;
-                    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-                    border: 1px solid ghostwhite;
+
                     border-radius: 5px;
                     overflow: hidden;
 
+                }
+
+                #pages-list a:not(:last-child){
+                    margin-right: 15px;
                 }
                 .trans-in{
                     transition: all 1s ease-in-out;
@@ -80,23 +92,23 @@ export default function Layout({ children, category = "" }) {
                     overflow: hidden;
                 }
                 #pages-list li:hover{
-                    color: white;
-                    background-color: black;
-                    
+                    background-color: #efefef;
+                    // text-decoration: underline;
                 }
                 #pages-list li:not(:last-child){
-                    margin-right: 10px;
+                    // margin-right: 15px;
                 }
                 #pages-list li{
+                    // margin-right: 20px;
                     padding: 2px 5px;
                     border-radius: 5px;
-                }
+                    transition: all 0.2s
+                    width: max-content;
 
 
-                #pages-button{
-                    padding: 10px 0px 10px 10px;
-                    font-weight: bold;
+
                 }
+
 
                 .nav{
                     z-index: 9999;
@@ -108,23 +120,35 @@ export default function Layout({ children, category = "" }) {
                 #main-wrapper{
                     margin-top: 4.0rem;
                     margin-bottom: 4.0rem;
-                    font-family: -apple-system,BlinkMacSystemFont,sans-serif;
+                    font-family: Inter,-apple-system,BlinkMacSystemFont,sans-serif;
                 }
 
                 .page-size{
                     margin: 0 auto;
                     max-width: 42em;
                     padding: 20px;
+                    font-size: 1.1rem;
                 }
 
                 .pages-button{
                     cursor: pointer;
                     margin-left: 5px;
+                    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.0);
+                    border: 1px solid transparent;
+                    padding: 5px 10px;
+                    border-radius: 10px;
                 }
 
+                .pages-button:hover{
+                    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+                    border: 1px solid greysmoke;
 
+                }
 
-
+                .pages-button-clicked{
+                    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+                    border: 1px solid greysmoke;
+                }
 
             `}</style>
         </>

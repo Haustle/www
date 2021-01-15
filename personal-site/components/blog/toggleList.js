@@ -1,7 +1,7 @@
 export default function ToggleList({ itemList }){
     return(
         <>
-            <div className="list-container">
+            <div className="list-container shadow">
 
                 {/* we take in itemList –– list of js objects that contain attributes 'task'(string) and 'completed'(boolean) */}
 
@@ -18,25 +18,26 @@ export default function ToggleList({ itemList }){
             <style jsx>{`
                 .list-container{
                     margin: 50px 0px;
-                    font-size: 1rem;
                     padding: 20px;
                     width: max-content;
-                    // border-top: 1px solid black;
-                    // border-bottom: 1px solid black;
+                    font-size: 1rem;
+                    border-radius: 10px;
+
                     
                 }
                 .completed{
-                    // opacity: .5;
                     text-decoration: line-through;
                 }
                 .box{
-                    height: 1em;
-                    width: 1em;
-                    border-radius: 5px;
-                    border: 1px solid black;
+                    height: 1rem;
+                    width: 1rem;
+                    border-radius: 50%;
+                    border: 1px solid grey;
                     margin-right: 20px;
                 }
                 .fill{
+                    border: 1px solid black;
+
                     background-color: black
                 }
                 .list-item{

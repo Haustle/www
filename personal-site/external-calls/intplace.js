@@ -6,7 +6,7 @@ export var things = [
     },
     {
         name: "Pressure",
-        category: ["art","creative","people"],
+        category: ["art","creative"],
         url: "https://twitter.com/1800xo"
     },
     {
@@ -88,5 +88,15 @@ export var things = [
         name: "Naval",
         category: ["writer"],
         url: "https://twitter.com/naval"
+    },
+    {
+        name: "Aidan Cullen",
+        category: ["photography"],
+        url: "https://www.instagram.com/aidancullen1/"
+    },
+    {
+        name: "Nabil",
+        category: ["photography"],
+        url: "https://www.instagram.com/nabil/"
     }
 ]
