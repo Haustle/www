@@ -18,7 +18,6 @@ export const paths = [
         "date": "Dec 10",
         "tags": ["Life", "Code", "Practice"],
         "summary": "this is for the without you article",
-
         "slug" : "mdprac"
     },
     

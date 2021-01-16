@@ -4,6 +4,7 @@ import {paths} from '../../paths'
 export default function articleTags(){
     const router = useRouter().query;
     // console.log(router)
+    const filteredPosts = paths.filter(a => a.tags.includes(router.tag))
 
     return(
         <> 
@@ -15,15 +16,17 @@ export default function articleTags(){
                 </div>
 
             </div>
-            
-            <div className="flex article-list-container">
+            { filteredPosts.length > 0 ? <div>{filteredPosts.length} posts found</div> : null}
+            <div className="flex article-list-container posts-container">
                 <h2 className="year">2020</h2>
                 <div className="article-container">
                     <div>
-                        {paths.filter(a => a.tags.includes(router.tag)).map((article, index) => (
+                        {filteredPosts.map((article, index) => (
                             <ArticleLink title={article.title} summary={article.summary} date={article.date} postUrl={article.slug} />
 
                         ))}
+
+                        {filteredPosts.length == 0 ? 'No posts found' : null}
                         
                     </div>
 
@@ -61,9 +64,12 @@ export default function articleTags(){
                     .lib-title{
                         font-size: 2rem;
                     }
+                    .posts-container{
+                        margin-bottom: 50px;
+
+                    }
                     .year{
                         // margin-top: 40px;
-                        margin-bottom: 50px;
                         margin-right: 20px;
                     }
                     .run-down-container{

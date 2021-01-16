@@ -9,20 +9,32 @@ export default function Home() {
         <div className="personal-description">Engineering student – Side projects <span className="link"><a href="http://haustle.studio" target="_blank">@Haustle</a></span> </div>
       </div>
 
-      <div className="project-card-container">
-        <div className="project-card-details-wrapper">
+
+      <div className="project-card-wrapper">
+        <div className="project-card-container"></div>
+        <div className="project-card-details">
           <h3 className="project-name">Work 1</h3>
           <div>Project Description</div>
-
         </div>
       </div>
 
-      <footer>
-        <div className="more-links">
+      <div className="project-card-wrapper">
+        <div className="project-card-container"></div>
+        <div className="project-card-details">
+          <h3 className="project-name">Work 2</h3>
+          <div>Project Description</div>
+        </div>
+      </div>
+      
+
+      
+
+      <footer className="no-select">
+        {/* <div className="more-links">
           <span className="link"><a href="https://twitter.com/haustle" target="_blank">Twitter</a></span>
           <span className="link"><a href="mailto:tyrus@haustle.studio">Email</a></span>
           <span className="link"><a href="mailto:tyrus@haustle.studio">Code</a></span>
-        </div>
+        </div> */}
         <div className="copyright">2021 © Tyrus Miles </div>
       </footer>
       
@@ -34,12 +46,19 @@ export default function Home() {
         }
         .copyright{
           margin-top: 25px;
-          color: #424242;
           
         }
-        .project-card-details-wrapper{
-          width: 100%;
-          padding: 20px;
+
+        .project-card-wrapper:not(:last-child){
+          margin-bottom: 50px;
+        }
+
+        .project-card-wrapper:last-child{
+          margin-bottom: 0px;
+        }
+
+        .project-card-details{
+          margin-top: 30px;
         }
         .about-container{
           margin-bottom: 50px;
@@ -52,6 +71,10 @@ export default function Home() {
           color: white;
           display: flex;
           align-items: flex-end;
+        }
+
+        .project-card-container:not(:first-child){
+          margin-top: 25px;
         }
 
         .index-h1{
