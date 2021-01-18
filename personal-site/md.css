@@ -11,6 +11,21 @@ article h3{
     margin-top: 5rem;
     margin-bottom: 2rem;
 }
+article .article-tag{
+    text-decoration: none;
+}
+article a{
+    text-decoration: underline;
+}
+
+article blockquote {
+    border-left: 2px solid black;
+    margin: 0;
+    padding-left: 30px;
+    font-weight: 600;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
 
 article .article-tag{
     font-size: 1rem;
@@ -28,12 +43,6 @@ article .article-tag:first-child{
 
 article h2 {
     margin-top: 50px;
-}
-article .blue{
-    color: #2D3047;
-    text-decoration-line: underline;
-    text-decoration-thickness: 1px;
-    
 }
 
 article p{

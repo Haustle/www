@@ -1,88 +1,69 @@
 import Link from 'next/link';
-
+import ProjectCard from '../components/ProjectCard'
 
 export default function Home() {
   return (
     <>
       <div className="about-container">
         <h2 className="h1-name index-h1">Hello, I'm Tyrus ⌨️</h2>
-        <div className="personal-description">Engineering student – Side projects <span className="link"><a href="http://haustle.studio" target="_blank">@Haustle</a></span> </div>
+        <div className="personal-description grey">Engineering (BSc) student</div>
+
       </div>
 
 
-      <div className="project-card-wrapper">
-        <div className="project-card-container"></div>
-        <div className="project-card-details">
-          <h3 className="project-name">Work 1</h3>
-          <div>Project Description</div>
-        </div>
-      </div>
 
-      <div className="project-card-wrapper">
-        <div className="project-card-container"></div>
-        <div className="project-card-details">
-          <h3 className="project-name">Work 2</h3>
-          <div>Project Description</div>
-        </div>
-      </div>
+
+      <ProjectCard name="Haustle Studios" link="haustle.studio" sum="More Structured Projects with others" />
       
 
       
 
-      <footer className="no-select">
-        {/* <div className="more-links">
+      
+
+      <footer className="no-select flex-align-items-center">
+        <div className="copyright"><span className="grey underline">CC BY-NC 4.0</span> 2021 © Tyrus Miles </div>
+        <div className="more-links">
           <span className="link"><a href="https://twitter.com/haustle" target="_blank">Twitter</a></span>
-          <span className="link"><a href="mailto:tyrus@haustle.studio">Email</a></span>
-          <span className="link"><a href="mailto:tyrus@haustle.studio">Code</a></span>
-        </div> */}
-        <div className="copyright">2021 © Tyrus Miles </div>
+          <span className="link"><a href="mailto:tyrus@haustle.studio" target="_blank">Email</a></span>
+          <span className="link"><a href="https://github.com/haustle" target="_blank">Code</a></span>
+        </div>
       </footer>
       
         
 
       <style jsx>{`
+        .comp-logo{
+          height: 1rem;
+          margin-bottom: 15px;
+        }
+        .haustle-b{
+          background-color: #fff7df;
+        }
         footer{
-          margin-top: 75px;
+          font-size: 1rem;
+          margin-top: 100px;
         }
         .copyright{
-          margin-top: 25px;
           
         }
 
-        .project-card-wrapper:not(:last-child){
-          margin-bottom: 50px;
-        }
 
-        .project-card-wrapper:last-child{
-          margin-bottom: 0px;
-        }
-
-        .project-card-details{
-          margin-top: 30px;
-        }
         .about-container{
           margin-bottom: 50px;
         }
-        .project-card-container{
-          height: 300px;
-          background-color: black;
-          width: 75%;
-          border-radius: 10px;
-          color: white;
-          display: flex;
-          align-items: flex-end;
-        }
 
-        .project-card-container:not(:first-child){
-          margin-top: 25px;
-        }
+
+
+
 
         .index-h1{
           font-size: 2rem;
         }
-
+        .more-links{
+          margin-left: 40px;
+        }
         .more-links span:not(:last-child){
-          margin-right: 20px;
+          margin-right: 10px;
         }
 
         .personal-description{

@@ -6,7 +6,7 @@ import { useEffect } from 'react'
 
 
 const peoplePage = () => {
-    const [currentCat, setCat] = React.useState("Following")
+    const [currentCat, setCat] = React.useState("Follows")
 
     const compChange = (item) => {
         var category = item.target.innerText;
@@ -18,7 +18,7 @@ const peoplePage = () => {
 
     useEffect(() => {
         var cats = {
-            'Following': things,
+            'Follows': things,
             'Media': bookmarks
         }
 
@@ -32,11 +32,11 @@ const peoplePage = () => {
             </div>
             
             <div className="online-head">
-                <div onClick={compChange} className={` base-button ${currentCat == "Following" ? 'blocked' : 'unselected'}`}>Following</div>
+                <div onClick={compChange} className={` base-button ${currentCat == "Follows" ? 'blocked' : 'unselected'}`}>Follows</div>
                 <div onClick={compChange} className={` base-button ${currentCat == "Media" ? 'blocked' : 'unselected'}`}>Media</div>
             </div>
 
-            { currentCat == "Following" ? <div> <FilteredList listObj={things} /></div> : <div><FilteredList listObj={bookmarks}/></div> }
+            { currentCat == "Follows" ? <div> <FilteredList listObj={things} /></div> : <div><FilteredList listObj={bookmarks}/></div> }
 
             <style jsx>{`
                 .base-button{

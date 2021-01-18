@@ -76,9 +76,9 @@ export default function FilteredList({listObj = []}){
 
             }
 
-            <div className="results-found grey">
+            {/* <div className="results-found grey">
                 <b>{people.length}</b> {people.length == 1 ? 'result' : 'results'} found | <b>{catList.length}</b> filters...
-            </div>
+            </div> */}
             <div>
                 {people.map((item, index) => (
                     <div className="person" key={`${item.name}`}>

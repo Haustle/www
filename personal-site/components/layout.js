@@ -23,7 +23,7 @@ export default function Layout({ children, category = "" }) {
     const closeAnimation = 'animate__animated animate__fadeOutRight animate__faster'
     return (
         <>
-        <Head><link rel="shortcut icon" href="/favicon.ico"/></Head>
+            <Head><link rel="shortcut icon" href="/favicon.ico?v=2" type="image/x-icon" /></Head>
             <main id='main-wrapper'>
                 <header className = 'nav page-size flex-justify-between'>
 

@@ -16,7 +16,7 @@ export default function articleTags(){
                 </div>
 
             </div>
-            { filteredPosts.length > 0 ? <div>{filteredPosts.length} posts found</div> : null}
+            { filteredPosts.length > 0 ? <div>Posts found -> <span className="posts-found bold">{filteredPosts.length}</span></div> : null}
             <div className="flex article-list-container posts-container">
                 <h2 className="year">2020</h2>
                 <div className="article-container">
@@ -36,6 +36,9 @@ export default function articleTags(){
 
             <style jsx>
                 {`
+                    .posts-found{
+                        margin-left: 15px;
+                    }
                     h1{
                         font-size: 2rem;
                     }

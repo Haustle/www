@@ -24,7 +24,7 @@ export default function MyApp({ Component, pageProps }) {
         <>
             <Head>
                 {/* if the page is nested */}
-                <title>{name ? `${name} «` : null}  Tyrus</title>
+                <title>{name ? `${name} « Tyrus` : 'Tyrus Miles'}</title>
             </Head>
             
             {/* main layout wrapper */}

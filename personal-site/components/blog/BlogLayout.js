@@ -1,11 +1,11 @@
 import Link from 'next/link';
 import { ArrowLeft } from 'react-feather'
-
+// import Router from 'next/router'
 
 
 export default function BlogLayout({ children, meta = {} }){
     const [backhover, setBackHover] = React.useState(false)
-
+    // console.log(Router.back)
     return (
         <>
             <Link href="/blog">
