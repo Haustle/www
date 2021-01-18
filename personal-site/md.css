@@ -1,0 +1,87 @@
+/* **********************************************************************
+This is the styling for all blog posts within the <article> tag 
+all pages on /blog use this
+
+This css file is loaded and launched alongside the style.css file so we need 
+to specify article in front of all these tags. Later on I can implement scss 
+as putting `article` in front of all is redudant
+***********************************************************************/
+
+article h3{
+    margin-top: 5rem;
+    margin-bottom: 2rem;
+}
+article .article-tag{
+    text-decoration: none;
+}
+article a{
+    text-decoration: underline;
+}
+
+article blockquote {
+    border-left: 2px solid black;
+    margin: 0;
+    padding-left: 30px;
+    font-weight: 600;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+article .article-tag{
+    font-size: 1rem;
+    padding: 5px;
+    background-color: #efefef;
+    border-radius: 5px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+article .article-tag:first-child{
+    margin-left: 0px;
+
+}
+
+article h2 {
+    margin-top: 50px;
+}
+
+article p{
+    color: #424242;
+    line-height: 2.0rem;
+
+
+}
+article p span{
+    color: black;
+    text-decoration: underline;
+    cursor: pointer;
+}
+article{
+    width: 90%;
+
+}
+
+article .article-details{
+    margin-top: 15px;
+    margin-bottom: 25px;
+}
+
+article .blog-header{
+    margin-bottom: 4rem;
+    margin-top: 3rem;
+
+}
+article .article-title{
+    color: black;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+article code{
+    /* color: red; */
+    background-color: #efefef;
+    padding: 2px 5px;
+    border-radius: 5px;
+
+}
+

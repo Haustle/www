@@ -26,7 +26,8 @@ export default function Example(){
                 <h1 className="article-title">Example Title</h1>
             </div>
 
-            <article className="space">
+            <article className="">
+                {/* <article className="space"> */}
                 <p>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui veniam in reiciendis dolorem molestias quasi voluptatem dolor assumenda velit eligendi vel sit, itaque est illum ullam doloribus non, iure totam modi. Hic, earum nostrum ut illum, dolorem fugit voluptatum rem id incidunt libero ullam minus quidem itaque, sunt nobis? Eum deserunt dolor quibusdam ea quo recusandae dignissimos, nam cum tempore officiis a omnis rem vero eveniet quidem eos dolorum obcaecati quod <H>earum placeat</H> voluptatum. Incidunt laborum provident asperiores? Veritatis ducimus quidem atque dignissimos tenetur rem maiores harum quasi quod recusandae a libero quis officiis at, esse enim totam numquam possimus!
                 </p>
@@ -50,8 +51,10 @@ export default function Example(){
                     font-size: 16px;
                 }
                 article{
-                    line-height: 1.9;
-                    font-size: 1.0rem;
+                    // line-height: 1.9;
+                    line-height: 2.5;
+                    // font-size: 1.2rem;
+                    // font-size: 1rem;
                 }
                 .article-title{
                     margin-top: 1rem;
@@ -96,10 +99,3 @@ export default function Example(){
     )
 }
 
-export function getStaticProps(){
-    return{
-        props : {
-            pageName: 'Blog'
-        }
-    }
-}

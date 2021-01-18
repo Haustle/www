@@ -36,7 +36,7 @@ export default function CodeBlock({language = "", code=""}){
                     color: black;
                 }
                 .copy{
-                    font-size: 1rem;
+
                     cursor: pointer;
                     padding: 5px;
                     border-radius: 5px;
@@ -52,7 +52,6 @@ export default function CodeBlock({language = "", code=""}){
                     font-size: .8rem;
                     padding: 5px;
                     border-radius: 10px;
-                    // border: 2px solid white;
                     text-decoration: underline;
                     background-color: black;
                     width: max-content;
@@ -65,7 +64,6 @@ export default function CodeBlock({language = "", code=""}){
                     margin-top: 75px;
                     background-color: black;
                     color: white;
-                    font-size: 1rem;
                     padding: 10px;
                     border-radius: 10px;
                 }

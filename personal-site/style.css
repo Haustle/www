@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Space+Mono:400,400i,700,700i&display=swap');
 
+@import './md.css';
 
 body,html,ul, h1, h2, h3{
     margin: 0;
@@ -12,6 +13,9 @@ html{
     overflow-y: scroll; 
 }
 
+.inter{
+    font-family: 'Inter';
+}
 
 .flex-align-items-center{
     display: flex;
@@ -30,14 +34,19 @@ html{
 .display-none{
     display: none;
 }
+.grey{
+    color: #424242;
+}
 .link{
     border-bottom: 1px dotted currentColor;
     cursor: pointer;
-    padding: 2px;
+    padding: 2px 5px;
+    /* padding: 2px; */
     color: #424242;
 }
 
 .link:hover{
+    /* border-radius: 5px; */
     border-radius: 2px;
     color: #fff;
     background-color: #000;
@@ -48,7 +57,7 @@ html{
     pointer-events: none;
     cursor: default;
 }
-a, a:visited, a:hover{
+a, a:visited{
     color: inherit;
     text-decoration: none;
 }
@@ -80,4 +89,32 @@ a, a:visited, a:hover{
 ::selection{
     background-color: black;
     color: white;
+}
+
+.no-select{
+    -webkit-user-select:none;
+    -khtml-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    -o-user-select:none;
+    user-select:none;
+}
+
+.underline{
+    text-decoration: underline;
+}
+
+.shadow{
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+    border: 1px solid greysmoke;
+}
+
+.shadow-2{
+    border: 1px solid whitesmoke;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.07), 
+              0 2px 2px rgba(0,0,0,0.07), 
+              0 4px 4px rgba(0,0,0,0.07); 
+              /* 0 8px 8px rgba(0,0,0,0.07);  */
+              /* 0 16px 16px rgba(0,0,0,0.07), 
+              0 32px 32px rgba(0,0,0,0.07); */
 }
