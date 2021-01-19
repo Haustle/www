@@ -33,8 +33,8 @@ export default function ArticleLink({title="",summary="",date="", postUrl="examp
                     .last-updated{
                         margin-top: 10px;
                         font-size: .9rem;
-                        opacity: .6;
-                        color: #4a5568;
+                        // opacity: .6;
+                        color: #bcc2cc;
 
                     }
                     .summary-text{

@@ -13,9 +13,8 @@ export default IMG = ({url="", caption=null}) => {
             
 
             <style jsx>{`
+
                 .image-container{
-                    // display: flex;
-                    // justify-content: center;
                     margin-top: 50px;
                 }
                 .caption{
@@ -26,6 +25,7 @@ export default IMG = ({url="", caption=null}) => {
                 }
                 .image-wrapper{
                     width: 75%;
+                    border-radius: 20px;
                     margin: 0 auto;
                     margin-top: 30px;
                     margin-bottom: 40px;
@@ -33,7 +33,7 @@ export default IMG = ({url="", caption=null}) => {
 
                 }
                 img{
-
+                    border-radius: 5px;
                     width: 100%;
                 }
             `}</style>
