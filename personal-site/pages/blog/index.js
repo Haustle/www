@@ -1,12 +1,12 @@
 import Callout from '../../components/callout'
 import Link from 'next/link';
 import ArticleLink from '../../components/blog/ArticleLink'
-import { paths } from '../../paths'
+import posts from '../../paths'
 
 
 
 
-export default function index(){
+export default function index({posts}){
     return(
         <>
             
@@ -14,18 +14,24 @@ export default function index(){
                 <h1 className="lib-title">Blog</h1>
                 <span className="margin-left-25">Sharing ideas</span>
             </div>
-            
-            <div className="flex article-list-container">
-                <h2 className="year">2020</h2>
-                <div className="article-container">
-                    <div>
-                        {paths.map((article, index) => (
-                            <ArticleLink title={article.title} summary={article.summary} date={article.date} postUrl={article.slug} />
 
-                        ))}
+            <div className=" article-list-container">
+                {posts.map((year, index) => (
+
+                    <div className="flex year-article-container">
+                    <h2 className="year">{year.year}</h2>
+                    <div className="article-container"> 
+                        <div>
+                            {year.posts.map((post, index) => (
+                                <div className="article-link-container"> 
+                                    <ArticleLink title={post.title} summary={post.summary} date={post.date} postUrl={post.slug} />
+                                </div>
+                            ))}
+                        </div>
+                    </div>
                     </div>
 
-                </div>
+                ))}
 
             </div>
             
@@ -33,6 +39,34 @@ export default function index(){
 
 
             <style jsx>{`
+                .year-article-container:not(:first-child){
+                    margin-top: 50px;
+                }
+                .article-link-container{
+                    margin-top: 50px;
+                }
+                .article-link-container:first-child{
+                    margin-top: -2px;
+                }
+                .selected{
+                    background-color: #efefef;
+
+                }
+                .unselected:hover{
+                    background-color: #f8f8f8;
+                    
+                }
+                .sort-by{
+                    margin-right: 30px;
+                }
+                .base-button{
+                    cursor: pointer;
+                    padding: 2px 5px;
+                    border-radius: 5px;
+                }
+                .base-button:not(:first-child){
+                    margin-left: 30px;
+                }
                 .article-list-container{
                     margin-top: 100px;
                 }
@@ -44,8 +78,10 @@ export default function index(){
                 }
                 .year{
                     // margin-top: 40px;
+                    width: 20%;
+                    margin-top: -3px;
                     margin-bottom: 50px;
-                    margin-right: 20px;
+                    // margin-right: 20px;
                 }
                 .run-down-container{
                     display: flex;
@@ -63,3 +99,10 @@ export default function index(){
     )
 }
 
+export function getStaticProps(){
+    return {
+        props : {
+            posts: posts()
+        }
+    }
+}

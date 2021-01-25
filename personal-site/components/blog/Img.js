@@ -1,40 +1,55 @@
 var IMG;
 export default IMG = ({url="", caption=null}) => {
-
+    const arrow = "->"
     return(
         <>
-            {/* <div className="image-container shadow-2"> */}
-                <div className="image-wrapper">
-                    <img className="" src={url} />
-                    <div className="caption">{caption}</div>
+            <div className="border-back no-select">
+                <div className="white-canvas ">
+                    <div className="image-wrapper stripe-box-shadow"></div>
                 </div>
-            {/* </div> */}
-            
-            
+                {caption ? <div className="caption">{arrow} {caption}</div> : null}
+
+            </div>
 
             <style jsx>{`
+                .white-canvas{
+                    width: 75%;
+                    margin: 0 auto;
+                    // border-radius: 5px;
 
-                .image-container{
-                    margin-top: 50px;
+
                 }
+                .stripe-box-shadow{
+                    box-shadow: 0 7px 14px rgba(50, 50, 93, 0.1), 
+                                0 3px 6px rgba(0, 0, 0, 0.08);
+
+                }
+                .border-back{
+                    padding: 40px 0px;
+
+                }
+
                 .caption{
                     font-size: .9rem;
-                    color: grey;
-                    margin-top: 15px;
-                    text-align: center;
+                    font-weight: 500;
+                    width: 75%;
+                    margin: 0 auto;
+                    margin-top: 25px;
+                    color: #424242;
+
+
                 }
                 .image-wrapper{
-                    width: 75%;
-                    border-radius: 20px;
+                    background-image: url(${url});
+                    background-size: cover;
+                    background-position: center; 
+                    background-repeat: no-repeat;
+                    height: 300px;
                     margin: 0 auto;
-                    margin-top: 30px;
-                    margin-bottom: 40px;
-
-
+                    border-radius: 2px;
                 }
                 img{
-                    border-radius: 5px;
-                    width: 100%;
+                    width: 100%
                 }
             `}</style>
         </>

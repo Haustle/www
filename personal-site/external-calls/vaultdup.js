@@ -138,6 +138,18 @@ export const bookmarks = ([
         category: ['Article'],
         date: '11/20/2020',
         url: 'https://julian.digital/2020/11/20/chief-notion-officer/',
+    }, 
+    {
+        name: "Signaling as a Service",
+        category: ['Article'],
+        date: '1/18/2021',
+        url: 'https://julian.digital/2020/03/28/signaling-as-a-service/',
+    },
+    {
+        name: "Banking on Status",
+        category: ['Article'],
+        date: '1/18/2021',
+        url: 'https://julian.digital/2020/12/03/banking-on-status/',
     },
     
     

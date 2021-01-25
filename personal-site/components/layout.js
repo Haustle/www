@@ -83,9 +83,6 @@ export default function Layout({ children, category = "" }) {
                 #pages-list a:not(:last-child){
                     margin-right: 15px;
                 }
-                .trans-in{
-                    transition: all 1s ease-in-out;
-                }
 
                 .pages-list-container{
                     padding: 10px;

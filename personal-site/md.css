@@ -14,16 +14,17 @@ article h3{
 article .article-tag{
     text-decoration: none;
 }
-article a{
+article p a{
     text-decoration: underline;
+    color: black;
 }
 
 article blockquote {
-    border-left: 4px solid black;
+    border-left: 4px solid #bcc2cc;
     margin: 0;
     padding-left: 30px;
     color: black;
-    /* font-weight: 600; */
+    font-weight: 500;
     /* font-style: italic; */
     margin-top: 40px;
     margin-bottom: 40px;
@@ -48,15 +49,40 @@ article h2 {
 }
 
 article p{
+    font-family: 'IBM Plex Mono';
     color: #424242;
     line-height: 2.0rem;
-
-
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    /* font-size: 1.1rem; */
+}
+article em{
+    /* color: black; */
+    font-weight: 500;
+}
+article ol{
+    font-family: 'IBM Plex Mono';
+    line-height: 2rem;
+    margin-left: 50px;
+    margin-top: 50px;
+    margin-bottom: 50px;;
 }
 article p span{
     color: black;
     text-decoration: underline;
     cursor: pointer;
+}
+
+article ul a{
+    text-decoration: underline;
+}
+
+article ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    line-height: 2rem;
 }
 article{
     width: 90%;
