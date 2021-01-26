@@ -75,7 +75,6 @@ export function getStaticProps() {
     return {
         props: {
             archive: things,
-            name : 'Library'
         }
     }
 }

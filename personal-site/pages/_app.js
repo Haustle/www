@@ -17,19 +17,19 @@ export default function MyApp({ Component, pageProps }) {
     // to determine the title of the webpage
     // we ceheck to see if we override the router title with props.name
     
-    name = pageProps.name ?? nameCapitalized;
+    const headTtitle = pageProps.title ?? nameCapitalized;
 
 
     return (
         <>
             <Head>
                 {/* if the page is nested */}
-                <title>{name ? `${name} « Tyrus` : 'Tyrus Miles'}</title>
+                <title>{name ? `${headTtitle} « Tyrus` : 'Tyrus Miles'}</title>
             </Head>
             
             {/* main layout wrapper */}
             {/* can override nameCapitalized if you specify in page what you want the tag to be */}
-            <Layout category={ name}>
+            <Layout category={nameCapitalized}>
                 <Component {...pageProps} />
             </Layout>
         </>

@@ -1,37 +1,24 @@
-import ArticleLink from '../../components/blog/ArticleLink'
-import { useRouter } from 'next/router'
-import {paths} from '../../paths'
-export default function articleTags(){
-    const router = useRouter().query;
-    // console.log(router)
-    const filteredPosts = paths.filter(a => a.tags.includes(router.tag))
+import {withTag , allTags} from '../../paths'
+import ArticleList from '../../components/blog/ArticleList'
 
+
+
+export default function articleTags({ filteredPosts, tag }){
+
+    const arrow = "->"
     return(
         <> 
             <div className="h1-name flex-align-items-center">
                 <h1 className="">Blog</h1>
                 <div className="containing">
                     <span className="containing-text">containing</span>  
-                    <span className="tag">`{router.tag}`</span>
+                    <span className="tag">`{tag}`</span>
                 </div>
 
+            
             </div>
-            { filteredPosts.length > 0 ? <div>Posts found -> <span className="posts-found bold">{filteredPosts.length}</span></div> : null}
-            <div className="flex article-list-container posts-container">
-                <h2 className="year">2020</h2>
-                <div className="article-container">
-                    <div>
-                        {filteredPosts.map((article, index) => (
-                            <ArticleLink title={article.title} summary={article.summary} date={article.date} postUrl={article.slug} />
-
-                        ))}
-
-                        {filteredPosts.length == 0 ? 'No posts found' : null}
-                        
-                    </div>
-
-                </div>
-
+            <div>
+                {filteredPosts ? <ArticleList posts={filteredPosts}/>: "loading..."}
             </div>
 
             <style jsx>
@@ -53,53 +40,43 @@ export default function articleTags(){
                         cursor: pointer;
                         font-size: 1.3rem;
                         height: max-content;
-
                         background-color: #efefef;
                         padding: 2px;
                         border-radius: 10px;
                     }
-                    .article-list-container{
-                        margin-top: 100px;
-                    }
-                    .article-container{
-                        width: 100%;
-                    }
+
                     .lib-title{
                         font-size: 2rem;
                     }
-                    .posts-container{
-                        margin-bottom: 50px;
 
-                    }
-                    .year{
-                        // margin-top: 40px;
-                        margin-right: 20px;
-                    }
-                    .run-down-container{
-                        display: flex;
-                        justify-content: flex-end
-                    }
-                    .run-down{
-                        width: 80%;
-                        margin-top: 15px;
-                    }
+
                 `}
             </style>
         </>
     )
 }
 
-export function getStaticProps() {
+export async function getStaticProps(context) {
+    const tag = context.params.tag
+    var filteredPosts = await withTag(tag)
+    filteredPosts = filteredPosts.filter(year => year.posts.length > 0)
+
     return {
         props: {
-            name: 'Tag'
+            name: 'Tag',
+            tag,
+            filteredPosts
         }
     }
 }
 
-export function getStaticPaths(){
+
+
+export async function getStaticPaths(){
+    const tags = await allTags()
+
     return{
-        paths: paths.map(p => `/tag/${p.slug}`),
+        paths: tags.map(p => `/tag/${p.slug}`),
         fallback: true
     }
     

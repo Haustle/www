@@ -1,17 +1,9 @@
 import Link from 'next/link';
 import { ArrowLeft } from 'react-feather'
-import posts from '../../paths'
 
 
-
-export default function BlogLayout({ children, slug = "" }){
+export default function BlogLayout({ children, meta = null }){
     const [backhover, setBackHover] = React.useState(false)
-    const all = posts();
-
-    const meta = all.filter(year => year.posts.some(post => post.slug == slug))[0].posts
-                        .find(post => post.slug == slug);
-    // console.log(getPost)
-
 
     return (
         <>
@@ -39,7 +31,6 @@ export default function BlogLayout({ children, slug = "" }){
                                 </Link>
                             ))}
                         </div>
-
                     </div>
                 </div>
 
