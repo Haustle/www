@@ -1,5 +1,8 @@
 // It's easier and faster (assuming) to hardcode and have the article information available.
 // Then to have to open all mdx files and read the metadata
+
+// I need to make sure I have the exact same tags as the [article].mdx file has
+// need to find a smooth way of making sure these match vs hardcoding
 export default function posts() {
     return (
         [
@@ -37,7 +40,6 @@ export default function posts() {
 
 
 export function withTag(tag){
-    console.log(`Tag looking for ${tag}`)
     var currentPosts = posts();
     currentPosts.map(year => {
         year.posts = year.posts.filter(post => post.tags.includes(tag))
@@ -49,7 +51,10 @@ export function withTag(tag){
 }
 
 export async function allTags(){
+    // return master list of keys
     var list = []
+
+    // grab all postings w/ their tags
     var temp = await posts();
 
 
@@ -58,6 +63,8 @@ export async function allTags(){
         for(var y = 0; y < yearPost.length; y++){
             var tags = yearPost[y].tags;
             for(var z = 0; z < tags.length; z++){
+                
+                // make check to see if the list already contains the tag
                 if(!list.includes(tags[z])){
                     list.push(tags[z])
                 }
