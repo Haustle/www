@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-export default function ArticleLink({title="",summary="",date="", postUrl="example"}){
+export default function ArticleLink({title="",date="", postUrl="example"}){
 
 
     return(

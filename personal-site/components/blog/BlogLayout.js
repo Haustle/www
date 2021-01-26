@@ -40,7 +40,7 @@ export default function BlogLayout({ children, meta = null }){
                 
                 <div className="sign-up-container">
                     <div className="sign-up ibm">
-                        <div><span className="underline new-bold">Sign Up</span> for more</div>
+                        {/* <div><span className="underline new-bold">Sign Up</span> for more</div> */}
                         
                     </div>
                 </div>

@@ -73,11 +73,12 @@ export async function getStaticProps(context) {
 
 
 export async function getStaticPaths(){
-    const tags = await allTags()
-
+    var tags = await allTags()
+    tags = tags.map(tag => `/tag/${tag}`)
+    console.log(tags)
     return{
-        paths: tags.map(p => `/tag/${p.slug}`),
-        fallback: true
+        paths: tags,
+        fallback: false
     }
     
 }

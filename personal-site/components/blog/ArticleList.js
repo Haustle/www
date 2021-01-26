@@ -24,7 +24,7 @@ export default function ArticleList({posts = null}){
             </div>
             <style jsx>{`
                 .year-article-container:not(:first-child){
-                    margin-top: 50px;
+                    margin-top: 100px;
                 }
                 .article-link-container{
                     margin-top: 50px;
@@ -50,7 +50,7 @@ export default function ArticleList({posts = null}){
                 .year{
                     width: 20%;
                     margin-top: -3px;
-                    margin-bottom: 50px;
+                    // margin-bottom: 50px;
                 }
             `}</style>
         </>
