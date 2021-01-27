@@ -65,7 +65,7 @@ export default function FilteredList({listObj = []}){
             { showfil ? (
                 <div className="cat-contain">
                     {cateGorySet.map((item, index) => (
-                        <span className={`cat-buttons ${catSet.has(item) ? 'selected-cat' : 'nonselected-cat'}`} onClick={() => togglePeople(item)} key={index}>
+                        <span className={`cat-buttons ${catSet.has(item) ? 'selected-cat' : 'nonselected-cat'}`} onClick={() => togglePeople(item)} key={item}>
                             {item}
                         </span>
 

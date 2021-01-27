@@ -23,9 +23,9 @@ export default function BlogLayout({ children, meta = null }){
                     <div className="flex-align-items-center">
                         <div className="tag-container">
                             {meta.tags.map((tag, index) => (
-                                <Link href={`/tag/${tag}`}>
-                                    <a className="article-tag" key={`${tag}${index}`}>
-                                        <span  key={`${tag}${index}`}>{tag}</span>
+                                <Link href={`/tag/${tag}`} key={tag}>
+                                    <a className="article-tag" >
+                                        <span>{tag}</span>
 
                                     </a>
                                 </Link>
@@ -39,10 +39,6 @@ export default function BlogLayout({ children, meta = null }){
                 </div>
                 
                 <div className="sign-up-container">
-                    <div className="sign-up ibm">
-                        {/* <div><span className="underline new-bold">Sign Up</span> for more</div> */}
-                        
-                    </div>
                 </div>
                 <div className="more-links flex ibm">
                     <div className="link"><a href="https://twitter.com/haustle" target="_blank">Twitter</a></div>
@@ -71,19 +67,11 @@ export default function BlogLayout({ children, meta = null }){
                 .more-links .link:not(:first-child){
                     margin-left: 25px;
                 }
-                .sign-up{
-                    padding: 20px;
-                    // background-color: #f0faba;
-                    border-radius: 10px;
-                }
+
                 .sign-up-container{
                     margin-top: 75px;
                     padding-top: 30px;
                     border-top: 1px solid #bcc2cc;
-                }
-                article{
-                    width: 90%;
-
                 }
 
                 .back-button{

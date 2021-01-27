@@ -34,7 +34,6 @@ export default function articleTags({ filteredPosts, tag }){
                     }
                     .containing{
                         margin-left: 25px;
-
                     }
                     .tag{
                         cursor: pointer;
@@ -56,14 +55,13 @@ export default function articleTags({ filteredPosts, tag }){
     )
 }
 
-export async function getStaticProps(context) {
-    const tag = context.params.tag
+export async function getStaticProps({params}) {
+    const tag = params.tag
     var filteredPosts = await withTag(tag)
     filteredPosts = filteredPosts.filter(year => year.posts.length > 0)
 
     return {
         props: {
-            name: 'Tag',
             tag,
             filteredPosts
         }
@@ -73,9 +71,10 @@ export async function getStaticProps(context) {
 
 
 export async function getStaticPaths(){
-    var tags = await allTags()
-    tags = tags.map(tag => `/tag/${tag}`)
-    console.log(tags)
+    var tags = await allTags();
+
+    // this params property needs to be the same as file name [tag].js -> tag
+    tags = tags.map(t => ({params : { tag : t}}))
     return{
         paths: tags,
         fallback: false

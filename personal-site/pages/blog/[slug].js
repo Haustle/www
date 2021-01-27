@@ -16,8 +16,8 @@ export default function Post({slug , meta}){
     );
 }
     
-export const getStaticProps = async (context) => {
-    const slug = context.params.slug;
+export const getStaticProps = async ({ params }) => {
+    const slug = params.slug;
     const metadata = require(`../../posts/${slug}.mdx`).meta
     return {
         props: {
@@ -34,7 +34,7 @@ export const getStaticProps = async (context) => {
 export function getStaticPaths(){
     const dir = path.join(process.cwd(),"posts");
     const filenames = fs.readdirSync(dir)
-    const paths = filenames.map(file => '/blog/' + file.replace(".mdx",""))
+    const paths = filenames.map(file => ({params : {slug : file.replace(".mdx","")}}))
 
     return{
         paths,

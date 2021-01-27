@@ -6,12 +6,12 @@ export default function ArticleList({posts = null}){
             <div className=" article-list-container">
                 {posts.map((year, index) => (
 
-                    <div className="flex year-article-container">
+                    <div className="flex year-article-container" key={`${year.year}`}>
                         <h2 className="year">{year.year}</h2>
                         <div className="article-container">
                             <div>
                                 {year.posts.map((post, index) => (
-                                    <div className="article-link-container">
+                                    <div className="article-link-container" key={post.title}>
                                         <ArticleLink title={post.title} summary={post.summary} date={post.date} postUrl={post.slug} />
                                     </div>
                                 ))}
