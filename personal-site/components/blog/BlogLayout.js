@@ -1,5 +1,5 @@
+import BackButton from './BackButton'
 import Link from 'next/link';
-import { ArrowLeft } from 'react-feather'
 
 
 export default function BlogLayout({ children, meta = null }){
@@ -7,13 +7,8 @@ export default function BlogLayout({ children, meta = null }){
 
     return (
         <>
-            <Link href="/blog">
-                <a className=" back-button flex-align-items-center" onMouseOver={() => { setBackHover(true) }} onMouseOut={() => { setBackHover(false) }}>
-                    <ArrowLeft size="1rem" />
-                    <span className={`back-text ${backhover ? 'back-hover ' : null}`}>Back</span>
+            <BackButton/>
 
-                </a>
-            </Link>
             <article>
                 <div className="blog-header">
                     <div className="date">{meta.date}</div>
