@@ -16,13 +16,7 @@ const peoplePage = () => {
 
     }
 
-    useEffect(() => {
-        var cats = {
-            'Follows': things,
-            'Media': bookmarks
-        }
 
-    }, [currentCat])
 
     return(
         <>
@@ -32,11 +26,15 @@ const peoplePage = () => {
             </div>
             
             <div className="online-head">
-                <div onClick={compChange} className={` base-button ${currentCat == "Follows" ? 'blocked' : 'unselected'}`}>Follows</div>
-                <div onClick={compChange} className={` base-button ${currentCat == "Media" ? 'blocked' : 'unselected'}`}>Media</div>
+                <div onClick={compChange} className={` base-button ${currentCat == "Follows" ? 'selected' : 'unselected'}`}>Follows</div>
+                <div onClick={compChange} className={` base-button ${currentCat == "Media" ? 'selected' : 'unselected'}`}>Media</div>
+
             </div>
 
-            { currentCat == "Follows" ? <div> <FilteredList listObj={things} /></div> : <div><FilteredList listObj={bookmarks}/></div> }
+            { currentCat == "Follows" ? <FilteredList listObj={things} /> : null}
+            { currentCat == "Media" ? <FilteredList listObj={bookmarks} /> : null}
+
+
 
             <style jsx>{`
                 .base-button{
@@ -46,8 +44,7 @@ const peoplePage = () => {
                 .lib-title{
                     font-size: 2rem;
                 }
-                .blocked{
-                    // text-decoration: underline;
+                .selected{
                     background-color: #efefef;
 
                 }
@@ -76,7 +73,7 @@ export function getStaticProps() {
     return {
         props: {
             archive: things,
-            name : 'Library'
+            square: "Library"
         }
     }
 }

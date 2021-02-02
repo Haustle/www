@@ -1,3 +1,6 @@
+// This file is archived, but I m;ight use it some other time
+// This gave a color depending on how the amount of days (recent ativity)
+
 export default function ActivityCircle({ days = 0}){
 
     var colorChosen = "";

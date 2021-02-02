@@ -1,40 +1,61 @@
 var IMG;
-export default IMG = ({url="", caption=null}) => {
-
+import {useRouter} from 'next/router'
+export default IMG = ({url="", caption=null, title=false}) => {
+    const router = useRouter().asPath;
+    console.log(router)
+    const arrow = "->"
     return(
         <>
-            {/* <div className="image-container shadow-2"> */}
-                <div className="image-wrapper">
-                    <img className="" src={url} />
-                    <div className="caption">{caption}</div>
+            <div className={`border-back no-select ${title ? 'padding-top-0' : null}`}>
+                <div className="white-canvas ">
+                    <div className="image-wrapper stripe-box-shadow"></div>
                 </div>
-            {/* </div> */}
-            
-            
+                {caption ? <div className="caption">{arrow} {caption}</div> : null}
+
+            </div>
 
             <style jsx>{`
-                .image-container{
-                    // display: flex;
-                    // justify-content: center;
-                    margin-top: 50px;
-                }
-                .caption{
-                    font-size: .9rem;
-                    color: grey;
-                    margin-top: 15px;
-                    text-align: center;
-                }
-                .image-wrapper{
+                .white-canvas{
                     width: 75%;
                     margin: 0 auto;
-                    margin-top: 30px;
-                    margin-bottom: 40px;
+                    // border-radius: 5px;
 
 
                 }
-                img{
+                .stripe-box-shadow{
+                    box-shadow: 0 7px 14px rgba(50, 50, 93, 0.1), 
+                                0 3px 6px rgba(0, 0, 0, 0.08);
 
-                    width: 100%;
+                }
+                .border-back{
+                    padding: 40px 0px;
+
+                }
+                .padding-top-0{
+                    padding-top: 0px;
+                }
+
+                .caption{
+                    font-size: .9rem;
+                    font-weight: 500;
+                    width: 75%;
+                    margin: 0 auto;
+                    margin-top: 25px;
+                    color: #424242;
+
+
+                }
+                .image-wrapper{
+                    background-image: url(${router + url});
+                    background-size: cover;
+                    background-position: center; 
+                    background-repeat: no-repeat;
+                    height: 300px;
+                    margin: 0 auto;
+                    border-radius: 5px;
+                }
+                img{
+                    width: 100%
                 }
             `}</style>
         </>

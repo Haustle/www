@@ -14,15 +14,18 @@ article h3{
 article .article-tag{
     text-decoration: none;
 }
-article a{
+article p a{
     text-decoration: underline;
+    color: black;
 }
 
 article blockquote {
-    border-left: 2px solid black;
+    border-left: 4px solid #bcc2cc;
     margin: 0;
     padding-left: 30px;
-    font-weight: 600;
+    color: black;
+    font-weight: 500;
+    /* font-style: italic; */
     margin-top: 40px;
     margin-bottom: 40px;
 }
@@ -46,19 +49,55 @@ article h2 {
 }
 
 article p{
+    font-family: 'IBM Plex Mono';
     color: #424242;
     line-height: 2.0rem;
-
-
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    /* font-size: 1.1rem; */
 }
-article p span{
-    color: black;
+article em{
+    /* color: black; */
+    font-weight: 500;
+}
+article ol{
+    font-family: 'IBM Plex Mono';
+    line-height: 2rem;
+    margin-left: 50px;
+    margin-top: 50px;
+    margin-bottom: 50px;;
+}
+
+
+article ul a{
     text-decoration: underline;
-    cursor: pointer;
+}
+
+article ul{
+    font-family: 'IBM Plex Mono';
+    color : #272727;
+        text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    list-style: none;
+    list-style-position: inside;
+    padding: 0;
+    margin: 0;
+    line-height: 2rem;
+    /* font-weight: 500; */
+}
+article ul ul{
+    margin-left: 75px;
 }
 article{
     width: 90%;
 
+}
+article ul li::before{
+    content: "–";
+    margin-right: 1.5rem;
+    color : #c7c7c7;
 }
 
 article .article-details{

@@ -1,24 +1,21 @@
 import Link from 'next/link';
 
-export default function ArticleLink({title="",summary="",date="", postUrl="example"}){
+export default function ArticleLink({title="",date="", postUrl="example"}){
 
-    const [underline, setUnderline] = React.useState(false);
 
     return(
         <>
             <Link href={`/blog/${postUrl}`} >
                 <a>
-                    <div className="flex title-container" onMouseOver={() => { setUnderline(true)}} onMouseOut={() => setUnderline(false)}>
-                        <span className="date">{date}</span>
+                    <div className="flex title-container">
+                        <span className="date">{date.split(",")[0]}</span>
                         <div className="name-cat">
                             <div className="flex">
 
                                 
-                                {/* <h3 className={`${underline ? 'yellow-back' : null}`}>{title}</h3> */}
-                                <h3>{title}</h3>
+
+                                <h2>{title}</h2>
                             </div>
-                            <div className="summary-text">{summary}</div>
-                            <div className="last-updated">Last updated <b>2 months ago</b></div>
 
                         </div>
                     </div>
@@ -33,17 +30,14 @@ export default function ArticleLink({title="",summary="",date="", postUrl="examp
                     .last-updated{
                         margin-top: 10px;
                         font-size: .9rem;
-                        opacity: .6;
-                        color: #4a5568;
+                        color: #bcc2cc;
 
                     }
                     .summary-text{
                         color: #4a5568;
                         margin-top: 20px;
                     }
-                    .title{
-                        // font-size: 1.4rem;
-                    }
+
                     .black-background{
                         background-color: black;
                         color: #fff;
@@ -71,10 +65,13 @@ export default function ArticleLink({title="",summary="",date="", postUrl="examp
                         margin-right: 25px;
                         width: 20%;
                         text-align: right;
+                        transform: translateY(1px);
                     }
                     .title-container{
                         display: flex;
-                        margin-bottom: 25px;
+                        // margin-bottom: 25px;
+                        transition: all 0.2s
+
                     }
                     .title-under{
                         text-decoration-line: underline;
@@ -86,13 +83,11 @@ export default function ArticleLink({title="",summary="",date="", postUrl="examp
                     .title-container:hover{
                         cursor: pointer;
                         opacity: .4;
-                        transition: all 0.1s
                     }
 
                     .writing-tag{
                         display: flex;
                         align-items: center;
-                        // font-size: 1rem;
 
                         // same as tags on /library
                         font-size: .8rem;
