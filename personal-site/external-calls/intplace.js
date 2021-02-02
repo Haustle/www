@@ -98,5 +98,42 @@ export var things = [
         name: "Nabil",
         category: ["photography"],
         url: "https://www.instagram.com/nabil/"
+    },
+    {
+        name: "Garry Tan",
+        category: ["investor"],
+        url: "https://twitter.com/garrytan"
+    },
+    {
+        name : "mmay3r",
+        category: ["writer"],
+        url: "https://twitter.com/mmay3r"
+    },
+    {
+        name: "Jackson Dahl",
+        category: ["writer"],
+        url: "https://twitter.com/jacksondahl",
+    },
+    {
+        name: "rauchg",
+        category : ["writer","developer"],
+        url: "https://twitter.com/rauchg"
+    },
+    {
+        name: "rsms",
+        category : ["writer","developer","developer"],
+        url: "https://twitter.com/rsms",
+    },
+    {
+        name: "wongmjane",
+        category : ["developer"],
+        url: "https://twitter.com/wongmjane"
+    },
+    {
+        name: "Lee Robinson",
+        category: ["developer"],
+        url: "https://twitter.com/leeerob"
     }
 ]
+
+

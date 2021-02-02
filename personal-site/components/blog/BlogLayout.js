@@ -3,7 +3,6 @@ import Link from 'next/link';
 
 
 export default function BlogLayout({ children, meta = null }){
-    const [backhover, setBackHover] = React.useState(false)
 
     return (
         <>
@@ -33,13 +32,20 @@ export default function BlogLayout({ children, meta = null }){
                     {children}
                 </div>
                 
-                <div className="sign-up-container">
+                <div className="sign-up-container ibm">
+                    {/* <div className="subscribe-text">Subscribe to my blog 😋</div>
+                    <div>
+                        <input type="text" id="subscribe-box" placeholder="tim@apple.com" />
+                        <span id="subscribe-button">Subscribe</span>
+                    </div> */}
+                    {/* Thanks for reading ❤️ */}
+                    
                 </div>
-                <div className="more-links flex ibm">
+                <div className="more-links flex">
                     <div className="link"><a href="https://twitter.com/haustle" target="_blank">Twitter</a></div>
                     <div className="link"><a href="mailto:tyrus@haustle.studio" target="_blank">Email</a></div>
-                    <div className="link"><a href="https://github.com/haustle" target="_blank">Code</a></div>
-                    <div className="link"><a href="https://github.com/haustle" target="_blank">RSS</a></div>
+                    <div className="link"><a href="https://github.com/haustle" target="_blank">GitHub</a></div>
+
 
 
                 </div>
@@ -47,6 +53,25 @@ export default function BlogLayout({ children, meta = null }){
 
 
             <style jsx>{`
+                .subscribe-text{
+                    margin-bottom: 20px;
+                    font-size: 1rem;
+                }
+                #subscribe-button{
+                    font-size: .9rem;
+                    margin-left: 10px;
+                    padding: 5px 10px;
+                    // border: 1px solid grey;
+                    border-radius: 5px;
+                }
+                #subscribe-box{
+                    outline: none;
+                    border: 1px solid grey;
+                    font-size: 1.1rem;
+                    padding: 5px 10px;
+                    border-radius: 5px;
+                }
+
                 .tag-container{
                     margin-top: 15px;
                 }

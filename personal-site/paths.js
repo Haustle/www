@@ -6,28 +6,16 @@
 export default function posts() {
     return (
         [
-            {
-                "year": 2020,
-                "posts": [
-                    {
-                        "title": "MDX Example Post",
-                        "date": "Dec 10 , 2020",
-                        "tags": ["Life", "Code", "Practice"],
-                        "summary": "Example Blog Layout Post",
-                        "slug": "mdprac"
-                    },
-                    
-                ]
-            },
+            
             {
                 "year" : 2021,
                 "posts": [
                     {
-                        "title": "MDX Example Post 2",
-                        "date": "Jan 22 , 2021",
-                        "tags": ["Life", "Code", "Practice"],
-                        "summary": "Example Blog Layout Post",
-                        "slug": "mdprac"
+                        "title" : "Hello",
+                        "date" : "Feb 1 , 2021",
+                        "slug": "hello",
+                        "tags": ["Hello World"]
+
                     },
 
                 ]
@@ -38,6 +26,8 @@ export default function posts() {
 }
 
 
+// returns posts that contain tag
+// maintains year -> year.posts structure
 
 export function withTag(tag){
     var currentPosts = posts();
@@ -49,6 +39,9 @@ export function withTag(tag){
     return returnList;
 
 }
+
+
+// This function returns set of all tags found in posts
 
 export async function allTags(){
     // return master list of keys

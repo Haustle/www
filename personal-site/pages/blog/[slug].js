@@ -8,7 +8,7 @@ import dynamic from 'next/dynamic'
 
 
 export default function Post({slug , meta}){
-    const MDx = dynamic( async () => await import(`../../posts/${slug}.mdx`));
+    const MDx = dynamic( () => import(`../../posts/${slug}.mdx`));
     return (
         <BlogLayout meta={meta}>
             <MDx/>

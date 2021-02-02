@@ -68,25 +68,36 @@ article ol{
     margin-top: 50px;
     margin-bottom: 50px;;
 }
-article p span{
-    color: black;
-    text-decoration: underline;
-    cursor: pointer;
-}
+
 
 article ul a{
     text-decoration: underline;
 }
 
 article ul{
+    font-family: 'IBM Plex Mono';
+    color : #272727;
+        text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
     list-style: none;
+    list-style-position: inside;
     padding: 0;
     margin: 0;
     line-height: 2rem;
+    /* font-weight: 500; */
+}
+article ul ul{
+    margin-left: 75px;
 }
 article{
     width: 90%;
 
+}
+article ul li::before{
+    content: "–";
+    margin-right: 1.5rem;
+    color : #c7c7c7;
 }
 
 article .article-details{

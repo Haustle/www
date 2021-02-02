@@ -1,9 +1,12 @@
 var IMG;
-export default IMG = ({url="", caption=null}) => {
+import {useRouter} from 'next/router'
+export default IMG = ({url="", caption=null, title=false}) => {
+    const router = useRouter().asPath;
+    console.log(router)
     const arrow = "->"
     return(
         <>
-            <div className="border-back no-select">
+            <div className={`border-back no-select ${title ? 'padding-top-0' : null}`}>
                 <div className="white-canvas ">
                     <div className="image-wrapper stripe-box-shadow"></div>
                 </div>
@@ -28,6 +31,9 @@ export default IMG = ({url="", caption=null}) => {
                     padding: 40px 0px;
 
                 }
+                .padding-top-0{
+                    padding-top: 0px;
+                }
 
                 .caption{
                     font-size: .9rem;
@@ -40,13 +46,13 @@ export default IMG = ({url="", caption=null}) => {
 
                 }
                 .image-wrapper{
-                    background-image: url(${url});
+                    background-image: url(${router + url});
                     background-size: cover;
                     background-position: center; 
                     background-repeat: no-repeat;
                     height: 300px;
                     margin: 0 auto;
-                    border-radius: 2px;
+                    border-radius: 5px;
                 }
                 img{
                     width: 100%

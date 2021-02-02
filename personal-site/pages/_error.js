@@ -22,7 +22,8 @@ export default function error() {
 export function getStaticProps() {
     return {
         props: {
-            name: 'Error'
+            square: 'Error',
+            title: 'Error'
         }
     }
 }
