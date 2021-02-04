@@ -52,13 +52,8 @@ article p{
     font-family: 'IBM Plex Mono';
     color: #424242;
     line-height: 2.0rem;
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    /* font-size: 1.1rem; */
 }
 article em{
-    /* color: black; */
     font-weight: 500;
 }
 article ol{
@@ -77,15 +72,16 @@ article ul a{
 article ul{
     font-family: 'IBM Plex Mono';
     color : #272727;
-        text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
     list-style: none;
     list-style-position: inside;
     padding: 0;
     margin: 0;
     line-height: 2rem;
     /* font-weight: 500; */
+}
+
+article .image-wrapper img{
+    border-radius: 5px;
 }
 article ul ul{
     margin-left: 75px;

@@ -72,13 +72,11 @@ export default function FilteredList({listObj = []}){
                     ))}
 
                 </div>
-            ) : ''
+            ) : null
 
             }
 
-            {/* <div className="results-found grey">
-                <b>{people.length}</b> {people.length == 1 ? 'result' : 'results'} found | <b>{catList.length}</b> filters...
-            </div> */}
+
             <div>
                 {people.map((item, index) => (
                     <div className="person" key={`${item.name}`}>
@@ -118,6 +116,7 @@ export default function FilteredList({listObj = []}){
                     background-color: black;
                     color: white;
                     border-radius: 5px;
+                    font-weight: 500
                 }
 
                 .cat-contain{

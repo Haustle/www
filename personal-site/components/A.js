@@ -5,7 +5,7 @@ export default function A({children, link="", text=""}){
     // or If I need a regular <a> tag
     
     const local = link.charAt(0) == "/"
-    console.log(`this is local : ${local}`)
+
 
     if(local){
         return(

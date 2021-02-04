@@ -1,4 +1,4 @@
-import BackButton from './BackButton'
+// import BackButton from '../BackButton'
 import Link from 'next/link';
 
 
@@ -6,7 +6,6 @@ export default function BlogLayout({ children, meta = null }){
 
     return (
         <>
-            <BackButton/>
 
             <article>
                 <div className="blog-header">
@@ -32,21 +31,9 @@ export default function BlogLayout({ children, meta = null }){
                     {children}
                 </div>
                 
-                <div className="sign-up-container ibm">
-                    {/* <div className="subscribe-text">Subscribe to my blog 😋</div>
-                    <div>
-                        <input type="text" id="subscribe-box" placeholder="tim@apple.com" />
-                        <span id="subscribe-button">Subscribe</span>
-                    </div> */}
-                    {/* Thanks for reading ❤️ */}
-                    
-                </div>
-                <div className="more-links flex">
-                    <div className="link"><a href="https://twitter.com/haustle" target="_blank">Twitter</a></div>
-                    <div className="link"><a href="mailto:tyrus@haustle.studio" target="_blank">Email</a></div>
-                    <div className="link"><a href="https://github.com/haustle" target="_blank">GitHub</a></div>
 
-
+                <div className="more-links">
+                    {/* <div className="underline">Like</div> */}
 
                 </div>
             </article>
@@ -82,7 +69,7 @@ export default function BlogLayout({ children, meta = null }){
                     font-weight: 500;
                 }
                 .more-links{
-                    margin-top: 50px;
+                    margin-top: 100px;
                 }
                 .more-links .link:not(:first-child){
                     margin-left: 25px;

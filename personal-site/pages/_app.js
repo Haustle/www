@@ -3,11 +3,12 @@ import 'animate.css'
 import Head from 'next/head'
 import Layout from '../components/layout';
 import { useRouter } from 'next/router'
+import BackButton from '../components/BackButton'
 
 export default function MyApp({ Component, pageProps }) {
 
     const router = useRouter();
-
+    const noBackButtonHere = [""]
 
     // we get the path from the router
     const fullPath = router.route;
@@ -30,6 +31,7 @@ export default function MyApp({ Component, pageProps }) {
             {/* main layout wrapper */}
             {/* can override nameCapitalized if you specify in page what you want the tag to be */}
             <Layout category={pageProps.square ?? nameCapitalized}>
+                {!(noBackButtonHere.includes(name)) ? <BackButton/> : null}
                 <Component {...pageProps} />
             </Layout>
         </>
