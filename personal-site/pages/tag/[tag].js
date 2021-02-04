@@ -1,6 +1,6 @@
 import {withTag , allTags} from '../../paths'
 import ArticleList from '../../components/blog/ArticleList'
-import BackButton from '../../components/blog/BackButton'
+// import BackButton from '../../components/BackButton'
 
 
 
@@ -9,7 +9,7 @@ export default function articleTags({ filteredPosts, tag }){
     const arrow = "->"
     return(
         <> 
-            <BackButton/>
+            {/* <BackButton/> */}
 
             <div className="h1-name flex-align-items-center">
                 <h1 className="">Blog</h1>

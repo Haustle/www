@@ -3,13 +3,15 @@ import { ArrowLeft } from 'react-feather'
 
 
 export default function BackButton(){
+    // for now just disable 
+
     const router = useRouter();
     const [backhover, setBackHover] = React.useState(false)
 
     return(
         <>
 
-                <a className=" back-button flex-align-items-center" onMouseOver={() => { setBackHover(true) }} onMouseOut={() => { setBackHover(false) }} onClick={() => router.back()}>
+                <a className=" back-button flex-align-items-center" onMouseOver={() => { setBackHover(true) }} onMouseOut={() => { setBackHover(false) }} onClick={() => {;router.back()}}>
                     <ArrowLeft size="1rem" />
                     <span className={`back-text ${backhover ? 'back-hover ' : null}`}>Back</span>
 

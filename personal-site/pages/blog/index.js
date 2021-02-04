@@ -7,7 +7,7 @@ export default function index({posts}){
     return(
         <>
             
-            <div className="h1-name flex-align-items-center lib-header">
+            <div className="h1-name flex-align-items-center">
                 <h1 className="lib-title">Blog</h1>
                 <span className="margin-left-25">Sharing ideas</span>
             </div>

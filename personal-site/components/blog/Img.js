@@ -8,12 +8,10 @@ export default IMG = ({url="", caption=null, title=false}) => {
     return(
         <>
             
-            <div className={`border-back no-select ${title ? 'padding-top-0' : null}`}>
-                <div className="white-canvas ">
-                    <div className="image-wrapper stripe-box-shadow">
-                        <Image src={router + url} alt="gon" height={300} width={500} layout="intrinsic" priority/>
+            <div className={`border-back  ${title ? 'padding-top-0' : null}`}>
 
-                    </div>
+                <div className="image-wrapper stripe-box-shadow no-select">
+                    <Image src={router + url} alt="gon" height={300} width={500} layout="intrinsic" priority/>
                 </div>
                 {caption ? <div className="caption">{arrow} {caption}</div> : null}
 
@@ -21,9 +19,8 @@ export default IMG = ({url="", caption=null, title=false}) => {
 
             <style jsx>{`
                 .white-canvas{
-                    width: 500px;
-                    height: 300px;
-                    margin: 0 auto;
+                    // width: 500px;
+                    // height: 300px;
                     border-radius: 5px;
 
 
@@ -35,6 +32,8 @@ export default IMG = ({url="", caption=null, title=false}) => {
                 }
                 .border-back{
                     padding: 40px 0px;
+                    width: 500px;
+                    margin: 0 auto;
 
                 }
                 .padding-top-0{
@@ -52,8 +51,8 @@ export default IMG = ({url="", caption=null, title=false}) => {
 
                 }
                 .image-wrapper{
-                    width: 100%;
-                    height: 100%;
+                    width: max-content;
+                    display: flex;
                     border-radius: 5px;
                 }
                 img{

@@ -10,6 +10,11 @@ body,html,ul, h1, h2, h3{
     padding: 0;
 
 }
+body{
+        text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
 html{
     /* Make sure the page stays align regardless if there's a scrollbar */
     overflow-y: scroll; 
