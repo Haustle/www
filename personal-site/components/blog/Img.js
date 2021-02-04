@@ -1,3 +1,4 @@
+import Image from 'next/image';
 var IMG;
 import {useRouter} from 'next/router'
 export default IMG = ({url="", caption=null, title=false}) => {
@@ -6,9 +7,13 @@ export default IMG = ({url="", caption=null, title=false}) => {
     const arrow = "->"
     return(
         <>
+            
             <div className={`border-back no-select ${title ? 'padding-top-0' : null}`}>
                 <div className="white-canvas ">
-                    <div className="image-wrapper stripe-box-shadow"></div>
+                    <div className="image-wrapper stripe-box-shadow">
+                        <Image src={router + url} alt="gon" height={300} width={500} layout="intrinsic" priority/>
+
+                    </div>
                 </div>
                 {caption ? <div className="caption">{arrow} {caption}</div> : null}
 
@@ -16,9 +21,10 @@ export default IMG = ({url="", caption=null, title=false}) => {
 
             <style jsx>{`
                 .white-canvas{
-                    width: 75%;
+                    width: 500px;
+                    height: 300px;
                     margin: 0 auto;
-                    // border-radius: 5px;
+                    border-radius: 5px;
 
 
                 }
@@ -46,12 +52,8 @@ export default IMG = ({url="", caption=null, title=false}) => {
 
                 }
                 .image-wrapper{
-                    background-image: url(${router + url});
-                    background-size: cover;
-                    background-position: center; 
-                    background-repeat: no-repeat;
-                    height: 300px;
-                    margin: 0 auto;
+                    width: 100%;
+                    height: 100%;
                     border-radius: 5px;
                 }
                 img{
