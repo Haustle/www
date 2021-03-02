@@ -1,5 +1,7 @@
 import {withTag , allTags} from '../../paths'
 import ArticleList from '../../components/blog/ArticleList'
+import fs from 'fs'
+import path from 'path'
 // import BackButton from '../../components/BackButton'
 
 
@@ -56,9 +58,30 @@ export default function articleTags({ filteredPosts, tag }){
     )
 }
 
-export async function getStaticProps({params}) {
+export async function getStaticProps({ params }) {
     const tag = params.tag
-    var filteredPosts = await withTag(tag)
+
+    const postDir = path.join(process.cwd(), "posts");
+    const filenames = fs.readdirSync(postDir).filter(file => file.endsWith(".mdx"))
+
+    let postMap = new Map()
+
+    for (var x = 0; x < filenames.length; x++) {
+        const newpath = path.join(postDir, filenames[x]);
+        const metadata = require(`../../posts/${filenames[x]}`).meta
+        const year = metadata.year;
+        if (!postMap.has(year)) {
+            postMap.set(year, [])
+            // console.log(year)
+        }
+        postMap.get(year).push(metadata)
+
+    }
+
+    // get all posts
+    const retPost = [...postMap].map(([year, posts]) => ({ year, posts }));
+
+    var filteredPosts = await withTag(tag, retPost)
     filteredPosts = filteredPosts.filter(year => year.posts.length > 0)
 
     return {
@@ -72,7 +95,27 @@ export async function getStaticProps({params}) {
 
 
 export async function getStaticPaths(){
-    var tags = await allTags();
+    const postDir = path.join(process.cwd(), "posts");
+    const filenames = fs.readdirSync(postDir).filter(file => file.endsWith(".mdx"))
+
+    let postMap = new Map()
+
+    for (var x = 0; x < filenames.length; x++) {
+        const newpath = path.join(postDir, filenames[x]);
+        const metadata = require(`../../posts/${filenames[x]}`).meta
+        const year = metadata.year;
+        if (!postMap.has(year)) {
+            postMap.set(year, [])
+            // console.log(year)
+        }
+        postMap.get(year).push(metadata)
+
+    }
+
+    // get all posts
+    const retPost = [...postMap].map(([year, posts]) => ({ year, posts }));
+
+    var tags = await allTags(retPost);
 
     // this params property needs to be the same as file name [tag].js -> tag
     tags = tags.map(t => ({params : { tag : t}}))

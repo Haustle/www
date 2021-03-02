@@ -18,9 +18,7 @@ export default function Home() {
 
       </div>
 
-    <div className="link changes">
-        <A link="/changelog" text="Changelog 📰"/>
-    </div>
+
       <style jsx>{`
         .changes{
           // font-size: .8rem;

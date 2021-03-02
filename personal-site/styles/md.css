@@ -9,7 +9,9 @@ as putting `article` in front of all is redudant
 
 article h3{
     margin-top: 5rem;
-    margin-bottom: 2rem;
+    margin-bottom: 2.5rem;
+    /* padding-bottom: 15px; */
+    /* border-bottom: 1px solid #4242; */
 }
 article .article-tag{
     text-decoration: none;
@@ -88,6 +90,9 @@ article ul ul{
 }
 article{
     width: 90%;
+    cursor: default;
+    font-size: 1rem;
+
 
 }
 article ul li::before{
