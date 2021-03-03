@@ -31,7 +31,7 @@ export default function MyApp({ Component, pageProps }) {
             {/* main layout wrapper */}
             {/* can override nameCapitalized if you specify in page what you want the tag to be */}
             <Layout category={pageProps.square ?? nameCapitalized}>
-                {!(noBackButtonHere.includes(name)) ? <BackButton/> : null}
+                {/* {!(noBackButtonHere.includes(name)) ? <BackButton/> : null} */}
                 <Component {...pageProps} />
             </Layout>
         </>

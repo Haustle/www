@@ -1,9 +1,19 @@
 import posts from '../../paths'
 import ArticleList from '../../components/blog/ArticleList'
+// import fs from 'fs'
+import path from 'path'
+
+import getPosts from "../../external-calls/prac"
+
+
 
 
 
 export default function index({posts}){
+
+
+
+
     return(
         <>
             
@@ -29,9 +39,14 @@ export default function index({posts}){
 }
 
 export function getStaticProps(){
+    const posts = getPosts();
+
+
+
     return {
         props : {
-            posts: posts()
+            // posts: posts()
+            posts
         }
     }
 }

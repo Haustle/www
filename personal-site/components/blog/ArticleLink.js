@@ -8,7 +8,7 @@ export default function ArticleLink({title="",date="", postUrl="example"}){
             <Link href={`/blog/${postUrl}`} >
                 <a>
                     <div className="flex title-container">
-                        <span className="date">{date.split(",")[0]}</span>
+                        <span className="date">{date}</span>
                         <div className="name-cat">
                             <div className="flex">
 

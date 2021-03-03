@@ -1,7 +1,7 @@
 import Image from 'next/image';
 var IMG;
 import {useRouter} from 'next/router'
-export default IMG = ({url="", caption=null, title=false}) => {
+export default IMG = ({url="", caption=null, title=false, width="500px", shadow=true}) => {
     const router = useRouter().asPath;
     console.log(router)
     const arrow = "->"
@@ -9,15 +9,22 @@ export default IMG = ({url="", caption=null, title=false}) => {
         <>
             
             <div className={`border-back  ${title ? 'padding-top-0' : null}`}>
-
-                <div className="image-wrapper stripe-box-shadow no-select">
-                    <Image src={router + url} alt="gon" height={300} width={500} layout="intrinsic" priority/>
+                <div className="img-container">
+                    <div className={`image-wrapper ${shadow ? 'stripe-box-shadow' : null} no-select`}>
+                        {/* <Image src={router + url} alt="gon" height={300} width={500} layout="intrinsic" priority /> */}
+                        <img src={router + url} alt="gon" />
+                    </div>
                 </div>
+                
                 {caption ? <div className="caption">{arrow} {caption}</div> : null}
 
             </div>
 
             <style jsx>{`
+                .img-container{
+                    display: flex;
+                    justify-content: center;
+                }
                 .white-canvas{
                     // width: 500px;
                     // height: 300px;
@@ -34,6 +41,8 @@ export default IMG = ({url="", caption=null, title=false}) => {
                     padding: 40px 0px;
                     width: 500px;
                     margin: 0 auto;
+                    // display: flex;
+                    // justify-content: center;
 
                 }
                 .padding-top-0{
@@ -56,7 +65,8 @@ export default IMG = ({url="", caption=null, title=false}) => {
                     border-radius: 5px;
                 }
                 img{
-                    width: 100%
+                    width: ${width};
+                    height: 100%;
                 }
             `}</style>
         </>
