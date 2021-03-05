@@ -80,6 +80,7 @@ export default function Layout({ children, category = "" }) {
 
                 }
 
+
                 #pages-list a:not(:last-child){
                     margin-right: 15px;
                 }

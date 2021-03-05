@@ -1,19 +1,23 @@
 import Link from 'next/link';
 
-export default function ArticleLink({title="",date="", postUrl="example"}){
+export default function ArticleLink({title="",date=null, postUrl="example"}){
 
+    // Date object returns a number for the month so we can use this list as a way to 
+    // link number to month name
+    const monthAbrev = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
+        "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
+    ];
 
     return(
         <>
             <Link href={`/blog/${postUrl}`} >
                 <a>
                     <div className="flex title-container">
-                        <span className="date">{date}</span>
+                        {/* pass the date month number into the monthAbrev list */}
+                        {/* we use date.getDate() to get the actual day number which we don't need to change */}
+                        <span className="date">{monthAbrev[date.getMonth()]} {date.getDate()}</span>
                         <div className="name-cat">
                             <div className="flex">
-
-                                
-
                                 <h2>{title}</h2>
                             </div>
 

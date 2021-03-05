@@ -1,15 +1,25 @@
 // import BackButton from '../BackButton'
 import Link from 'next/link';
-
+// we pass in the meta data and the contents (children) of the mdx file
 
 export default function BlogLayout({ children, meta = null }){
 
+    // because we're using the metadata from the article
+    // the date is going to be returned as a string
+    // in other files we can utilize the Date() object, but here it
+    // would be overdoing so we're just going to get the date, by splitting
+    // if you're confused why, just head over to the /posts directory and see
+    // the value for date in the header of a .mdx file
+
+    var date = meta.date.split(" ")
+    delete date[date.length-1]
+    date = date.join(" ")
+
     return (
         <>
-
             <article>
                 <div className="blog-header">
-                    <div className="date">{meta.date}</div>
+                    <div className="date">{date}</div>
                     <h1 className="article-title">{meta.title}</h1>
 
                     {/* these should be clickable to send the user to page of all blogs posts containing that tag*/}

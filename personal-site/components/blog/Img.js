@@ -1,21 +1,26 @@
-import Image from 'next/image';
+import { useRouter } from 'next/router'
+
 var IMG;
-import {useRouter} from 'next/router'
 export default IMG = ({url="", caption=null, title=false, width="500px", shadow=true}) => {
     const router = useRouter().asPath;
-    console.log(router)
+    // console.log(router)
     const arrow = "->"
     return(
         <>
-            
+            {/* If the title is intended to be at the top of the post we can add a title property */}
+            {/* that will remove the margin top that is naturally used. */}
             <div className={`border-back  ${title ? 'padding-top-0' : null}`}>
                 <div className="img-container">
                     <div className={`image-wrapper ${shadow ? 'stripe-box-shadow' : null} no-select`}>
-                        {/* <Image src={router + url} alt="gon" height={300} width={500} layout="intrinsic" priority /> */}
+
+                        {/* all images should be downloaded before hand so we can just use router */}
+                        {/* and route the image to a folder path that's similar to the url */}
                         <img src={router + url} alt="gon" />
                     </div>
                 </div>
                 
+                {/* if caption is null it means the user doesnt want a caption */}
+                {/* to determine this we just use a ternary */}
                 {caption ? <div className="caption">{arrow} {caption}</div> : null}
 
             </div>

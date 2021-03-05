@@ -12,7 +12,7 @@ export default function ArticleList({posts = null}){
                             <div>
                                 {year.posts.map((post, index) => (
                                     <div className="article-link-container" key={post.title}>
-                                        <ArticleLink title={post.title} summary={post.summary} date={post.date} postUrl={post.slug} />
+                                        <ArticleLink title={post.title} summary={post.summary} date={ new Date(post.date)} postUrl={post.slug} />
                                     </div>
                                 ))}
                             </div>
