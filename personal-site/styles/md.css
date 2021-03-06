@@ -13,11 +13,24 @@ article h3{
     /* padding-bottom: 15px; */
     /* border-bottom: 1px solid #4242; */
 }
+article h2{
+    margin-bottom: 2.5rem;
+    padding-bottom: 15px;
+
+    border-bottom: 1px solid #4242;
+
+
+}
 article .article-tag{
     text-decoration: none;
 }
 article p a{
     text-decoration: underline;
+    /* color: black; */
+    transition: all .2s;
+}
+
+article p a:hover{
     color: black;
 }
 
