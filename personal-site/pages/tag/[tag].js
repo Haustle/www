@@ -1,6 +1,6 @@
 import {withTag , allTags} from '../../paths'
 import ArticleList from '../../components/blog/ArticleList'
-// import BackButton from '../../components/BackButton'
+import getPosts from "../../external-calls/getPostList"
 
 
 
@@ -57,8 +57,9 @@ export default function articleTags({ filteredPosts, tag }){
 }
 
 export async function getStaticProps({params}) {
+    const posts = getPosts();
     const tag = params.tag
-    var filteredPosts = await withTag(tag)
+    var filteredPosts = await withTag(tag, posts)
     filteredPosts = filteredPosts.filter(year => year.posts.length > 0)
 
     return {
@@ -72,7 +73,8 @@ export async function getStaticProps({params}) {
 
 
 export async function getStaticPaths(){
-    var tags = await allTags();
+    const posts = getPosts();
+    var tags = await allTags(posts);
 
     // this params property needs to be the same as file name [tag].js -> tag
     tags = tags.map(t => ({params : { tag : t}}))
