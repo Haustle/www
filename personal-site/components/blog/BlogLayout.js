@@ -29,7 +29,6 @@ export default function BlogLayout({ children, meta = null }){
                                 <Link href={`/tag/${tag}`} key={tag}>
                                     <a className="article-tag" >
                                         <span>{tag}</span>
-
                                     </a>
                                 </Link>
                             ))}
@@ -43,7 +42,7 @@ export default function BlogLayout({ children, meta = null }){
                 
 
                 <div className="more-links">
-                    {/* <div className="underline">Like</div> */}
+                    Tyrus Miles 👋
 
                 </div>
             </article>

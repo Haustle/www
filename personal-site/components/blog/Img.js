@@ -21,21 +21,24 @@ export default IMG = ({url="", caption=null, title=false, width="500px", shadow=
                 
                 {/* if caption is null it means the user doesnt want a caption */}
                 {/* to determine this we just use a ternary */}
-                {caption ? <div className="caption">{arrow} {caption}</div> : null}
+                {caption ? <div className="caption flex">
+                    <div className="arrow">{arrow}</div> 
+                    <div>{caption}</div>
+                    </div> 
+                    : null}
 
             </div>
 
             <style jsx>{`
+                .arrow{
+                    margin-right: 20px;
+                }
                 .img-container{
                     display: flex;
                     justify-content: center;
                 }
                 .white-canvas{
-                    // width: 500px;
-                    // height: 300px;
                     border-radius: 5px;
-
-
                 }
                 .stripe-box-shadow{
                     box-shadow: 0 7px 14px rgba(50, 50, 93, 0.1), 
@@ -44,10 +47,9 @@ export default IMG = ({url="", caption=null, title=false, width="500px", shadow=
                 }
                 .border-back{
                     padding: 40px 0px;
-                    width: 500px;
+                    // width: 500px;
+                    width: ${width};
                     margin: 0 auto;
-                    // display: flex;
-                    // justify-content: center;
 
                 }
                 .padding-top-0{
@@ -55,14 +57,13 @@ export default IMG = ({url="", caption=null, title=false, width="500px", shadow=
                 }
 
                 .caption{
-                    font-size: .9rem;
-                    font-weight: 500;
-                    width: 75%;
+                    font-size: .8rem;
+                    font-weight: 400;
+                    width: 90%;
                     margin: 0 auto;
                     margin-top: 25px;
                     color: #424242;
-
-
+                    line-height: 1.4rem;
                 }
                 .image-wrapper{
                     width: max-content;
