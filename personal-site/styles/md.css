@@ -17,20 +17,20 @@ article h2{
     margin-bottom: 2.5rem;
     padding-bottom: 15px;
 
-    border-bottom: 1px solid #4242;
+    border-bottom: 1px dashed #4242;
 
 
 }
 article .article-tag{
     text-decoration: none;
 }
-article p a{
+article a{
     text-decoration: underline;
     /* color: black; */
     transition: all .2s;
 }
 
-article p a:hover{
+article a:hover{
     color: black;
 }
 
@@ -72,11 +72,13 @@ article em{
     font-weight: 500;
 }
 article ol{
+    color: #424242;
     font-family: 'IBM Plex Mono';
     line-height: 2rem;
     margin-left: 50px;
     margin-top: 50px;
-    margin-bottom: 50px;;
+    margin-bottom: 50px;
+    list-style-type: lower-roman;
 }
 
 
@@ -88,11 +90,18 @@ article ul{
     font-family: 'IBM Plex Mono';
     color : #272727;
     list-style: none;
-    list-style-position: inside;
+    /* list-style-position: outside; */
+    margin-left: 0;
+    /* padding-left: 1em; */
+    /* text-indent: -1em; */
     padding: 0;
     margin: 0;
     line-height: 2rem;
     /* font-weight: 500; */
+}
+
+article ul li{
+    margin-left: 1.2rem;
 }
 
 article .image-wrapper img{
@@ -110,7 +119,7 @@ article{
 }
 article ul li::before{
     content: "–";
-    margin-right: 1.5rem;
+margin-left: -20px; margin-right: 10px;
     color : #c7c7c7;
 }
 

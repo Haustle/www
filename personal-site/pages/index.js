@@ -1,6 +1,7 @@
 
 
 import A from '../components/A'
+import Link from 'next/link'
 export default function Home() {
   return (
     <>
@@ -11,10 +12,10 @@ export default function Home() {
 
       </div>
       <div className="more-links-vert">
-        <div className="link"><A link="https://twitter.com/haustle" text="Twitter"/></div>
-        <div className="link"><A link="mailto:tyrus@haustle.studio" text="Email"/></div>
-        <div className="link"><A link="https://github.com/haustle" text="GitHub"/></div>
-        <div className="link"><A link="https://haustle.studio" text="Haustle 😌"/></div>
+        <div className="link"><A href="https://twitter.com/haustle">Twitter</A></div>
+        <div className="link"><A href="mailto:tyrus@haustle.studio">Email</A></div>
+        <div className="link"><A href="https://github.com/haustle">GitHub</A></div>
+        <div className="link"><A href="https://haustle.studio">Haustle 😌</A></div>
 
       </div>
 

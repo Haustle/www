@@ -3,7 +3,7 @@ import fs from 'fs'
 import path from 'path'
 import hydrate from 'next-mdx-remote/hydrate'
 import renderToString from 'next-mdx-remote/render-to-string'
-
+import { MDXProvider } from '@mdx-js/react'
 import IMG from '../../components/blog/Img';
 import A from '../../components/A'
 
@@ -11,14 +11,20 @@ import A from '../../components/A'
 
 import matter from "gray-matter"
 
-const components = { IMG, A }
+const components = { IMG }
 
 export default function Post({slug , meta, mdx}){
     const sor = hydrate(mdx, {components})
     return (
         <BlogLayout meta={meta}>
             {/* <MDx/> */}
-            {sor}
+            <MDXProvider components={{
+                a: A,
+                img: IMG,
+            }}>
+                {sor}
+
+            </MDXProvider>
         </BlogLayout>
     );
 }

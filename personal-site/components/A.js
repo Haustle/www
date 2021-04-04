@@ -1,17 +1,12 @@
 import Link from 'next/link';
 
-export default function A({children, link="", text=""}){
-    // need to check to see if I can use <Link> tag (for local pages)
-    // or If I need a regular <a> tag
-    
-    const local = link.charAt(0) == "/"
-
-
-    if(local){
+export default function A({children, href}){
+    // need to check to see if it's an internal link
+    if(href && href.startsWith("/")){
         return(
-            <Link href={link}>
+            <Link href={href}>
                 <a>
-                    {text}
+                    {children}
                 </a>
             </Link>
         )
@@ -19,8 +14,8 @@ export default function A({children, link="", text=""}){
         
     }
     return(
-        <a href={link} target="_blank">
-            {text}
+        <a href={href} target="_blank">
+            {children}
         </a>
     )
 }
