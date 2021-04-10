@@ -1,8 +1,7 @@
 import {things} from '../external-calls/intplace'
 import {bookmarks} from '../external-calls/vaultdup'
-import Callout from '../components/callout'
 import FilteredList from '../components/bookmarks/FilteredList'
-import { useEffect } from 'react'
+
 
 
 const peoplePage = () => {
@@ -15,8 +14,6 @@ const peoplePage = () => {
         }
 
     }
-
-
 
     return(
         <>
@@ -56,7 +53,6 @@ const peoplePage = () => {
                     margin-right: 30px;
                 }
                 .unselected:hover{
-                    // text-decoration: underline;
                     background-color: #f8f8f8;
                     
                 }
@@ -72,7 +68,7 @@ const peoplePage = () => {
 export function getStaticProps() {
     return {
         props: {
-            archive: things,
+            // archive: things,
             square: "Library"
         }
     }

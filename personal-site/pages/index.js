@@ -1,13 +1,12 @@
 
 
 import A from '../components/A'
-import Link from 'next/link'
+
 export default function Home() {
   return (
     <>
       <div className="about-container">
         <h2 className="h1-name index-h1">Tyrus Miles </h2>
-        {/* <div className="personal-description grey">Currently <span className="no-select">–></span> Engineering (BSc) student</div> */}
 
 
       </div>
