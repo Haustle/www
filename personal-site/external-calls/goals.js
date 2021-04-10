@@ -1,4 +1,4 @@
-export var goals = [
+export const goals = [
     {
         task: 'Notion API to auto update bookmarks page',
         completed: true

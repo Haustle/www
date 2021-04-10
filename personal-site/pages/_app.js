@@ -12,7 +12,7 @@ export default function MyApp({ Component, pageProps }) {
 
     // we get the path from the router
     const fullPath = router.route;
-    var name = fullPath.split("/")[1]
+    const name = fullPath.split("/")[1]
     const nameCapitalized = name.charAt(0).toUpperCase() + name.slice(1)
 
     // to determine the title of the webpage

@@ -16,7 +16,7 @@ export function withTag(tag, currentPosts){
         year.posts = year.posts.filter(post => post.tags.includes(tag))
         return currentPosts
     })
-    var returnList = currentPosts
+    const returnList = currentPosts
     return returnList;
 
 }
@@ -26,16 +26,14 @@ export function withTag(tag, currentPosts){
 
 export async function allTags(posts){
     // return master list of keys
-    var list = []
+    let list = []
 
     // grab all postings w/ their tags
-
-
-    for (var x = 0; x < posts.length; x++){
-        var yearPost = posts[x].posts;
-        for(var y = 0; y < yearPost.length; y++){
-            var tags = yearPost[y].tags;
-            for(var z = 0; z < tags.length; z++){
+    for (let x = 0; x < posts.length; x++){
+        const yearPost = posts[x].posts;
+        for(let y = 0; y < yearPost.length; y++){
+            const tags = yearPost[y].tags;
+            for(let z = 0; z < tags.length; z++){
                 
                 // make check to see if the list already contains the tag
                 if(!list.includes(tags[z])){

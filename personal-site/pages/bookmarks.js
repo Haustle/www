@@ -8,7 +8,7 @@ const peoplePage = () => {
     const [currentCat, setCat] = React.useState("Follows")
 
     const compChange = (item) => {
-        var category = item.target.innerText;
+        const category = item.target.innerText;
         if(category != currentCat){
             setCat(category)
         }

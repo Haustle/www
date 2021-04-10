@@ -1,5 +1,3 @@
-
-
 import A from '../components/A'
 
 export default function Home() {
@@ -21,7 +19,6 @@ export default function Home() {
 
       <style jsx>{`
         .changes{
-          // font-size: .8rem;
           margin-top: 20px;
         }
         .more-links-vert .link:not(:first-child){
@@ -35,6 +32,7 @@ export default function Home() {
         .index-h1{
           font-size: 2rem;
         }
+
         .personal-description{
             line-height: 2.5rem;
         }

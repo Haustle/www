@@ -1,4 +1,4 @@
-export var things = [
+export const things = [
     {
         name: "Notion",
         category: ["products","company","design"],

@@ -20,12 +20,10 @@ export default function Post({meta, mdx}){
     
 export const getStaticProps = async ({ params }) => {
     const slug = params.slug;
-
     const newpath = `${path.join(process.cwd(),"posts",slug)}.mdx`
     const rawFileSource = fs.readFileSync(newpath);
     const { content, data } = matter(rawFileSource)
     const mdxSource = await renderToString(content)
-
 
     return {
         props: {
