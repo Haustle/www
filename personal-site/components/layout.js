@@ -29,8 +29,8 @@ export default function Layout({ children, category, meta}) {
                     <meta property="og:description" content={meta.description} />
                     <meta property="og:type" content={path.startsWith("/blog") ? "article" : "website"}/>
                     <meta property="og:url" content={path} />
-                    <meta property="og:image" content={`${path}/card.png`} />
-                    <meta property="og:image:url" content={`${path}/card.png`} />
+                    <meta property="og:image" content={`${host}${path}/card.png`} />
+                    <meta property="og:image:url" content={`${host}${path}/card.png`} />
                     <meta property="og:image:secure_url" content={`${host}${path}/card.png`} />
 
                     <meta property="og:site_name" content="tyrus.im"/>
