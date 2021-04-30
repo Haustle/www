@@ -9,12 +9,13 @@ export default function Layout({ children, category, meta}) {
     const [host, setHost] = useState("")
     const [url, setURL] = useState("")
     const path = router.asPath;
-    console.log(router)
+
 
     useEffect(() => {
         setHost(window.location.origin);
         setURL(window.location.href);
     }, [])
+    console.log(host);
 
     return (
         <>
@@ -29,8 +30,12 @@ export default function Layout({ children, category, meta}) {
                     <meta property="og:type" content={path.startsWith("/blog") ? "article" : "website"}/>
                     <meta property="og:url" content={path} />
                     <meta property="og:image" content={`${path}/card.png`} />
+                    <meta property="og:image:url" content={`${path}/card.png`} />
+                    <meta property="og:image:secure_url" content={`${host}${path}/card.png`} />
+
                     <meta property="og:site_name" content="tyrus.im"/>
                     <meta property="og:locale" content="en_US"/>
+                    <meta itemProp="author" content="Tyrus"/>
 
                     {/* <meta property="og:image" content={`${path}/card.png`} /> */}
 
@@ -40,7 +45,7 @@ export default function Layout({ children, category, meta}) {
                     <meta name="twitter:site" content="@haustle"/>
                     <meta name="twitter:creator" content="@haustle"/>
                     <meta name="twitter:description" content={meta.description}/>
-                    <meta name="twitter:image" content={`${path}/card.png`}></meta>
+                    <meta name="twitter:image" content={`${host}${path}/card.png`}></meta>
                     </>)
                 : null }
             </Head>
@@ -74,7 +79,6 @@ export default function Layout({ children, category, meta}) {
                 .page-selector{
                     padding: 5px;
                     border-radius: 5px;
-                    // border: 1px solid black;
                     margin-left: 15px;
                 }
                 #pages-list{
