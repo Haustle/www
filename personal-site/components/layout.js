@@ -9,6 +9,7 @@ export default function Layout({ children, category, meta}) {
     const [host, setHost] = useState("")
     const [url, setURL] = useState("")
     const path = router.asPath;
+    console.log(router)
 
     useEffect(() => {
         setHost(window.location.origin);
@@ -25,14 +26,14 @@ export default function Layout({ children, category, meta}) {
                     <meta property="og:title" content={meta.title} />
                     <meta property="og:description" content={meta.description} />
                     <meta property="og:type" content="website" />
-                    <meta property="og:url" content={url} />
-                    <meta property="og:image" content={`${host}${path}/card.png`} />
+                    <meta property="og:url" content={path} />
+                    <meta property="og:image" content={`${path}/card.png`} />
 
                     <meta property="twitter:card" content="summary_large_image"/>
-                    <meta property="twitter:url" content="https://www-git-meta-cards-haustle.vercel.app/blog/end-of-march"/>
+                    <meta property="twitter:url" content={path}/>
                     <meta property="twitter:title" content="End of March"/>
                     <meta property="twitter:description" content={meta.description}/>
-                    <meta property="twitter:image" content="/blog/end-of-march/card.png"></meta>
+                    <meta property="twitter:image" content={`${path}/card.png`}></meta>
                     </>)
                 : null }
             </Head>
