@@ -27,13 +27,15 @@ export default function Layout({ children, category, meta}) {
                     <meta property="og:description" content={meta.description} />
                     <meta property="og:type" content="website" />
                     <meta property="og:url" content={path} />
-                    <meta property="og:image" content={`${path}/card.png`} />
+                    <meta property="og:image" content="https://i1.wp.com/bloody-disgusting.com/wp-content/uploads/2020/09/dune-trailer.png?w=1627&ssl=1" />
+                    {/* <meta property="og:image" content={`${path}/card.png`} /> */}
 
                     <meta name="twitter:card" content="summary_large_image"/>
                     <meta name="twitter:url" content={path}/>
-                    <meta name="twitter:title" content="End of March"/>
+                    <meta name="twitter:title" content={meta.title}/>
+                    <meta name="twitter:site" content="@haustle"/>
                     <meta name="twitter:description" content={meta.description}/>
-                    <meta name="twitter:image" content={`${path}/card.png`}></meta>
+                    <meta name="twitter:image" content="https://i1.wp.com/bloody-disgusting.com/wp-content/uploads/2020/09/dune-trailer.png?w=1627&ssl=1"></meta>
                     </>)
                 : null }
             </Head>
