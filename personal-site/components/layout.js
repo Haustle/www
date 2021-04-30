@@ -26,10 +26,8 @@ export default function Layout({ children, category, meta}) {
                     (<>
                     <meta property="og:title" content={meta.title} />
                     <meta property="og:description" content={meta.description} />
-                    <meta property="og:url" content={path} />
+                    <meta property="og:url" content={`${host}${path}`} />
                     <meta property="og:image" content={`${host}${path}/card.png`} />
-                    <meta property="og:image:url" content={`${host}${path}/card.png`} />
-                    <meta property="og:image:secure_url" content={`${host}${path}/card.png`} />
                     <meta property="og:site_name" content="tyrus.im"/>
                     <meta property="og:locale" content="en_US"/>
                     <meta property="og:type" content={path.startsWith("/blog") ? "article" : "website"}/>
@@ -37,7 +35,8 @@ export default function Layout({ children, category, meta}) {
 
 
                     <meta itemProp="author" content="Tyrus"/>
-
+                    
+                    {/* Twitter */}
                     <meta name="twitter:card" content="summary_large_image"/>
                     <meta name="twitter:title" content={meta.title} />
                     <meta name="twitter:description" content={meta.description}/>
