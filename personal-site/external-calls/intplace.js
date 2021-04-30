@@ -121,7 +121,7 @@ export const things = [
     },
     {
         name: "rsms",
-        category : ["writer","developer","developer"],
+        category : ["writer","developer","designer"],
         url: "https://twitter.com/rsms",
     },
     {
@@ -133,6 +133,16 @@ export const things = [
         name: "Lee Robinson",
         category: ["developer"],
         url: "https://twitter.com/leeerob"
+    },
+    {
+        name: "Ryo Lu",
+        category: ["designer"],
+        url: "https://twitter.com/ryolu_"
+    },
+    {
+        name: "Yitong Zhang",
+        category: ["designer"],
+        url: "https://twitter.com/zhayitong"
     }
 ]
 

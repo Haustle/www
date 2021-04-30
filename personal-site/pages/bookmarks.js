@@ -32,8 +32,12 @@ const peoplePage = () => {
             { currentCat == "Media" ? <FilteredList listObj={bookmarks} /> : null}
 
 
-
+            <p className="notice">*These lists are cherry-picked statically. Sometime in the future it'll be connected via API.</p>
             <style jsx>{`
+                .notice{
+                    font-size: .8rem;
+                    margin-top: 50px;
+                }
                 .base-button{
                     padding: 2px 5px;
                     border-radius: 5px;

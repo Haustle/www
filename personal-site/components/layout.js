@@ -37,7 +37,7 @@ export default function Layout({ children, category = "" }) {
                 .page-selector{
                     padding: 5px;
                     border-radius: 5px;
-                    border: 1px solid black;
+                    // border: 1px solid black;
                     margin-left: 15px;
                 }
                 #pages-list{
