@@ -1,12 +1,36 @@
 import Head from 'next/head'
 import Link from 'next/link';
+import {useRouter} from 'next/router'
+import { useEffect } from 'react'
+import { useState } from 'react'
 
+export default function Layout({ children, category, meta}) {
+    const router = useRouter();
+    const [host, setHost] = useState("")
+    const [url, setURL] = useState("")
+    const path = router.asPath;
 
-export default function Layout({ children, category = "" }) {
+    useEffect(() => {
+        setHost(window.location.origin);
+        setURL(window.location.href);
+    }, [])
+
 
     return (
         <>
-            <Head><link rel="shortcut icon" href="/favicon.ico?v=2" type="image/x-icon" /></Head>
+            <Head>
+                <link rel="shortcut icon" href="/favicon.ico?v=2" type="image/x-icon" />
+                <meta name="viewport" content="width=device-width, initial-scale=1"/>
+                {meta ? 
+                    (<>
+                    <meta property="og:title" content={meta.title} />
+                    <meta property="og:description" content={meta.description} />
+                    <meta property="og:type" content="website" />
+                    <meta property="og:url" content={url} />
+                    <meta property="og:image" content={`${host}${path}/card.png`} />
+                    </>)
+                : null }
+            </Head>
             <main id='main-wrapper'>
                 <header className = 'nav page-size flex-justify-between'>
 
@@ -16,7 +40,7 @@ export default function Layout({ children, category = "" }) {
                             <Link href="/"><a>Tyrus</a></Link></div>
 
                         {/* if we don't want the page route display we just pass in category as "" */}
-                        {category != "" ? <div className='page-selector'>{category}</div> : null}
+                        {category ? <div className='page-selector'>{category}</div> : null}
                     </div>
 
                     {/* This is the container for the pages button and the list of pages it opens */}
