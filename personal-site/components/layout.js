@@ -29,11 +29,11 @@ export default function Layout({ children, category, meta}) {
                     <meta property="og:url" content={path} />
                     <meta property="og:image" content={`${path}/card.png`} />
 
-                    <meta property="twitter:card" content="summary_large_image"/>
-                    <meta property="twitter:url" content={path}/>
-                    <meta property="twitter:title" content="End of March"/>
-                    <meta property="twitter:description" content={meta.description}/>
-                    <meta property="twitter:image" content={`${path}/card.png`}></meta>
+                    <meta name="twitter:card" content="summary_large_image"/>
+                    <meta name="twitter:url" content={path}/>
+                    <meta name="twitter:title" content="End of March"/>
+                    <meta name="twitter:description" content={meta.description}/>
+                    <meta name="twitter:image" content={`${path}/card.png`}></meta>
                     </>)
                 : null }
             </Head>
