@@ -19,23 +19,28 @@ export default function Layout({ children, category, meta}) {
     return (
         <>
             <Head>
+                {/* go to julian lehr website for tips on meta tag */}
                 <link rel="shortcut icon" href="/favicon.ico?v=2" type="image/x-icon" />
                 <meta name="viewport" content="width=device-width, initial-scale=1"/>
                 {meta ? 
                     (<>
                     <meta property="og:title" content={meta.title} />
                     <meta property="og:description" content={meta.description} />
-                    <meta property="og:type" content="website" />
+                    <meta property="og:type" content={path.startsWith("/blog") ? "article" : "website"}/>
                     <meta property="og:url" content={path} />
-                    <meta property="og:image" content="https://i1.wp.com/bloody-disgusting.com/wp-content/uploads/2020/09/dune-trailer.png?w=1627&ssl=1" />
+                    <meta property="og:image" content={`${path}/card.png`} />
+                    <meta property="og:site_name" content="tyrus.im"/>
+                    <meta property="og:locale" content="en_US"/>
+
                     {/* <meta property="og:image" content={`${path}/card.png`} /> */}
 
                     <meta name="twitter:card" content="summary_large_image"/>
                     <meta name="twitter:url" content={path}/>
                     <meta name="twitter:title" content={meta.title}/>
                     <meta name="twitter:site" content="@haustle"/>
+                    <meta name="twitter:creator" content="@haustle"/>
                     <meta name="twitter:description" content={meta.description}/>
-                    <meta name="twitter:image" content="https://i1.wp.com/bloody-disgusting.com/wp-content/uploads/2020/09/dune-trailer.png?w=1627&ssl=1"></meta>
+                    <meta name="twitter:image" content={`${path}/card.png`}></meta>
                     </>)
                 : null }
             </Head>
