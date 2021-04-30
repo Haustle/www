@@ -15,7 +15,6 @@ export default function Layout({ children, category, meta}) {
         setHost(window.location.origin);
         setURL(window.location.href);
     }, [])
-    console.log(host);
 
     return (
         <>
@@ -27,25 +26,24 @@ export default function Layout({ children, category, meta}) {
                     (<>
                     <meta property="og:title" content={meta.title} />
                     <meta property="og:description" content={meta.description} />
-                    <meta property="og:type" content={path.startsWith("/blog") ? "article" : "website"}/>
                     <meta property="og:url" content={path} />
                     <meta property="og:image" content={`${host}${path}/card.png`} />
                     <meta property="og:image:url" content={`${host}${path}/card.png`} />
                     <meta property="og:image:secure_url" content={`${host}${path}/card.png`} />
-
                     <meta property="og:site_name" content="tyrus.im"/>
                     <meta property="og:locale" content="en_US"/>
+                    <meta property="og:type" content={path.startsWith("/blog") ? "article" : "website"}/>
+
+
+
                     <meta itemProp="author" content="Tyrus"/>
 
-                    {/* <meta property="og:image" content={`${path}/card.png`} /> */}
-
                     <meta name="twitter:card" content="summary_large_image"/>
-                    <meta name="twitter:url" content={path}/>
-                    <meta name="twitter:title" content={meta.title}/>
-                    <meta name="twitter:site" content="@haustle"/>
-                    <meta name="twitter:creator" content="@haustle"/>
+                    <meta name="twitter:title" content={meta.title} />
                     <meta name="twitter:description" content={meta.description}/>
-                    <meta name="twitter:image" content={`${host}${path}/card.png`}></meta>
+                    <meta name="twitter:site" content="@haustle"/>
+                    <meta name="twitter:image" content={`${host}${path}/card.png`}/>
+                    <meta name="twitter:creator" content="@haustle"/>
                     </>)
                 : null }
             </Head>
