@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router'
 
-var IMG;
+let IMG;
 export default IMG = ({url="", caption=null, title=false, width="500px", shadow=true}) => {
     const router = useRouter().asPath;
     // console.log(router)

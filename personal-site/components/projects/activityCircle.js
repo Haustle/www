@@ -3,7 +3,7 @@
 
 export default function ActivityCircle({ days = 0}){
 
-    var colorChosen = "";
+    let colorChosen = "";
     switch (days >= 0) {
         case (days <= 7 && days >= 0):
             colorChosen = "green";

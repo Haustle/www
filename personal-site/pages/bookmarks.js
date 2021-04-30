@@ -1,22 +1,19 @@
 import {things} from '../external-calls/intplace'
 import {bookmarks} from '../external-calls/vaultdup'
-import Callout from '../components/callout'
 import FilteredList from '../components/bookmarks/FilteredList'
-import { useEffect } from 'react'
+
 
 
 const peoplePage = () => {
     const [currentCat, setCat] = React.useState("Follows")
 
     const compChange = (item) => {
-        var category = item.target.innerText;
+        const category = item.target.innerText;
         if(category != currentCat){
             setCat(category)
         }
 
     }
-
-
 
     return(
         <>
@@ -35,8 +32,12 @@ const peoplePage = () => {
             { currentCat == "Media" ? <FilteredList listObj={bookmarks} /> : null}
 
 
-
+            <p className="notice">*These lists are cherry-picked statically. Sometime in the future it'll be connected via API.</p>
             <style jsx>{`
+                .notice{
+                    font-size: .8rem;
+                    margin-top: 50px;
+                }
                 .base-button{
                     padding: 2px 5px;
                     border-radius: 5px;
@@ -56,7 +57,6 @@ const peoplePage = () => {
                     margin-right: 30px;
                 }
                 .unselected:hover{
-                    // text-decoration: underline;
                     background-color: #f8f8f8;
                     
                 }
@@ -72,7 +72,7 @@ const peoplePage = () => {
 export function getStaticProps() {
     return {
         props: {
-            archive: things,
+            // archive: things,
             square: "Library"
         }
     }

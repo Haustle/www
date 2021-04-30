@@ -11,7 +11,7 @@ export default function getPosts(){
 
     let postMap = new Map()
 
-    for (var x = 0; x < filenames.length; x++) {
+    for (let x = 0; x < filenames.length; x++) {
         const newpath = path.join(postDir, filenames[x]);
 
         // open and read the mdx file
@@ -38,7 +38,7 @@ export default function getPosts(){
     const retPost = [...postMap].map(([year, posts]) => ({ year, posts }));
 
     // sorting all the posts from each year
-    for(var x = 0; x < retPost.length; x++){
+    for(let x = 0; x < retPost.length; x++){
         // order the post from most recent to oldest
         retPost[x].posts.sort(function (a, b) {
             return new Date(b.date) - new Date(a.date);

@@ -11,7 +11,7 @@ export default function BlogLayout({ children, meta = null }){
     // if you're confused why, just head over to the /posts directory and see
     // the value for date in the header of a .mdx file
 
-    var date = meta.date.split(" ")
+    let date = meta.date.split(" ")
     delete date[date.length-1]
     date = date.join(" ")
 

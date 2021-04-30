@@ -82,13 +82,11 @@ article ol{
 }
 
 
-article ul a{
-    text-decoration: underline;
-}
+
 
 article ul{
     font-family: 'IBM Plex Mono';
-    color : #272727;
+    color : #424242;
     list-style: none;
     /* list-style-position: outside; */
     margin-left: 0;

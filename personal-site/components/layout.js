@@ -2,25 +2,8 @@ import Head from 'next/head'
 import Link from 'next/link';
 
 
-
-
-
 export default function Layout({ children, category = "" }) {
 
-
-    // navShownOnce is initally set to false so on page load opacity 0 is used instead of fade out animation
-    const [navShownOnce, setNav] = React.useState(false);
-    const [pagesVisible, setPagesVisible] = React.useState(false);
-
-    var togglePages = e => {
-
-        // we set navshownonce to true so we can use the fadeout animation
-        setNav(true);
-        setPagesVisible(!pagesVisible);
-    };
-    
-    const loadAnimation = 'animate__animated animate__fadeInRight animate__faster';
-    const closeAnimation = 'animate__animated animate__fadeOutRight animate__faster'
     return (
         <>
             <Head><link rel="shortcut icon" href="/favicon.ico?v=2" type="image/x-icon" /></Head>
@@ -36,28 +19,15 @@ export default function Layout({ children, category = "" }) {
                         {category != "" ? <div className='page-selector'>{category}</div> : null}
                     </div>
 
-
-
-
                     {/* This is the container for the pages button and the list of pages it opens */}
                     <div className='flex-align-items-center other-links'>
-                        <div className='pages-list-container'>
-                            <ul id='pages-list' className={`flex ${navShownOnce == false ? 'opacity-0' : (pagesVisible ? loadAnimation : closeAnimation)}`}>
-
+                            <ul id='pages-list' className='flex'>
                                 <Link href="/blog"><a><li>Blog</li></a></Link>
                                 <Link href="/bookmarks"><a><li>Libary</li></a></Link>
-
                             </ul>
-                        </div>
-
-                        {/* pages button – onclick it has shadow and onhover it has shadow */}
-                        <div onClick={togglePages} className={`pages-button ${pagesVisible ? 'pages-button-clicked' : null}`}>Pages</div>
-
                     </div>
                 </header>
 
-
-                {/* page contents / components that gets passed in*/}
                 <div className='page-size' >
                     {children}
                 </div>
@@ -67,46 +37,29 @@ export default function Layout({ children, category = "" }) {
                 .page-selector{
                     padding: 5px;
                     border-radius: 5px;
-                    border: 1px solid black;
+                    // border: 1px solid black;
                     margin-left: 15px;
                 }
                 #pages-list{
-                    margin-right: 10px;
                     list-style-type: none;
-                    padding: 5px;
-
-                    border-radius: 5px;
-                    overflow: hidden;
+                    padding: 10px;
 
                 }
-
 
                 #pages-list a:not(:last-child){
                     margin-right: 15px;
                 }
 
-                .pages-list-container{
-                    padding: 10px;
-                    overflow: hidden;
-                }
                 #pages-list li:hover{
                     background-color: #efefef;
-                    // text-decoration: underline;
                 }
-                #pages-list li:not(:last-child){
-                    // margin-right: 15px;
-                }
+
                 #pages-list li{
-                    // margin-right: 20px;
                     padding: 2px 5px;
                     border-radius: 5px;
                     transition: all 0.2s
                     width: max-content;
-
-
-
                 }
-
 
                 .nav{
                     z-index: 9999;
@@ -114,7 +67,6 @@ export default function Layout({ children, category = "" }) {
                     position: sticky;
                     top: 0px;
                     background:rgba(255,255,255,0.99);
-                    // background:rgba(255,255,255, 0.98);
                 }
                 #main-wrapper{
                     margin-top: 4.0rem;
@@ -141,7 +93,6 @@ export default function Layout({ children, category = "" }) {
                 .pages-button:hover{
                     box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
                     border: 1px solid greysmoke;
-
                 }
 
                 .pages-button-clicked{

@@ -10,9 +10,9 @@ export default function FilteredList({listObj = []}){
 
     // Getting all the categories from all the associated communities / poeple
     // add them to set so now duplicates
-    var cateGorySet = new Set();
-    for (var x = 0; x < listObj.length; x++) {
-        var tempList = listObj[x].category
+    let cateGorySet = new Set();
+    for (let x = 0; x < listObj.length; x++) {
+        const tempList = listObj[x].category
         tempList.forEach(cat => {
             cateGorySet.add(cat)
         })
@@ -28,10 +28,10 @@ export default function FilteredList({listObj = []}){
     function showFilters() {
         setShowfil(!showfil);
     }
-    var togglePeople = (filter) => {
+    let togglePeople = (filter) => {
 
         // make a new set out of our current categories so we can filter easier
-        var set = new Set(catList);
+        let set = new Set(catList);
         if (set.has(filter)) {
             set.delete(filter);
         }
@@ -51,7 +51,7 @@ export default function FilteredList({listObj = []}){
 
     useEffect(() => {
 
-        var fitL = listObj.filter(p => containsCategory(p.category))
+        const fitL = listObj.filter(p => containsCategory(p.category))
         filterPeople(fitL)
     }, [catList]);
 

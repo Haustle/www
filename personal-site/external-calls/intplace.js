@@ -1,4 +1,4 @@
-export var things = [
+export const things = [
     {
         name: "Notion",
         category: ["products","company","design"],
@@ -121,7 +121,7 @@ export var things = [
     },
     {
         name: "rsms",
-        category : ["writer","developer","developer"],
+        category : ["writer","developer","designer"],
         url: "https://twitter.com/rsms",
     },
     {
@@ -133,6 +133,16 @@ export var things = [
         name: "Lee Robinson",
         category: ["developer"],
         url: "https://twitter.com/leeerob"
+    },
+    {
+        name: "Ryo Lu",
+        category: ["designer"],
+        url: "https://twitter.com/ryolu_"
+    },
+    {
+        name: "Yitong Zhang",
+        category: ["designer"],
+        url: "https://twitter.com/zhayitong"
     }
 ]
 
