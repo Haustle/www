@@ -24,19 +24,21 @@ export default function Layout({ children, category, meta}) {
                 <meta name="viewport" content="width=device-width, initial-scale=1"/>
                 {meta ? 
                     (<>
-                        <meta property="og:title" content={meta.title} />
-                        <meta property="og:description" content={meta.description} />
-                        <meta property="og:url" content={`${host}${path}`} />
-                        <meta property="og:image" content={`${host}${path}/card.png?123`} />
-                        <meta property="og:type" content={path.startsWith("/blog") ? "article" : "website"}/>
+                    <meta property="og:title" content={meta.title} />
+                    <meta property="og:description" content={meta.description} />
+                    <meta property="og:url" content={`${host}${path}`} />
+                    <meta property="og:image" content={`${host}${path}/card.png?123`} />
+                    <meta property="og:site_name" content="tyrus.im"/>
+                    <meta property="og:locale" content="en_US"/>
+                    <meta property="og:type" content={path.startsWith("/blog") ? "article" : "website"}/>
 
-                        
-                        {/* Twitter */}
-                        <meta name="twitter:card" content="summary_large_image"/>
-                        <meta name="twitter:site" content="@haustle" />
-                        <meta name="twitter:title" content={meta.title} />
-                        <meta name="twitter:description" content={meta.description}/>
-                        {/* <meta name="twitter:image" content={`${host}${path}/card.png`}/> */}
+                    
+                    {/* Twitter */}
+                    <meta name="twitter:card" content="summary_large_image"/>
+                    <meta name="twitter:site" content="@haustle" />
+                    <meta name="twitter:title" content={meta.title} />
+                    <meta name="twitter:description" content={meta.description}/>
+                    <meta name="twitter:image" content={`${host}${path}/card.png?123`}/>
 
                     </>)
                 : null }
