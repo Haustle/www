@@ -1,53 +1,45 @@
-import Head from 'next/head'
+import Head from 'next/head';
 import Link from 'next/link';
-import {useRouter} from 'next/router'
-import { useEffect } from 'react'
-import { useState } from 'react'
+import {useRouter} from 'next/router';
 
-export default function Layout({ children, category, meta}) {
+export default function Layout({ children, category, extraMeta}) {
     const router = useRouter();
-    const [host, setHost] = useState("")
-    const [url, setURL] = useState("")
-    const path = router.asPath;
+    const pubDir = router.asPath;
 
+    // console.log(extraMeta)
+    const meta = {
+        title: 'Tyrus Miles',
+        description: 'CS Student at ASU',
+        ...extraMeta
+    }
 
-    useEffect(() => {
-        setHost(window.location.origin);
-        setURL(window.location.href);
-    }, [])
+    const host = "https://tyrus.im"
 
-    console.log(`host: ${host}`);
     return (
         <>
             <Head>
                 {/* go to julian lehr website for tips on meta tag */}
                 <link rel="shortcut icon" href="/favicon.ico?v=2" type="image/x-icon" />
                 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-                {meta ? 
+                <meta property="og:title" content={meta.title} />
+                <meta property="og:description" content={meta.description} />
+                <meta property="og:url" content={`${host}${pubDir}`} />
+                <meta property="og:locale" content="en_US" />
+                <meta property="og:site_name" content="tyrus.im" />
+                <meta property="og:type" content={pubDir.startsWith("/blog") ? "article" : "website"} />
+
+                {meta.image ? 
                     (<>
-                    <meta property="og:title" content={meta.title} />
-                    <meta property="og:description" content={meta.description} />
-                    <meta property="og:url" content={`${host}${path}`} />
-                    <meta property="og:image" content={`${host}${path}/card.png`} />
-
-                        {/* <meta property="og:image" content="https://news.cgtn.com/news/3d3d514f3363544d35457a6333566d54/img/c66f29f6e575486aa40db56441fa503d/c66f29f6e575486aa40db56441fa503d.jpg" /> */}
-
-                    <meta property="og:site_name" content="tyrus.im"/>
-                    <meta property="og:locale" content="en_US"/>
-                    <meta property="og:type" content={path.startsWith("/blog") ? "article" : "website"}/>
-
-                    
-                    {/* Twitter */}
-                    <meta name="twitter:card" content="summary_large_image"/>
-                    <meta name="twitter:site" content="@haustle"/>
-                    <meta name="twitter:title" content={meta.title}/>
-                    <meta name="twitter:description" content={meta.description}/>
-                    <meta name="twitter:creator" content="@haustle"/>
-
-
+                        <meta property="og:image" content={`${host}${pubDir}/${meta.image}`} />
+                        <meta name="twitter:card" content="summary_large_image"/>
+                        <meta name="twitter:site" content="@haustle"/>
+                        <meta name="twitter:title" content={meta.title}/>
+                        <meta name="twitter:description" content={meta.description}/>
+                        <meta name="twitter:creator" content="@haustle"/>
                     </>)
                 : null }
             </Head>
+
             <main id='main-wrapper'>
                 <header className = 'nav page-size flex-justify-between'>
 
@@ -83,7 +75,6 @@ export default function Layout({ children, category, meta}) {
                 #pages-list{
                     list-style-type: none;
                     padding: 10px;
-
                 }
 
                 #pages-list a:not(:last-child){
