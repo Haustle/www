@@ -1,12 +1,45 @@
-import Head from 'next/head'
+import Head from 'next/head';
 import Link from 'next/link';
+import {useRouter} from 'next/router';
 
+export default function Layout({ children, category, extraMeta}) {
+    const router = useRouter();
+    const pubDir = router.asPath;
 
-export default function Layout({ children, category = "" }) {
+    // console.log(extraMeta)
+    const meta = {
+        title: 'Tyrus Miles',
+        description: 'CS Student at ASU',
+        ...extraMeta
+    }
+
+    const host = "https://tyrus.im"
 
     return (
         <>
-            <Head><link rel="shortcut icon" href="/favicon.ico?v=2" type="image/x-icon" /></Head>
+            <Head>
+                {/* go to julian lehr website for tips on meta tag */}
+                <link rel="shortcut icon" href="/favicon.ico?v=2" type="image/x-icon" />
+                <meta name="viewport" content="width=device-width, initial-scale=1"/>
+                <meta property="og:title" content={meta.title} />
+                <meta property="og:description" content={meta.description} />
+                <meta property="og:url" content={`${host}${pubDir}`} />
+                <meta property="og:locale" content="en_US" />
+                <meta property="og:site_name" content="tyrus.im" />
+                <meta property="og:type" content={pubDir.startsWith("/blog") ? "article" : "website"} />
+
+                {meta.image ? 
+                    (<>
+                        <meta property="og:image" content={`${host}${pubDir}/${meta.image}`} />
+                        <meta name="twitter:card" content="summary_large_image"/>
+                        <meta name="twitter:site" content="@haustle"/>
+                        <meta name="twitter:title" content={meta.title}/>
+                        <meta name="twitter:description" content={meta.description}/>
+                        <meta name="twitter:creator" content="@haustle"/>
+                    </>)
+                : null }
+            </Head>
+
             <main id='main-wrapper'>
                 <header className = 'nav page-size flex-justify-between'>
 
@@ -16,7 +49,7 @@ export default function Layout({ children, category = "" }) {
                             <Link href="/"><a>Tyrus</a></Link></div>
 
                         {/* if we don't want the page route display we just pass in category as "" */}
-                        {category != "" ? <div className='page-selector'>{category}</div> : null}
+                        {category ? <div className='page-selector'>{category}</div> : null}
                     </div>
 
                     {/* This is the container for the pages button and the list of pages it opens */}
@@ -37,13 +70,11 @@ export default function Layout({ children, category = "" }) {
                 .page-selector{
                     padding: 5px;
                     border-radius: 5px;
-                    // border: 1px solid black;
                     margin-left: 15px;
                 }
                 #pages-list{
                     list-style-type: none;
                     padding: 10px;
-
                 }
 
                 #pages-list a:not(:last-child){

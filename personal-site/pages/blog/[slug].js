@@ -9,10 +9,10 @@ import matter from "gray-matter"
 
 const components = { IMG, a: A }
 
-export default function Post({meta, mdx}){
+export default function Post({extraMeta, mdx}){
     const renderedContent = hydrate(mdx, {components})
     return (
-        <BlogLayout meta={meta}>
+        <BlogLayout meta={extraMeta}>
             {renderedContent}
         </BlogLayout>
     );
@@ -28,7 +28,7 @@ export const getStaticProps = async ({ params }) => {
     return {
         props: {
             mdx: mdxSource,
-            meta: data,
+            extraMeta: data,
             title: data.title
         }
         
