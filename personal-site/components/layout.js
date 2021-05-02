@@ -29,6 +29,7 @@ export default function Layout({ children, category, meta}) {
                     <meta property="og:url" content={`${host}${path}`} />
                         <meta property="og:image" content={`${host}${path}/card.png?43085449`} />
                         <meta property="og:image:secure_url" content={`${host}${path}/card.png?43085449`} />
+                        <meta property="og:image:url" content={`${host}${path}/card.png?43085449`} />
                         {/* <meta property="og:image" content="https://news.cgtn.com/news/3d3d514f3363544d35457a6333566d54/img/c66f29f6e575486aa40db56441fa503d/c66f29f6e575486aa40db56441fa503d.jpg" /> */}
 
                     <meta property="og:site_name" content="tyrus.im"/>
