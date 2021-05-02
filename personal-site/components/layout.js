@@ -35,7 +35,7 @@ export default function Layout({ children, category, meta}) {
 
                     
                     {/* Twitter */}
-                    <meta name="twitter:card" content="summary"/>
+                    <meta name="twitter:card" content="summary_large_image"/>
                     <meta name="twitter:site" content="@haustle"/>
                     <meta name="twitter:title" content={meta.title}/>
                     <meta name="twitter:description" content={meta.description}/>
