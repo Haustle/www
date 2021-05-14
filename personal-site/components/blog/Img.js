@@ -48,7 +48,7 @@ export default IMG = ({url="", caption=null, title=false, width="500px", shadow=
                 .border-back{
                     padding: 40px 0px;
                     // width: 500px;
-                    width: ${width};
+                    max-width: ${width};
                     margin: 0 auto;
 
                 }
@@ -59,7 +59,7 @@ export default IMG = ({url="", caption=null, title=false, width="500px", shadow=
                 .caption{
                     font-size: .8rem;
                     font-weight: 400;
-                    width: 90%;
+                    width: max-content;
                     margin: 0 auto;
                     margin-top: 25px;
                     color: #424242;
@@ -71,7 +71,7 @@ export default IMG = ({url="", caption=null, title=false, width="500px", shadow=
                     border-radius: 5px;
                 }
                 img{
-                    width: ${width};
+                    width: 100%;
                     height: 100%;
                 }
             `}</style>
