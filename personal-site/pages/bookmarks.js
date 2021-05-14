@@ -35,8 +35,9 @@ const peoplePage = () => {
             <p className="notice">*These lists are cherry-picked statically. Sometime in the future it'll be connected via API.</p>
             <style jsx>{`
                 .notice{
+                    color: #424242;
                     font-size: .8rem;
-                    margin-top: 50px;
+                    margin-top: 75px;
                 }
                 .base-button{
                     padding: 2px 5px;

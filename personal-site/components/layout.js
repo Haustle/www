@@ -6,7 +6,6 @@ export default function Layout({ children, category, extraMeta}) {
     const router = useRouter();
     const pubDir = router.asPath;
 
-    // console.log(extraMeta)
     const meta = {
         title: 'Tyrus Miles',
         description: 'CS Student at ASU',

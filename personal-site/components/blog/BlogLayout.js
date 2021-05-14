@@ -20,7 +20,7 @@ export default function BlogLayout({ children, meta = null }){
             <article>
                 <div className="blog-header">
                     <div className="date">{date}</div>
-                    <h1 className="article-title">{meta.title}</h1>
+                    <div className="article-title">{meta.title}</div>
 
                     {/* these should be clickable to send the user to page of all blogs posts containing that tag*/}
                     <div className="flex-align-items-center">
@@ -49,6 +49,9 @@ export default function BlogLayout({ children, meta = null }){
 
 
             <style jsx>{`
+                .article-title{
+                    // font-weight: 700;
+                }
                 .subscribe-text{
                     margin-bottom: 20px;
                     font-size: 1rem;

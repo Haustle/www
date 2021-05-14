@@ -3,7 +3,7 @@ import { useRouter } from 'next/router'
 let IMG;
 export default IMG = ({url="", caption=null, title=false, width="500px", shadow=true}) => {
     const router = useRouter().asPath;
-    // console.log(router)
+
     const arrow = "->"
     return(
         <>

@@ -14,13 +14,19 @@ article h3{
     /* border-bottom: 1px solid #4242; */
 }
 article h2{
-    margin-bottom: 2.5rem;
+    margin-bottom: 1.5rem;
     padding-bottom: 15px;
 
     border-bottom: 1px dashed #4242;
 
-
 }
+
+article h1{
+    margin-bottom: 1.5em ;
+    margin-top: 2.5rem;
+}
+
+
 article .article-tag{
     text-decoration: none;
 }
@@ -81,9 +87,6 @@ article ol{
     list-style-type: lower-roman;
 }
 
-
-
-
 article ul{
     font-family: 'IBM Plex Mono';
     color : #424242;
@@ -135,6 +138,8 @@ article .article-title{
     color: black;
     font-size: 2rem;
     margin-bottom: 1rem;
+    font-weight: 700;
+
 }
 
 article code{
