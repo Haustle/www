@@ -58,6 +58,10 @@ export default function FilteredList({listObj = []}){
     // this is the intial set of categories
     cateGorySet = [...cateGorySet]; // turn the set into a list
 
+    const shortDate = (date) => {
+        const dateList = date.split("/")
+        return `${dateList[0]}-${dateList[2]}`
+    }
     return(
         
         <>
@@ -80,9 +84,10 @@ export default function FilteredList({listObj = []}){
             <div>
                 {people.map((item, index) => (
                     <div className="person" key={`${item.name}`}>
-                        <span className="item link" key={`${index}`}><a target="_blank" href={item.url}>{item.name}</a></span>
+                        
+                        <span className="item link ibm" key={`${index}`}><a target="_blank" href={item.url}>{item.name}</a></span>
                         <span className="item-category-container" key={`categories${item.name}`}>
-                            {item.category.map((cat, index) => <span className="list-cat" key={`${cat}${index}`}>{cat}</span>)}
+                            {item.category.map((cat, index) => <span className="no-select list-cat" key={`${cat}${index}`}>{cat}</span>)}
                         </span>
                     </div>
 
@@ -90,9 +95,14 @@ export default function FilteredList({listObj = []}){
             </div>
 
             <style jsx>{`
-
+                .date{
+                    margin-right: 50px;
+                    font-size: .9rem;
+                    width: 10%;
+                    color: black;
+                    display: inline-block;
+                }
                 .show-filters{
-                    margin-top: 50px;
                     font-weight: bold;
                     width: 80%;
                     margin-bottom: 35px;
@@ -137,7 +147,8 @@ export default function FilteredList({listObj = []}){
 
                 }
                 .nonselected-cat{
-                    border: 2px solid transparent
+                    border: 2px solid transparent;
+                    background-color: #efefef;
                 }
                 .cat-buttons{
                     cursor: pointer;

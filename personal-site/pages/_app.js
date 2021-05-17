@@ -1,14 +1,11 @@
 import '../styles/global.css'
-import 'animate.css'
 import Head from 'next/head'
 import Layout from '../components/layout';
 import { useRouter } from 'next/router'
-import BackButton from '../components/BackButton'
 
 export default function MyApp({ Component, pageProps }) {
 
     const router = useRouter();
-    const noBackButtonHere = [""]
 
     // we get the path from the router
     const fullPath = router.route;
@@ -24,14 +21,10 @@ export default function MyApp({ Component, pageProps }) {
     return (
         <>
             <Head>
-                {/* if the page is nested */}
                 <title>{name ? `${headTitle} ← Tyrus` : 'Tyrus Miles'}</title>
             </Head>
             
-            {/* main layout wrapper */}
-            {/* can override nameCapitalized if you specify in page what you want the tag to be */}
             <Layout category={pageProps.square ?? nameCapitalized} extraMeta={pageProps.extraMeta}>
-                {/* {!(noBackButtonHere.includes(name)) ? <BackButton/> : null} */}
                 <Component {...pageProps} />
             </Layout>
         </>

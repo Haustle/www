@@ -27,7 +27,7 @@ export default function BlogLayout({ children, meta = null }){
                         <div className="tag-container">
                             {meta.tags.map((tag, index) => (
                                 <Link href={`/tag/${tag}`} key={tag}>
-                                    <a className="article-tag" >
+                                    <a className="article-tag no-select" >
                                         <span>{tag}</span>
                                     </a>
                                 </Link>

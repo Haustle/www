@@ -1,10 +1,10 @@
-import {things} from '../external-calls/intplace'
-import {bookmarks} from '../external-calls/vaultdup'
 import FilteredList from '../components/bookmarks/FilteredList'
+import queryNotionDatabase from '../external-calls/notion';
+import UrlList from '../components/bookmarks/UrlList';
 
 
 
-const peoplePage = () => {
+const peoplePage = ({notion_bookmarks, notion_people}) => {
     const [currentCat, setCat] = React.useState("Follows")
 
     const compChange = (item) => {
@@ -19,26 +19,22 @@ const peoplePage = () => {
         <>
             <div className="h1-name flex-align-items-center lib-header">
                 <h1 className="lib-title">Libary</h1>
-                <span className="margin-left-25">My favorite bookmarks 📖</span>
+                <span className="margin-left-25">My favorites</span>
             </div>
             
             <div className="online-head">
-                <div onClick={compChange} className={` base-button ${currentCat == "Follows" ? 'selected' : 'unselected'}`}>Follows</div>
-                <div onClick={compChange} className={` base-button ${currentCat == "Media" ? 'selected' : 'unselected'}`}>Media</div>
+                <div onClick={compChange} className={` base-button no-select ${currentCat == "Follows" ? 'selected' : 'unselected'}`}>Follows</div>
+                <div onClick={compChange} className={` base-button no-select ${currentCat == "Media" ? 'selected' : 'unselected'}`}>Media</div>
 
             </div>
 
-            { currentCat == "Follows" ? <FilteredList listObj={things} /> : null}
-            { currentCat == "Media" ? <FilteredList listObj={bookmarks} /> : null}
+            { currentCat == "Follows" ? <FilteredList listObj={notion_people} /> : null}
+            { currentCat == "Media" ? <UrlList catState={setCat} list={notion_bookmarks} /> : null}
 
 
-            <p className="notice">*These lists are cherry-picked statically. Sometime in the future it'll be connected via API.</p>
+
             <style jsx>{`
-                .notice{
-                    color: #424242;
-                    font-size: .8rem;
-                    margin-top: 75px;
-                }
+
                 .base-button{
                     padding: 2px 5px;
                     border-radius: 5px;
@@ -52,6 +48,7 @@ const peoplePage = () => {
                 }
                 .online-head div{
                     cursor: pointer;
+                    
                 }
 
                 .online-head div:not(:last-child){
@@ -64,17 +61,22 @@ const peoplePage = () => {
                 .online-head{
                     display: flex;
                     margin-top: 25px;
+                    margin-bottom: 50px;
                 }
                 
             `}</style>
         </>
     )
 }
-export function getStaticProps() {
+export async function getStaticProps() {
+    const notion_bookmarks = await queryNotionDatabase(process.env.FASC_DB_ID);
+    const notion_people = await queryNotionDatabase(process.env.PEOPLE_DB_ID);
+
     return {
         props: {
-            // archive: things,
-            square: "Library"
+            square: "Library",
+            notion_bookmarks,
+            notion_people
         }
     }
 }
