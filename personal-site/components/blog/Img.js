@@ -21,7 +21,7 @@ export default IMG = ({url="", caption=null, title=false, width="500px", shadow=
                 
                 {/* if caption is null it means the user doesnt want a caption */}
                 {/* to determine this we just use a ternary */}
-                {caption ? <div className="caption flex">
+                {caption ? <div className="caption no-select flex">
                     <div className="arrow">{arrow}</div> 
                     <div>{caption}</div>
                     </div> 

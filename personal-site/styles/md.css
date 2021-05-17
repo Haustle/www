@@ -32,7 +32,6 @@ article .article-tag{
 }
 article a{
     text-decoration: underline;
-    /* color: black; */
     transition: all .2s;
 }
 
@@ -119,8 +118,10 @@ article{
 
 }
 article ul li::before{
-    content: "–";
-margin-left: -20px; margin-right: 10px;
+    content: "•";
+    margin-left: -20px; 
+    margin-right: 10px;
+    font-size: 1.2rem;
     color : #c7c7c7;
 }
 
