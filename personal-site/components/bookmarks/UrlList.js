@@ -1,16 +1,11 @@
 import A from '../../components/A';
-import { useState } from 'react';
 
-const UrlList = ({list, catState}) => {
-
-    const [month, setMonth] = useState(-1);
-    const [year, setYear] = useState(-1);
+const UrlList = ({list}) => {
 
     return (
         <>
-            <div className="reason ibm">My saved tab – Things I'm trying to consume</div>
+            <div className="reason ibm">Things I'm trying to consume</div>
 
-            {/* <h3>May 2021</h3> */}
             {list.map((item, index) => (
                 <div className="link item ibm">
                     <A href={item.url}>{item.title}</A>

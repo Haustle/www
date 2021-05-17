@@ -84,10 +84,10 @@ export default function FilteredList({listObj = []}){
             <div>
                 {people.map((item, index) => (
                     <div className="person" key={`${item.name}`}>
-                        { item.date ? <span className="date ibm">{shortDate(item.date)}</span> : null }
+                        
                         <span className="item link ibm" key={`${index}`}><a target="_blank" href={item.url}>{item.name}</a></span>
                         <span className="item-category-container" key={`categories${item.name}`}>
-                            {!!item.date == false ? item.category.map((cat, index) => <span className="no-select list-cat" key={`${cat}${index}`}>{cat}</span>) : null}
+                            {item.category.map((cat, index) => <span className="no-select list-cat" key={`${cat}${index}`}>{cat}</span>)}
                         </span>
                     </div>
 
