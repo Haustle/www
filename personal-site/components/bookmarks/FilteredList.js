@@ -115,6 +115,8 @@ export default function FilteredList({listObj = []}){
                 .person{
                     display: block;
                     margin-bottom: 20px;
+                    line-height: 1.5;
+
                 }
                 .list-cat:first-child{
                     margin-left: 25px;
@@ -164,6 +166,13 @@ export default function FilteredList({listObj = []}){
                 }
                 .item{
                     width: max-content;
+                }
+
+
+                @media(max-width: 525px){
+                    .item-category-container{
+                        display: none;
+                    }
                 }
 
             `}</style>

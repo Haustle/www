@@ -18,6 +18,8 @@ const UrlList = ({list}) => {
                     width: max-content;
                     padding: 2px;
                     border-radius: 2px;
+                    line-height: 1.5;
+
                 }
                 .item:not(:last-child){
                     margin-bottom: 20px;
@@ -30,6 +32,12 @@ const UrlList = ({list}) => {
                     margin-bottom: 75px;
                     line-height: 2.2rem;
                     font-size: 1.1rem;
+                }
+
+                @media(max-width: 600px){
+                    .item{
+                        width: 100%;
+                    }
                 }
             `}</style>
         </>
