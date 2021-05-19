@@ -31,6 +31,13 @@ const UrlList = ({list}) => {
                     line-height: 2.2rem;
                     font-size: 1.1rem;
                 }
+
+                @media(max-width: 600px){
+                    .item{
+                        width: 100%;
+                        line-height: 1.9;
+                    }
+                }
             `}</style>
         </>
     )

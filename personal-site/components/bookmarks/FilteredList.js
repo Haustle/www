@@ -166,6 +166,19 @@ export default function FilteredList({listObj = []}){
                     width: max-content;
                 }
 
+                @media(max-width: 600px){
+                    .item{
+                        width: 100%;
+                        line-height: 1.9;
+                    }
+                }
+
+                @media(max-width: 425px){
+                    .item-category-container{
+                        display: none;
+                    }
+                }
+
             `}</style>
         </>
     )

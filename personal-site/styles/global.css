@@ -53,10 +53,14 @@ html{
     color: #424242;
 }
 .link{
-    border-bottom: 1px dotted currentColor;
-    padding: 2px 5px;
+    /* border-bottom: 1px dotted currentColor; */
+    /* padding: 2px 5px; */
     width: max-content;
     color: #424242;
+
+    text-decoration: underline;
+    text-underline-offset: 7px;
+    text-decoration-style: dotted;
 }
 
 
