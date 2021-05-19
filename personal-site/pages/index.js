@@ -13,7 +13,7 @@ export default function Home() {
         <div className="link"><A href="https://github.com/haustle">GitHub</A></div>
         <div className="link"><A href="https://www.linkedin.com/in/tyrusmiles/">LinkedIn</A></div>
         
-        <div className="link haus"><A href="https://haustle.studio"><img alt="Official Haustle logo" src="haustle-red.svg" className="haus-logo" /> 😌</A> </div>
+        {/* <div className="link haus"><A href="https://haustle.studio"><img alt="Official Haustle logo" src="haustle-red.svg" className="haus-logo" /> 😌</A> </div> */}
 
       </div>
 
